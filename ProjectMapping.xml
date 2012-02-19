@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<ProjectMappingInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" FileName="ProjectMapping.xml" xmlns="http://schemas.microsoft.com/pag/project-mapping">
+  <ProjectMappingTables>
+    <ProjectMappingTable Name="Service">
+      <ProjectMappings>
+        <ProjectMapping ProjectId="8d4b721f-ba3a-4ac2-ba9b-68383e1e8bf8" ProjectPath="\GeneratedCode" ProjectName="Service.BusinessEntities">
+          <Roles>
+            <Role Name="BusinessEntityRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="024fd961-54b7-46d1-a7cc-9cf1ef2e58a7" ProjectPath="\GeneratedCode" ProjectName="Service.BusinessLogic">
+          <Roles>
+            <Role Name="BusinessLogicRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="9445c59d-7ce2-4428-86fe-1c958d35e88c" ProjectPath="\GeneratedCode" ProjectName="Service.DataAccess">
+          <Roles />
+        </ProjectMapping>
+        <ProjectMapping ProjectId="79cdaa60-9caa-41de-9e22-7b0e1e1370a6" ProjectPath="\GeneratedCode" ProjectName="Service.DataContracts">
+          <Roles>
+            <Role Name="DataContractRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="fc4df1f6-ffd7-4f36-bd9b-9edcf658585a" ProjectPath="\GeneratedCode" ProjectName="Service.FaultContracts">
+          <Roles>
+            <Role Name="FaultContractRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="f286dab9-86c3-41e0-87a8-ca189dbd16cb" ProjectPath="\GeneratedCode" ProjectName="Service.MessageContracts">
+          <Roles>
+            <Role Name="MessageContractRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="bb3fddfa-3570-4d98-9ea0-dd9e28d1fe3f" ProjectPath="\GeneratedCode" ProjectName="Service.ServiceImplementation">
+          <Roles>
+            <Role Name="ServiceRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="578f9393-d58d-4188-87dd-8c59e5f9f496" ProjectPath="\GeneratedCode" ProjectName="Service.ServiceContracts">
+          <Roles>
+            <Role Name="ServiceContractRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="2a0b83b7-60e3-4958-bddf-e507f255dcf8" ProjectPath="\GeneratedCode" ProjectName="Service.Host">
+          <Roles>
+            <Role Name="HostRole" />
+          </Roles>
+        </ProjectMapping>
+        <ProjectMapping ProjectId="2ca91385-4df3-4edf-bde5-5a425b996956" ProjectPath="\GeneratedCode" ProjectName="Service.Client">
+          <Roles>
+            <Role Name="ClientRole" />
+          </Roles>
+        </ProjectMapping>
+      </ProjectMappings>
+    </ProjectMappingTable>
+  </ProjectMappingTables>
+</ProjectMappingInformation>

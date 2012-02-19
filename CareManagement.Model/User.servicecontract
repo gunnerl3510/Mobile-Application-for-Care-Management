@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceContractModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a1363775-aa6c-451b-a40e-617b1061eb6e" implementationTechnology="{3d062fd1-5877-4760-ae82-d8a31af845b5}|WCF|WCF Extension" projectMappingTable="Service" namespace="http://CareManagement.Model/2012/User" serializerType="DataContractSerializer" xmlns="http://schemas.microsoft.com/dsltools/ServiceContractDsl">
+  <serviceContracts>
+    <serviceContract Id="a37a1049-d3df-4083-bd26-d7db64011cda" name="User" namespace="http://CareManagement.Model/2012/User" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFServiceContract&quot;&gt;&#xD;&#xA;    &lt;ProtectionLevel&gt;None&lt;/ProtectionLevel&gt;&#xD;&#xA;    &lt;SessionMode&gt;Allowed&lt;/SessionMode&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;">
+      <operations>
+        <operationMoniker Id="4bf3f794-4c8d-4895-a978-a9d6515c2fb8" />
+        <operationMoniker Id="52cac54e-9b78-4d91-a0d6-4eeba5787db7" />
+      </operations>
+    </serviceContract>
+  </serviceContracts>
+  <operations>
+    <operation Id="4bf3f794-4c8d-4895-a978-a9d6515c2fb8" name="Authenticate" action="authenticate" isOneWay="false" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFOperationContract&quot;&gt;&#xD;&#xA;    &lt;ProtectionLevel&gt;None&lt;/ProtectionLevel&gt;&#xD;&#xA;    &lt;IsInitiating&gt;true&lt;/IsInitiating&gt;&#xD;&#xA;    &lt;IsTerminating&gt;false&lt;/IsTerminating&gt;&#xD;&#xA;    &lt;AsyncPattern&gt;false&lt;/AsyncPattern&gt;&#xD;&#xA;    &lt;ReplyAction&gt;authenticate&lt;/ReplyAction&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;">
+      <faults>
+        <dataContractFault Id="5869cdfd-ab5e-4acd-8d19-23be7c5885f9" name="CredentialFault" objectExtenderContainer="" type="modelbus://Microsoft.Practices.ServiceFactory.DataContracts.DataContractDslAdapter/User/AuthenticationFailure/.\User.datacontract%2f582b0188-9d5f-44fa-bcea-5ee51052aed4" />
+      </faults>
+      <response>
+        <messageMoniker Id="0d04a477-6c26-42f5-9413-05da16d61f9c" />
+      </response>
+    </operation>
+    <operation Id="52cac54e-9b78-4d91-a0d6-4eeba5787db7" name="Create" action="create" isOneWay="false" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFOperationContract&quot;&gt;&#xD;&#xA;    &lt;ProtectionLevel&gt;None&lt;/ProtectionLevel&gt;&#xD;&#xA;    &lt;IsInitiating&gt;true&lt;/IsInitiating&gt;&#xD;&#xA;    &lt;IsTerminating&gt;false&lt;/IsTerminating&gt;&#xD;&#xA;    &lt;AsyncPattern&gt;false&lt;/AsyncPattern&gt;&#xD;&#xA;    &lt;ReplyAction /&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;">
+      <response>
+        <messageMoniker Id="9ab30952-b3f9-441b-9830-b32a856c88cb" />
+      </response>
+    </operation>
+  </operations>
+  <services>
+    <service Id="d0c1ef0e-9c07-46b4-8c3a-92319ad17528" name="User" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFService&quot;&gt;&#xD;&#xA;    &lt;ConcurrencyMode&gt;Single&lt;/ConcurrencyMode&gt;&#xD;&#xA;    &lt;InstanceContextMode&gt;PerSession&lt;/InstanceContextMode&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" namespace="http://CareManagement.Model/2012/User">
+      <serviceContract>
+        <serviceContractMoniker name="/a1363775-aa6c-451b-a40e-617b1061eb6e/User" />
+      </serviceContract>
+    </service>
+  </services>
+  <messages>
+    <message Id="b2e3be4e-fe52-4f97-9f2a-c1c03efbd9a1" name="AuthenticateRequest" namespace="http://CareManagement.Model/2012/User" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFMessageContract&quot;&gt;&#xD;&#xA;    &lt;IsWrapped&gt;false&lt;/IsWrapped&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;">
+      <requestFor>
+        <operationMoniker Id="4bf3f794-4c8d-4895-a978-a9d6515c2fb8" />
+      </requestFor>
+      <messageParts>
+        <dataContractMessagePart Id="aa608891-3331-4ef4-9505-821967ba148b" name="Request" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFDataContractMessagePart&quot;&gt;&#xD;&#xA;    &lt;Namespace&gt;http://CareManagement.Model/2012/User&lt;/Namespace&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" type="modelbus://Microsoft.Practices.ServiceFactory.DataContracts.DataContractDslAdapter/User/AuthenticationCredentials/.\User.datacontract%2f342cc3cf-ebdf-4426-8c90-8cbcb38efcb6" />
+      </messageParts>
+    </message>
+    <message Id="0d04a477-6c26-42f5-9413-05da16d61f9c" name="AuthenticateResponse" namespace="http://CareManagement.Model/2012/User" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFMessageContract&quot;&gt;&#xD;&#xA;    &lt;IsWrapped&gt;false&lt;/IsWrapped&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;">
+      <messageParts>
+        <dataContractMessagePart Id="db55ce89-77ce-4168-9868-3e63af6075fb" name="Response" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFDataContractMessagePart&quot;&gt;&#xD;&#xA;    &lt;Namespace&gt;http://CareManagement.Model/2012/User&lt;/Namespace&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" type="modelbus://Microsoft.Practices.ServiceFactory.DataContracts.DataContractDslAdapter/User/AuthenticationResponse/.\User.datacontract%2facddef52-b971-44a0-ae99-9fb91a4d2e18" />
+      </messageParts>
+    </message>
+    <message Id="605b79ad-46ba-4feb-9d3c-cf56fabce5b7" name="CreateUserRequest" namespace="http://CareManagement.Model/2012/User" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFMessageContract&quot;&gt;&#xD;&#xA;    &lt;IsWrapped&gt;false&lt;/IsWrapped&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;">
+      <requestFor>
+        <operationMoniker Id="52cac54e-9b78-4d91-a0d6-4eeba5787db7" />
+      </requestFor>
+      <messageParts>
+        <dataContractMessagePart Id="8acdf60d-b4ba-4663-8893-079345fd2e87" name="Request" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFDataContractMessagePart&quot;&gt;&#xD;&#xA;    &lt;Namespace&gt;http://CareManagement.Model/2012/User&lt;/Namespace&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" type="modelbus://Microsoft.Practices.ServiceFactory.DataContracts.DataContractDslAdapter/User/NewUser/.\User.datacontract%2f0f50e447-c8f7-4f05-9168-fcd7ac2ed737" />
+      </messageParts>
+    </message>
+    <message Id="9ab30952-b3f9-441b-9830-b32a856c88cb" name="UserCreatedResponse" namespace="http://CareManagement.Model/2012/User" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFMessageContract&quot;&gt;&#xD;&#xA;    &lt;IsWrapped&gt;false&lt;/IsWrapped&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;">
+      <messageParts>
+        <dataContractMessagePart Id="7f2a0875-04aa-4c61-b0c5-302c492269c1" name="Response" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WCFDataContractMessagePart&quot;&gt;&#xD;&#xA;    &lt;Namespace&gt;http://CareManagement.Model/2012/User&lt;/Namespace&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" type="modelbus://Microsoft.Practices.ServiceFactory.DataContracts.DataContractDslAdapter/User/UserCreated/.\User.datacontract%2f541c98a9-7c2e-4d8e-a1a3-7e8f14d2d0ee" />
+      </messageParts>
+    </message>
+  </messages>
+</serviceContractModel>

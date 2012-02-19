@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hostDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="fc99b032-7aa4-402a-a7d7-a41c5370bf1b" namespace="http://CareManagement.Model/2012/ServiceHost" xmlns="http://schemas.microsoft.com/dsltools/HostDesigner">
+  <hostApplications>
+    <hostApplication Id="c020fada-09bc-4510-9831-e5c74eb50c79" name="Host" implementationProject="C:\Users\marc.lerwick\Documents\Visual Studio 2010\Projects\CareManagement\Service\Tests\Service.Host" implementationTechnology="{44e8a8c3-3651-4932-bae3-1faf3684e2f3}|WCF|WCF Extensions">
+      <serviceDescriptions>
+        <serviceReference Id="e34f85c6-3249-4ca5-8eb3-0283421b6386" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfServiceDescription&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;true&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" name="UserService" serviceImplementationType="modelbus://Microsoft.Practices.ServiceFactory.ServiceContracts.ServiceContractDslAdapter/User/User/.\User.servicecontract%2fd0c1ef0e-9c07-46b4-8c3a-92319ad17528">
+          <endpoints>
+            <endpoint Id="bb172999-6372-4065-a428-b0832414d596" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfEndpoint&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;wsHttpBinding&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" address="user" name="UserEndpoint" />
+          </endpoints>
+        </serviceReference>
+      </serviceDescriptions>
+    </hostApplication>
+  </hostApplications>
+  <clientApplications>
+    <clientApplication Id="56e8bd77-4bf4-4acd-8b48-b1df1eed9f57" name="Client" implementationTechnology="{44e8a8c3-3651-4932-bae3-1faf3684e2f3}|WCF|WCF Extensions" implementationProject="Service\Tests\Service.Client\Service.Client.csproj">
+      <proxies>
+        <proxy Id="8e6261d4-2ab8-4b24-9667-56218570e2b2" name="ClientProxy">
+          <endpoint>
+            <endpointMoniker Id="bb172999-6372-4065-a428-b0832414d596" />
+          </endpoint>
+        </proxy>
+      </proxies>
+    </clientApplication>
+  </clientApplications>
+</hostDesignerModel>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB3FDDFA-3570-4D98-9EA0-DD9E28D1FE3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service.ServiceImplementation</RootNamespace>
+    <AssemblyName>Service.ServiceImplementation.ServiceImplementation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="GeneratedCode\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Business Logic\Service.BusinessEntities\Service.BusinessEntities.csproj">
+      <Project>{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}</Project>
+      <Name>Service.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business Logic\Service.BusinessLogic\Service.BusinessLogic.csproj">
+      <Project>{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}</Project>
+      <Name>Service.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.DataContracts\Service.DataContracts.csproj">
+      <Project>{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}</Project>
+      <Name>Service.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.FaultContracts\Service.FaultContracts.csproj">
+      <Project>{FC4DF1F6-FFD7-4F36-BD9B-9EDCF658585A}</Project>
+      <Name>Service.FaultContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.MessageContracts\Service.MessageContracts.csproj">
+      <Project>{F286DAB9-86C3-41E0-87A8-CA189DBD16CB}</Project>
+      <Name>Service.MessageContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service.ServiceContracts\Service.ServiceContracts.csproj">
+      <Project>{578F9393-D58D-4188-87DD-8C59E5F9F496}</Project>
+      <Name>Service.ServiceContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Roles="ServiceRole" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
