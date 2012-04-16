@@ -75,12 +75,6 @@ namespace Infrastructure.Model.Medical
         public int AccountId { get; set; }
 
         /// <summary>
-        /// Gets or sets the facility identifier to which the appointment belongs
-        /// </summary>
-        [Required]
-        public int FacilityId { get; set; }
-
-        /// <summary>
         /// Gets or sets the provider identifier to which the appointment belongs
         /// </summary>
         [Required]

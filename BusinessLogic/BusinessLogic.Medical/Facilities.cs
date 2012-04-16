@@ -1,13 +1,13 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Insurers.cs" company="LC LLC">
-//   All rights reserved LC LLC
+// <copyright file="Facilities.cs" company="LC LLC">
+//   All rights reserved
 // </copyright>
 // <summary>
-//   Business logic for working with Insurer objects
+//   Business logic for working with Facility objects
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace BusinessLogic.Insurance
+namespace BusinessLogic.Medical
 {
     using System;
     using System.Linq;
@@ -22,31 +22,31 @@ namespace BusinessLogic.Insurance
 
     using Ninject;
 
-    using InsuranceModels = Infrastructure.Model.Insurance;
+    using MedicalModels = Infrastructure.Model.Medical;
 
     /// <summary>
-    /// Business logic for working with <seealso cref="InsuranceModels.Insurer"/> objects
+    /// Business logic for working with <seealso cref="MedicalModels.Facility"/> objects
     /// </summary>
-    public class Insurers
+    public class Facilities
     {
         #region private members
 
         /// <summary>
         /// The <seealso cref="IReadOnlyRepository{T}"/> for the 
-        /// <seealso cref="InsuranceModels.Insurer"/> models
+        /// <seealso cref="MedicalModels.Facility"/> models
         /// </summary>
-        private readonly IReadOnlyRepository<InsuranceModels.Insurer> insurerReadOnlyRepository;
+        private readonly IReadOnlyRepository<MedicalModels.Facility> facilityReadOnlyRepository;
 
         /// <summary>
         /// The <seealso cref="IRepository{T}"/> for the 
-        /// <seealso cref="InsuranceModels.Insurer"/> models
+        /// <seealso cref="MedicalModels.Facility"/> models
         /// </summary>
-        private readonly IRepository<InsuranceModels.Insurer> insurerRepository;
+        private readonly IRepository<MedicalModels.Facility> facilityRepository;
 
         /// <summary>
         /// The <seealso cref="ILogger{T}"/> to use for logging messages
         /// </summary>
-        private readonly ILogger<Insurers> logger;
+        private readonly ILogger<Facilities> logger;
 
         /// <summary>
         /// The object that implements the <seealso cref="IKernel"/> interface used for
@@ -59,31 +59,31 @@ namespace BusinessLogic.Insurance
         #region public constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Insurers"/> class.
+        /// Initializes a new instance of the <see cref="Facilities"/> class.
         /// Interfaces are used for initialization to facilitate dependency injection.
         /// </summary>
-        /// <param name="insurerReadOnlyRepository">
+        /// <param name="facilityReadOnlyRepository">
         /// The <seealso cref="IReadOnlyRepository{T}"/> to use for retrieving 
-        /// <seealso cref="InsuranceModels.Insurer"/> records from the repository
+        /// <seealso cref="MedicalModels.Facility"/> records from the repository 
         /// </param>
-        /// <param name="insurerRepository">
+        /// <param name="facilityRepository">
         /// The <seealso cref="IRepository{T}"/> to use for adding, deleting, and updating 
-        /// <seealso cref="InsuranceModels.Insurer"/> records in the  repository
+        /// <seealso cref="MedicalModels.Facility"/> records in the  repository
         /// </param>
         /// <param name="logger">
-        /// The <seealso cref="ILogger{T}"/> to use to log messages
+        /// The <c>ILogger</c> to user to log messages
         /// </param>
         /// <param name="kernel">
-        /// The <seealso cref="IKernel"/> to use for dependency injection
+        /// The <c>IKernel</c> to use for dependency injection
         /// </param>
-        public Insurers(
-            IReadOnlyRepository<InsuranceModels.Insurer> insurerReadOnlyRepository,
-            IRepository<InsuranceModels.Insurer> insurerRepository,
-            ILogger<Insurers> logger,
+        public Facilities(
+            IReadOnlyRepository<MedicalModels.Facility> facilityReadOnlyRepository,
+            IRepository<MedicalModels.Facility> facilityRepository,
+            ILogger<Facilities> logger,
             IKernel kernel)
         {
-            this.insurerReadOnlyRepository = insurerReadOnlyRepository;
-            this.insurerRepository = insurerRepository;
+            this.facilityReadOnlyRepository = facilityReadOnlyRepository;
+            this.facilityRepository = facilityRepository;
             this.logger = logger;
             this.kernel = kernel;
         }
@@ -93,44 +93,45 @@ namespace BusinessLogic.Insurance
         #region public methods
 
         /// <summary>
-        /// Adds an insurer to the repository
+        /// Adds a <seealso cref="MedicalModels.Facility"/> to the repository
         /// </summary>
-        /// <param name="insurer">
-        /// The insurer to add.
+        /// <param name="facility">
+        /// The <seealso cref="MedicalModels.Facility"/> to add.
         /// </param>
         /// <param name="identity">
-        /// The identity of the user authorized to add the insurer to the insurer
+        /// The identity of the user authorized to add the <seealso cref="MedicalModels.Facility"/>
+        ///  to the account
         /// </param>
         /// <exception cref="ArgumentNullException">
-        /// Thrown if the <paramref name="insurer"/> parameter is null
+        /// Thrown if the <paramref name="facility"/> parameter is null
         /// </exception>
         /// <exception cref="ArgumentNullException">
         /// Thrown if the <paramref name="identity"/> parameter is null
         /// </exception>
         /// <exception cref="SecurityException">
-        /// Thrown if the user is not authorized to add the insurer to the
-        /// repository
+        /// Thrown if the user is not authorized to add the <seealso cref="MedicalModels.Facility"/>
+        ///  to the account
         /// </exception>
-        public void CreateInsurer(InsuranceModels.Insurer insurer, IIdentity identity)
+        public void CreateFacility(MedicalModels.Facility facility, IIdentity identity)
         {
-            logger.EnterMethod("CreateInsurer");
+            logger.EnterMethod("CreateFacility");
 
-            Invariant.IsNotNull(insurer, "insurer");
+            Invariant.IsNotNull(facility, "facility");
             Invariant.IsNotNull(identity, "identity");
 
             try
             {
-                kernel.Get<Security>().AuthorizeAction(identity, insurer.AccountId);
+                kernel.Get<Security>().AuthorizeAction(identity, facility.AccountId);
             }
             catch (SecurityException exception)
             {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in CreateInsurer");
+                logger.LogExceptionWithMessage(exception, "SecurityException thrown in CreateFacility");
                 throw;
             }
 
             try
             {
-                insurerRepository.Add(insurer);
+                facilityRepository.Add(facility);
             }
             catch (Exception exception)
             {
@@ -138,47 +139,49 @@ namespace BusinessLogic.Insurance
                 throw;
             }
 
-            logger.LeaveMethod("CreateInsurer");
+            logger.LeaveMethod("CreateFacility");
         }
 
         /// <summary>
-        /// Deletes an insurer from the repository
+        /// Deletes a <seealso cref="MedicalModels.Facility"/> from the repository
         /// </summary>
-        /// <param name="insurer">The <seealso cref="InsuranceModels.Insurer"/> to 
-        /// delete from the repository</param>
+        /// <param name="facility">
+        /// The <seealso cref="MedicalModels.Facility"/> to delete from the repository
+        /// </param>
         /// <param name="identity">
         /// The <c>IIdentity</c> of the user authorized to delete the 
-        /// <seealso cref="InsuranceModels.Insurer"/> from the repository
+        /// <seealso cref="MedicalModels.Facility"/> from the repository
         /// </param>
         /// <exception cref="ArgumentNullException">
-        /// Thrown if the <paramref name="insurer"/> parameter is null
+        /// Thrown if the <paramref name="facility"/> parameter is null
         /// </exception>
         /// <exception cref="ArgumentNullException">
         /// Thrown if the <paramref name="identity"/> parameter is null
         /// </exception>
         /// <exception cref="SecurityException">
-        /// Thrown if the user is not  authorized to delete the insurer from the repository
+        /// Thrown if the user is not  authorized to delete the <seealso cref="MedicalModels.Facility"/>
+        /// from the repository
         /// </exception>
-        public void DeleteInsurer(InsuranceModels.Insurer insurer, IIdentity identity)
+        public void DeleteFacility(MedicalModels.Facility facility, IIdentity identity)
         {
-            logger.EnterMethod("DeleteInsurer");
+            logger.EnterMethod("DeleteFacility");
 
-            Invariant.IsNotNull(insurer, "insurer");
+            Invariant.IsNotNull(facility, "facility");
             Invariant.IsNotNull(identity, "identity");
 
             try
             {
-                kernel.Get<Security>().AuthorizeAction(identity, insurer.AccountId);
+                kernel.Get<Security>().AuthorizeAction(identity, facility.AccountId);
             }
             catch (SecurityException exception)
             {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in DeleteInsurer");
+                logger.LogExceptionWithMessage(exception, "SecurityException thrown in DeleteFacility");
                 throw;
             }
 
             try
             {
-                insurerRepository.Delete(insurer);
+                this.facilityRepository.Delete(facility);
             }
             catch (ArgumentException exception)
             {
@@ -186,49 +189,49 @@ namespace BusinessLogic.Insurance
                 throw;
             }
 
-            logger.LeaveMethod("DeleteInsurer");
+            logger.LeaveMethod("DeleteFacility");
         }
 
         /// <summary>
-        /// Updates an insurer in the repository
+        /// Updates a <seealso cref="MedicalModels.Facility"/> in the repository
         /// </summary>
-        /// <param name="insurer">
-        /// The <seealso cref="InsuranceModels.Insurer"/> to update in the repository
+        /// <param name="facility">
+        /// The <seealso cref="MedicalModels.Facility"/> to update in the repository
         /// </param>
         /// <param name="identity">
         /// The <c>IIdentity</c> of the user authorized to update the 
-        /// <seealso cref="InsuranceModels.Insurer"/> in the repository
+        /// <seealso cref="MedicalModels.Facility"/> in the repository
         /// </param>
         /// <exception cref="ArgumentNullException">
-        /// Thrown if the <paramref name="insurer"/> parameter is null
+        /// Thrown if the <paramref name="facility"/> parameter is null
         /// </exception>
         /// <exception cref="ArgumentNullException">
         /// Thrown if the <paramref name="identity"/> parameter is null
         /// </exception>
         /// <exception cref="SecurityException">
-        /// Thrown if the user is not authorized to update the insurer in
-        /// the repository
+        /// Thrown if the user is not authorized to update the <seealso cref="MedicalModels.Facility"/>
+        /// in the repository
         /// </exception>
-        public void UpdateInsurer(InsuranceModels.Insurer insurer, IIdentity identity)
+        public void UpdateFacility(MedicalModels.Facility facility, IIdentity identity)
         {
-            logger.EnterMethod("UpdateInsurer");
+            logger.EnterMethod("UpdateFacility");
 
-            Invariant.IsNotNull(insurer, "insurer");
+            Invariant.IsNotNull(facility, "facility");
             Invariant.IsNotNull(identity, "identity");
 
             try
             {
-                kernel.Get<Security>().AuthorizeAction(identity, insurer.AccountId);
+                kernel.Get<Security>().AuthorizeAction(identity, facility.AccountId);
             }
             catch (SecurityException exception)
             {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in UpdateInsurer");
+                logger.LogExceptionWithMessage(exception, "SecurityException thrown in UpdateFacility");
                 throw;
             }
 
             try
             {
-                insurerRepository.Update(insurer);
+                facilityRepository.Update(facility);
             }
             catch (ArgumentException exception)
             {
@@ -236,68 +239,68 @@ namespace BusinessLogic.Insurance
                 throw;
             }
 
-            logger.LeaveMethod("UpdateInsurer");
+            logger.LeaveMethod("UpdateFacility");
         }
 
-        #region insurer retrieval
+        #region facility retrieval
 
         /// <summary>
-        /// Retrieves an <seealso cref="InsuranceModels.Insurer"/> from the 
-        /// repository using the id of the insurer
+        /// Retrieves a <seealso cref="MedicalModels.Facility"/> from the 
+        /// repository using the id of the facility
         /// </summary>
-        /// <param name="insurerId">
-        /// The id of the insurer to retrieve
+        /// <param name="facilityId">
+        /// The id of the <seealso cref="MedicalModels.Facility"/> to retrieve
         /// </param>
         /// <param name="identity">
         /// The identity whose credentials are used to authorize the action
         /// </param>
         /// <exception cref="ArgumentOutOfRangeException">
-        /// Thrown if the <paramref name="insurerId"/> parameter is less than 1
+        /// Thrown if the <paramref name="facilityId"/> parameter is less than 1
         /// </exception>
         /// <exception cref="ArgumentNullException">
         /// Thrown if the <paramref name="identity"/> parameter is null
         /// </exception>
         /// <exception cref="SecurityException">
-        /// Thrown if the user is not authorized to retrieve the insurer in
-        /// the repository
+        /// Thrown if the user is not authorized to retrieve the 
+        /// <seealso cref="MedicalModels.Facility"/> from the repository
         /// </exception>
         /// <returns>
-        /// The retrieved <seealso cref="InsuranceModels.Insurer"/> if it is 
+        /// The retrieved <seealso cref="MedicalModels.Facility"/> if it is 
         /// found in the repository or null if it is not found
         /// </returns>
-        public InsuranceModels.Insurer GetInsurerById(int insurerId, IIdentity identity)
+        public MedicalModels.Facility GetFacilityById(int facilityId, IIdentity identity)
         {
-            logger.EnterMethod("GetInsurerById");
+            logger.EnterMethod("GetFacilityById");
 
             Invariant.IsNotNull(identity, "identity");
 
-            if (insurerId < 1)
+            if (facilityId < 1)
             {
-                throw new ArgumentOutOfRangeException("insurerId", insurerId, "The insurerId parameter must be greater than 0.");
+                throw new ArgumentOutOfRangeException("facilityId", facilityId, "The facilityId parameter must be greater than 0.");
             }
 
-            var requestedInsurer = insurerReadOnlyRepository.FindBy(insurer => insurer.Id.Equals(insurerId));
+            var requestedFacility = facilityReadOnlyRepository.FindBy(facility => facility.Id.Equals(facilityId));
 
             try
             {
-                kernel.Get<Security>().AuthorizeAction(identity, requestedInsurer.AccountId);
+                kernel.Get<Security>().AuthorizeAction(identity, requestedFacility.AccountId);
             }
             catch (SecurityException exception)
             {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in UpdateInsurer");
+                logger.LogExceptionWithMessage(exception, "SecurityException thrown in UpdateFacility");
                 throw;
             }
 
-            logger.LeaveMethod("GetInsurerById");
-            return requestedInsurer;
+            logger.LeaveMethod("GetFacilityById");
+            return requestedFacility;
         }
 
         /// <summary>
-        /// Retrieves a collection of <seealso cref="InsuranceModels.Insurer"/> 
+        /// Retrieves a collection of <seealso cref="MedicalModels.Facility"/> 
         /// that have an account id that matches the <paramref name="accountId"/> passed in
         /// </summary>
         /// <param name="accountId">
-        /// The id of the account to retrieve the <seealso cref="InsuranceModels.Insurer"/> for
+        /// The id of the account to retrieve the <seealso cref="MedicalModels.Facility"/> for
         /// </param>
         /// <param name="identity">
         /// The <seealso cref="IIdentity"/> that contains the identity of the user that is authorized
@@ -310,16 +313,16 @@ namespace BusinessLogic.Insurance
         /// Thrown if the <paramref name="identity"/> parameter is null
         /// </exception>
         /// <exception cref="SecurityException">
-        /// Thrown if the user is not authorized to retrieve the insurers for the account specified
-        /// from the repository
+        /// Thrown if the user is not authorized to retrieve the <seealso cref="MedicalModels.Facility"/>
+        /// for the account specified from the repository
         /// </exception>
         /// <returns>
-        /// An <seealso cref="IQueryable{T}"/> collection of <seealso cref="InsuranceModels.Insurer"/>
+        /// An <seealso cref="IQueryable{T}"/> collection of <seealso cref="MedicalModels.Facility"/>
         /// that belong to account identified by <paramref name="accountId"/>
         /// </returns>
-        public IQueryable<InsuranceModels.Insurer> GetInsurersByAccount(int accountId, IIdentity identity)
+        public IQueryable<MedicalModels.Facility> GetFacilitiesByAccount(int accountId, IIdentity identity)
         {
-            logger.EnterMethod("GetInsurersByAccount");
+            logger.EnterMethod("GetFacilitiesByAccount");
 
             Invariant.IsNotNull(identity, "identity");
 
@@ -334,15 +337,15 @@ namespace BusinessLogic.Insurance
             }
             catch (SecurityException exception)
             {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in GetInsurersByAccount");
+                logger.LogExceptionWithMessage(exception, "SecurityException thrown in GetFacilitiesByAccount");
                 throw;
             }
 
-            var insurers = insurerReadOnlyRepository.FilterBy(insurer => insurer.AccountId.Equals(accountId));
+            var facilities = facilityReadOnlyRepository.FilterBy(facility => facility.AccountId.Equals(accountId));
 
-            logger.LeaveMethod("GetInsurersByAccount");
+            logger.LeaveMethod("GetFacilitiesByAccount");
 
-            return insurers;
+            return facilities;
         }
 
         #endregion

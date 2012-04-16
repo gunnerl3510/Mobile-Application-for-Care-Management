@@ -52,6 +52,13 @@ namespace Infrastructure.Model.Insurance
         #endregion
 
         /// <summary>
+        /// Gets or sets the account identifier to which the follow up belongs
+        /// </summary>
+        [HiddenInput]
+        [Editable(false)]
+        public int AccountId { get; set; }
+
+        /// <summary>
         /// Gets or sets the authorization request identifier to which the authorization follow-up belongs
         /// </summary>
         [HiddenInput]

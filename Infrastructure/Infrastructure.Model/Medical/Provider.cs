@@ -15,7 +15,7 @@ namespace Infrastructure.Model.Medical
     /// <summary>
     /// Encapsulates medical provider information
     /// </summary>
-    public class Provider
+    public class Provider : IModel
     {
         #region Implementation of IModel
 

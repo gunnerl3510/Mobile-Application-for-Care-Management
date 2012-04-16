@@ -120,11 +120,7 @@ namespace BusinessLogic.Insurance
 
             try
             {
-                var accountId =
-                    kernel.Get<IReadOnlyRepository<InsuranceModels.AuthorizationRequest>>().FindBy(
-                        request => request.Id.Equals(authorizationFollowUp.AuthorizationRequestId)).AccountId;
-
-                kernel.Get<Security>().AuthorizeAction(identity, accountId);
+                kernel.Get<Security>().AuthorizeAction(identity, authorizationFollowUp.AccountId);
             }
             catch (SecurityException exception)
             {
@@ -173,11 +169,7 @@ namespace BusinessLogic.Insurance
 
             try
             {
-                var accountId =
-                    kernel.Get<IReadOnlyRepository<InsuranceModels.AuthorizationRequest>>().FindBy(
-                        request => request.Id.Equals(authorizationFollowUp.AuthorizationRequestId)).AccountId;
-
-                kernel.Get<Security>().AuthorizeAction(identity, accountId);
+                kernel.Get<Security>().AuthorizeAction(identity, authorizationFollowUp.AccountId);
             }
             catch (SecurityException exception)
             {
@@ -227,11 +219,7 @@ namespace BusinessLogic.Insurance
 
             try
             {
-                var accountId =
-                    kernel.Get<IReadOnlyRepository<InsuranceModels.AuthorizationRequest>>().FindBy(
-                        request => request.Id.Equals(authorizationFollowUp.AuthorizationRequestId)).AccountId;
-
-                kernel.Get<Security>().AuthorizeAction(identity, accountId);
+                kernel.Get<Security>().AuthorizeAction(identity, authorizationFollowUp.AccountId);
             }
             catch (SecurityException exception)
             {
@@ -293,11 +281,7 @@ namespace BusinessLogic.Insurance
 
             try
             {
-                var accountId =
-                    kernel.Get<IReadOnlyRepository<InsuranceModels.AuthorizationRequest>>().FindBy(
-                        request => request.Id.Equals(requestedFollowUp.AuthorizationRequestId)).AccountId;
-
-                kernel.Get<Security>().AuthorizeAction(identity, accountId);
+                kernel.Get<Security>().AuthorizeAction(identity, requestedFollowUp.AccountId);
             }
             catch (SecurityException exception)
             {
@@ -413,13 +397,8 @@ namespace BusinessLogic.Insurance
                 throw;
             }
 
-            var authorizationids =
-                kernel.Get<IReadOnlyRepository<InsuranceModels.AuthorizationRequest>>().FilterBy(
-                    request => request.AccountId.Equals(accountId)).Select(request => request.Id).ToList();
-
             var requests =
-                authorizationFollowUpReadOnlyRepository.FilterBy(
-                    request => authorizationids.Contains(request.AuthorizationRequestId));
+                authorizationFollowUpReadOnlyRepository.FilterBy(request => request.AccountId.Equals(accountId));
 
             logger.LeaveMethod("GetAuthorizationFollowUpsByAccount");
 
