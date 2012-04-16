@@ -48,7 +48,7 @@ namespace Infrastructure.Model.Insurance
         /// Gets or sets the insurance company name
         /// </summary>
         [Required(ErrorMessage = "A name for the account is required.")]
-        [StringLength(256, ErrorMessage = "Account names are restricted to a maximum of 256 characters")]
+        [StringLength(256, ErrorMessage = "Insurace organization names are restricted to a maximum of 256 characters")]
         public string Name { get; set; }
     }
 }

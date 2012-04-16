@@ -45,11 +45,13 @@
     <Compile Include="Account\Account.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="Insurance\AuthorizationFollowUp.cs" />
+    <Compile Include="Insurance\AuthorizationNote.cs" />
     <Compile Include="Insurance\AuthorizationRequest.cs" />
     <Compile Include="Insurance\Insurer.cs" />
     <Compile Include="Medical\Facility.cs" />
     <Compile Include="Medical\MedicalAppointment.cs" />
     <Compile Include="Medical\Provider.cs" />
+    <Compile Include="ModelHelpers.cs" />
     <Compile Include="Prescription\Enumerations.cs" />
     <Compile Include="Prescription\Medication.cs" />
     <Compile Include="Prescription\PrescriptionPickup.cs" />
@@ -58,7 +60,12 @@
     <Compile Include="Scheduling\IAppointment.cs" />
     <Compile Include="Scheduling\IAppointmentDuration.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure.Helpers\Infrastructure.Helpers.csproj">
+      <Project>{0CD88831-F3C4-465C-949B-23E567DC28FD}</Project>
+      <Name>Infrastructure.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

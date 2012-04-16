@@ -9,6 +9,7 @@
 
 namespace Infrastructure.Model.Insurance
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
@@ -49,5 +50,12 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [Required]
         public int InsurerId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description for this authorization request
+        /// </summary>
+        [Required]
+        [StringLength(512, ErrorMessage = "The description of this authorization cannot exceed 512 characters.")]
+        public string Description { get; set; }
     }
 }
