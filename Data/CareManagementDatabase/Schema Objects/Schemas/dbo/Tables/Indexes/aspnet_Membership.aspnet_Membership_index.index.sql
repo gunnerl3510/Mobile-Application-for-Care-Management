@@ -1,0 +1,1 @@
+﻿CREATE CLUSTERED INDEX aspnet_Membership_index ON aspnet_Membership(ApplicationId, LoweredEmail)

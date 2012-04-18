@@ -9,6 +9,7 @@
 
 namespace Infrastructure.Model.Insurance
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     /// <summary>
@@ -42,5 +43,12 @@ namespace Infrastructure.Model.Insurance
         [Required]
         [StringLength(512, ErrorMessage = "The maximum length for this note is 512 characters.")]
         public string Note { get; set; }
+
+        /// <summary>
+        /// Gets or sets the date and time that the note was created
+        /// </summary>
+        [Required]
+        [DataType(DataType.DateTime)]
+        public DateTime Created { get; set; }
     }
 }

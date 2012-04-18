@@ -27,7 +27,7 @@ namespace Infrastructure.Model.Prescription
         /// <summary>
         /// Dosages measured in milligrams
         /// </summary>
-        Milligrams = 3,
+        Milligram = 3,
 
         /// <summary>
         /// Dosages measured in Teaspoons

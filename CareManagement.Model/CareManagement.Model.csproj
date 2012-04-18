@@ -27,19 +27,5 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="ServiceHost.host" />
-    <None Include="ServiceHost.host.diagram">
-      <DependentUpon>ServiceHost.host</DependentUpon>
-    </None>
-    <None Include="User.datacontract" />
-    <None Include="User.datacontract.diagram">
-      <DependentUpon>User.datacontract</DependentUpon>
-    </None>
-    <None Include="User.servicecontract" />
-    <None Include="User.servicecontract.diagram">
-      <DependentUpon>User.servicecontract</DependentUpon>
-    </None>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

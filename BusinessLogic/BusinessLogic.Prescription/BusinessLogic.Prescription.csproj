@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\packages\Ninject.3.0.0.15\lib\net40\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +43,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Medications.cs" />
+    <Compile Include="PrescriptionPickups.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Data.Repository\Data.Repository.csproj">
+      <Project>{B8FC01F6-FC7D-46FF-900F-5A5A6DC02F65}</Project>
+      <Name>Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure.Logging\Infrastructure.Logging.csproj">
+      <Project>{EA68B403-46DF-4C40-A652-E36BAFC57D32}</Project>
+      <Name>Infrastructure.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure.Model\Infrastructure.Model.csproj">
+      <Project>{A844CD45-EDA4-4FA9-9DC7-E5EE299DE3DC}</Project>
+      <Name>Infrastructure.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLogic.Helpers\BusinessLogic.Helpers.csproj">
+      <Project>{D273A314-DF97-49C1-B5E2-F365BE7A2713}</Project>
+      <Name>BusinessLogic.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

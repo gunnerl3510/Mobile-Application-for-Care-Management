@@ -64,5 +64,11 @@ namespace Infrastructure.Model.Insurance
         [HiddenInput]
         [Editable(false)]
         public int AuthorizationRequestId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description for this follow up
+        /// </summary>
+        [StringLength(512, ErrorMessage = "The maximum length for the description is 512 characters.")]
+        public string Description { get; set; }
     }
 }

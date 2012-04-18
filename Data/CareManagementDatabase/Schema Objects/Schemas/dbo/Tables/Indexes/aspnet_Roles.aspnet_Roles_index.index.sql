@@ -1,0 +1,1 @@
+﻿CREATE UNIQUE  CLUSTERED  INDEX aspnet_Roles_index ON  dbo.aspnet_Roles(ApplicationId, LoweredRoleName)

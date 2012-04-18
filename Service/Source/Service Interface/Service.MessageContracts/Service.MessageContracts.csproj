@@ -42,12 +42,10 @@
     <Reference Include="System.Xml.Linq">
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="GeneratedCode\AuthenticateRequest.cs" />
-    <Compile Include="GeneratedCode\AuthenticateResponse.cs" />
-    <Compile Include="GeneratedCode\CreateUserRequest.cs" />
-    <Compile Include="GeneratedCode\UserCreatedResponse.cs" />
+    <Folder Include="GeneratedCode\" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

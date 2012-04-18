@@ -1,0 +1,1 @@
+﻿CREATE INDEX aspnet_UsersInRoles_index ON  dbo.aspnet_UsersInRoles(RoleId)

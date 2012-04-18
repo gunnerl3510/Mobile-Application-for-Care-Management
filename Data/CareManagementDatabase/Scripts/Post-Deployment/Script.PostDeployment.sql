@@ -9,3 +9,27 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+
+EXEC [dbo].aspnet_RegisterSchemaVersion N'Common', N'1', 1, 1
+
+GO
+
+EXEC [dbo].aspnet_RegisterSchemaVersion N'Membership', N'1', 1, 1
+
+GO
+
+EXEC [dbo].aspnet_RegisterSchemaVersion N'Role Manager', N'1', 1, 1
+
+GO
+
+EXEC sp_tableoption N'aspnet_Membership', 'text in row', 3000
+
+GO
+
+:r .\SynchronizeReferenceData\SynchronizeDosageUnits.sql
+
+GO
+
+:r .\SynchronizeReferenceData\SynchronizeScheduleUnits.sql
+
+GO

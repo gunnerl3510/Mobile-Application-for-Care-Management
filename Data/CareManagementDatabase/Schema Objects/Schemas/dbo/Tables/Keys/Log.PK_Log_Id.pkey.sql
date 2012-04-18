@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[Log]
+	ADD CONSTRAINT [PK_Log_Id]
+	PRIMARY KEY ([Id])

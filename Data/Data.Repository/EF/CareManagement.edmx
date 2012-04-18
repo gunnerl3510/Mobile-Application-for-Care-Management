@@ -1,0 +1,2123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CareManagement.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CareManagementStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="CareManagement.Store.__RefactorLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Accounts" EntityType="CareManagement.Store.Accounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Applications" EntityType="CareManagement.Store.aspnet_Applications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Membership" EntityType="CareManagement.Store.aspnet_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Roles" EntityType="CareManagement.Store.aspnet_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_SchemaVersions" EntityType="CareManagement.Store.aspnet_SchemaVersions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_Users" EntityType="CareManagement.Store.aspnet_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="CareManagement.Store.aspnet_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AuthorizationFollowUps" EntityType="CareManagement.Store.AuthorizationFollowUps" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AuthorizationNotes" EntityType="CareManagement.Store.AuthorizationNotes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AuthorizationRequests" EntityType="CareManagement.Store.AuthorizationRequests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DosageUnits" EntityType="CareManagement.Store.DosageUnits" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Facilities" EntityType="CareManagement.Store.Facilities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Insurers" EntityType="CareManagement.Store.Insurers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Log" EntityType="CareManagement.Store.Log" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MedicalAppointments" EntityType="CareManagement.Store.MedicalAppointments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Medications" EntityType="CareManagement.Store.Medications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PrescriptionPickups" EntityType="CareManagement.Store.PrescriptionPickups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Providers" EntityType="CareManagement.Store.Providers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ScheduleUnits" EntityType="CareManagement.Store.ScheduleUnits" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_aspnet_Applications" EntityType="CareManagement.Store.vw_aspnet_Applications" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Applications">
+            <DefiningQuery>SELECT 
+      [vw_aspnet_Applications].[ApplicationName] AS [ApplicationName], 
+      [vw_aspnet_Applications].[LoweredApplicationName] AS [LoweredApplicationName], 
+      [vw_aspnet_Applications].[ApplicationId] AS [ApplicationId], 
+      [vw_aspnet_Applications].[Description] AS [Description]
+      FROM [dbo].[vw_aspnet_Applications] AS [vw_aspnet_Applications]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="CareManagement.Store.vw_aspnet_MembershipUsers" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_MembershipUsers">
+            <DefiningQuery>SELECT 
+      [vw_aspnet_MembershipUsers].[UserId] AS [UserId], 
+      [vw_aspnet_MembershipUsers].[PasswordFormat] AS [PasswordFormat], 
+      [vw_aspnet_MembershipUsers].[MobilePIN] AS [MobilePIN], 
+      [vw_aspnet_MembershipUsers].[Email] AS [Email], 
+      [vw_aspnet_MembershipUsers].[LoweredEmail] AS [LoweredEmail], 
+      [vw_aspnet_MembershipUsers].[PasswordQuestion] AS [PasswordQuestion], 
+      [vw_aspnet_MembershipUsers].[PasswordAnswer] AS [PasswordAnswer], 
+      [vw_aspnet_MembershipUsers].[IsApproved] AS [IsApproved], 
+      [vw_aspnet_MembershipUsers].[IsLockedOut] AS [IsLockedOut], 
+      [vw_aspnet_MembershipUsers].[CreateDate] AS [CreateDate], 
+      [vw_aspnet_MembershipUsers].[LastLoginDate] AS [LastLoginDate], 
+      [vw_aspnet_MembershipUsers].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
+      [vw_aspnet_MembershipUsers].[LastLockoutDate] AS [LastLockoutDate], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
+      [vw_aspnet_MembershipUsers].[FailedPasswordAnswerAttemptWindowStart] AS [FailedPasswordAnswerAttemptWindowStart], 
+      [vw_aspnet_MembershipUsers].[Comment] AS [Comment], 
+      [vw_aspnet_MembershipUsers].[ApplicationId] AS [ApplicationId], 
+      [vw_aspnet_MembershipUsers].[UserName] AS [UserName], 
+      [vw_aspnet_MembershipUsers].[MobileAlias] AS [MobileAlias], 
+      [vw_aspnet_MembershipUsers].[IsAnonymous] AS [IsAnonymous], 
+      [vw_aspnet_MembershipUsers].[LastActivityDate] AS [LastActivityDate]
+      FROM [dbo].[vw_aspnet_MembershipUsers] AS [vw_aspnet_MembershipUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_Roles" EntityType="CareManagement.Store.vw_aspnet_Roles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Roles">
+            <DefiningQuery>SELECT 
+      [vw_aspnet_Roles].[ApplicationId] AS [ApplicationId], 
+      [vw_aspnet_Roles].[RoleId] AS [RoleId], 
+      [vw_aspnet_Roles].[RoleName] AS [RoleName], 
+      [vw_aspnet_Roles].[LoweredRoleName] AS [LoweredRoleName], 
+      [vw_aspnet_Roles].[Description] AS [Description]
+      FROM [dbo].[vw_aspnet_Roles] AS [vw_aspnet_Roles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_Users" EntityType="CareManagement.Store.vw_aspnet_Users" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_Users">
+            <DefiningQuery>SELECT 
+      [vw_aspnet_Users].[ApplicationId] AS [ApplicationId], 
+      [vw_aspnet_Users].[UserId] AS [UserId], 
+      [vw_aspnet_Users].[UserName] AS [UserName], 
+      [vw_aspnet_Users].[LoweredUserName] AS [LoweredUserName], 
+      [vw_aspnet_Users].[MobileAlias] AS [MobileAlias], 
+      [vw_aspnet_Users].[IsAnonymous] AS [IsAnonymous], 
+      [vw_aspnet_Users].[LastActivityDate] AS [LastActivityDate]
+      FROM [dbo].[vw_aspnet_Users] AS [vw_aspnet_Users]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="CareManagement.Store.vw_aspnet_UsersInRoles" store:Type="Views" store:Schema="dbo" store:Name="vw_aspnet_UsersInRoles">
+            <DefiningQuery>SELECT 
+      [vw_aspnet_UsersInRoles].[UserId] AS [UserId], 
+      [vw_aspnet_UsersInRoles].[RoleId] AS [RoleId]
+      FROM [dbo].[vw_aspnet_UsersInRoles] AS [vw_aspnet_UsersInRoles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__aspnet_Me__Appli__3B75D760" Association="CareManagement.Store.FK__aspnet_Me__Appli__3B75D760">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__3C69FB99" Association="CareManagement.Store.FK__aspnet_Me__UserI__3C69FB99">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__3D5E1FD2" Association="CareManagement.Store.FK__aspnet_Ro__Appli__3D5E1FD2">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__3E52440B" Association="CareManagement.Store.FK__aspnet_Us__Appli__3E52440B">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__403A8C7D" Association="CareManagement.Store.FK__aspnet_Us__RoleI__403A8C7D">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__3F466844" Association="CareManagement.Store.FK__aspnet_Us__UserI__3F466844">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Accounts_UserId_aspnet_Users_UserId" Association="CareManagement.Store.FK_Accounts_UserId_aspnet_Users_UserId">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Accounts" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationFollowUps_AccountId_Accounts_AccountId" Association="CareManagement.Store.FK_AuthorizationFollowUps_AccountId_Accounts_AccountId">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="AuthorizationFollowUps" EntitySet="AuthorizationFollowUps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" Association="CareManagement.Store.FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+            <End Role="AuthorizationRequests" EntitySet="AuthorizationRequests" />
+            <End Role="AuthorizationFollowUps" EntitySet="AuthorizationFollowUps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" Association="CareManagement.Store.FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+            <End Role="AuthorizationRequests" EntitySet="AuthorizationRequests" />
+            <End Role="AuthorizationNotes" EntitySet="AuthorizationNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationRequests_AccountId_Accounts_AccountId" Association="CareManagement.Store.FK_AuthorizationRequests_AccountId_Accounts_AccountId">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="AuthorizationRequests" EntitySet="AuthorizationRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationRequests_InsurerId_Insurers_InsurerId" Association="CareManagement.Store.FK_AuthorizationRequests_InsurerId_Insurers_InsurerId">
+            <End Role="Insurers" EntitySet="Insurers" />
+            <End Role="AuthorizationRequests" EntitySet="AuthorizationRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facilities_AccountId_Accounts_AccountId" Association="CareManagement.Store.FK_Facilities_AccountId_Accounts_AccountId">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Facilities" EntitySet="Facilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insurer_AccountId_Accounts_AccountId" Association="CareManagement.Store.FK_Insurer_AccountId_Accounts_AccountId">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Insurers" EntitySet="Insurers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalAppointments_AccountId_Accounts_AccountId" Association="CareManagement.Store.FK_MedicalAppointments_AccountId_Accounts_AccountId">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="MedicalAppointments" EntitySet="MedicalAppointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalAppointments_ProviderId_Providers_ProviderId" Association="CareManagement.Store.FK_MedicalAppointments_ProviderId_Providers_ProviderId">
+            <End Role="Providers" EntitySet="Providers" />
+            <End Role="MedicalAppointments" EntitySet="MedicalAppointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId" Association="CareManagement.Store.FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId">
+            <End Role="ScheduleUnits" EntitySet="ScheduleUnits" />
+            <End Role="MedicalAppointments" EntitySet="MedicalAppointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medications_AccountId_Accounts_AccountId" Association="CareManagement.Store.FK_Medications_AccountId_Accounts_AccountId">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="Medications" EntitySet="Medications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medications_DosageUnitId_DosageUnits_DosageUnitId" Association="CareManagement.Store.FK_Medications_DosageUnitId_DosageUnits_DosageUnitId">
+            <End Role="DosageUnits" EntitySet="DosageUnits" />
+            <End Role="Medications" EntitySet="Medications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionPickups_AccountId_Accounts_AccountId" Association="CareManagement.Store.FK_PrescriptionPickups_AccountId_Accounts_AccountId">
+            <End Role="Accounts" EntitySet="Accounts" />
+            <End Role="PrescriptionPickups" EntitySet="PrescriptionPickups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionPickups_MedicationId" Association="CareManagement.Store.FK_PrescriptionPickups_MedicationId">
+            <End Role="Medications" EntitySet="Medications" />
+            <End Role="PrescriptionPickups" EntitySet="PrescriptionPickups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Providers_FacilityId_Facilities_FacilityId" Association="CareManagement.Store.FK_Providers_FacilityId_Facilities_FacilityId">
+            <End Role="Facilities" EntitySet="Facilities" />
+            <End Role="Providers" EntitySet="Providers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Name="AccountId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="uniqueidentifier" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="EmailAddress" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_SchemaVersions">
+          <Key>
+            <PropertyRef Name="Feature" />
+            <PropertyRef Name="CompatibleSchemaVersion" />
+          </Key>
+          <Property Name="Feature" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="CompatibleSchemaVersion" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AuthorizationFollowUps">
+          <Key>
+            <PropertyRef Name="AuthorizationFollowUpId" />
+          </Key>
+          <Property Name="AuthorizationFollowUpId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="AuthorizationRequestId" Type="int" Nullable="false" />
+          <Property Name="AppointmentDateTime" Type="datetimeoffset" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="AuthorizationNotes">
+          <Key>
+            <PropertyRef Name="AuthorizationNoteId" />
+          </Key>
+          <Property Name="AuthorizationNoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorizationRequestId" Type="int" Nullable="false" />
+          <Property Name="Created" Type="datetimeoffset" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="AuthorizationRequests">
+          <Key>
+            <PropertyRef Name="AuthorizationRequestId" />
+          </Key>
+          <Property Name="AuthorizationRequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="InsurerId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="DosageUnits">
+          <Key>
+            <PropertyRef Name="DosageUnitId" />
+          </Key>
+          <Property Name="DosageUnitId" Type="int" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Facilities">
+          <Key>
+            <PropertyRef Name="FacilityId" />
+          </Key>
+          <Property Name="FacilityId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Insurers">
+          <Key>
+            <PropertyRef Name="InsurerId" />
+          </Key>
+          <Property Name="InsurerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Thread" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Level" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Logger" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Message" Type="varchar" Nullable="false" MaxLength="4000" />
+          <Property Name="Exception" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="MedicalAppointments">
+          <Key>
+            <PropertyRef Name="MedicalAppointmentId" />
+          </Key>
+          <Property Name="MedicalAppointmentId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="ProviderId" Type="int" Nullable="false" />
+          <Property Name="AppointmentDateTime" Type="datetimeoffset" Nullable="false" />
+          <Property Name="ScheduleUnitId" Type="int" />
+          <Property Name="Length" Type="decimal" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Medications">
+          <Key>
+            <PropertyRef Name="MedicationId" />
+          </Key>
+          <Property Name="MedicationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="DosageUnitId" Type="int" />
+          <Property Name="Quantity" Type="decimal" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="PrescriptionPickups">
+          <Key>
+            <PropertyRef Name="PrescriptionPickupId" />
+          </Key>
+          <Property Name="PrescriptionPickupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+          <Property Name="MedicationId" Type="int" Nullable="false" />
+          <Property Name="AppointmentDateTime" Type="datetimeoffset" Nullable="false" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Providers">
+          <Key>
+            <PropertyRef Name="ProviderId" />
+          </Key>
+          <Property Name="ProviderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FacilityId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="ScheduleUnits">
+          <Key>
+            <PropertyRef Name="ScheduleUnitId" />
+          </Key>
+          <Property Name="ScheduleUnitId" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareManagementDatabase.dbo.vw_aspnet_Applications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="LoweredApplicationName" />
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredApplicationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareManagementDatabase.dbo.vw_aspnet_MembershipUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_aspnet_MembershipUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareManagementDatabase.dbo.vw_aspnet_Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_aspnet_Roles">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="LoweredRoleName" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredRoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareManagementDatabase.dbo.vw_aspnet_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_aspnet_Users">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="LoweredUserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LoweredUserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CareManagementDatabase.dbo.vw_aspnet_UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__Appli__3B75D760">
+          <End Role="aspnet_Applications" Type="CareManagement.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="CareManagement.Store.aspnet_Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__3C69FB99">
+          <End Role="aspnet_Users" Type="CareManagement.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="CareManagement.Store.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__3D5E1FD2">
+          <End Role="aspnet_Applications" Type="CareManagement.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Roles" Type="CareManagement.Store.aspnet_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__3E52440B">
+          <End Role="aspnet_Applications" Type="CareManagement.Store.aspnet_Applications" Multiplicity="1" />
+          <End Role="aspnet_Users" Type="CareManagement.Store.aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__403A8C7D">
+          <End Role="aspnet_Roles" Type="CareManagement.Store.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="CareManagement.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__3F466844">
+          <End Role="aspnet_Users" Type="CareManagement.Store.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="CareManagement.Store.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Accounts_UserId_aspnet_Users_UserId">
+          <End Role="aspnet_Users" Type="CareManagement.Store.aspnet_Users" Multiplicity="0..1" />
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Accounts">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationFollowUps_AccountId_Accounts_AccountId">
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="1" />
+          <End Role="AuthorizationFollowUps" Type="CareManagement.Store.AuthorizationFollowUps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="AuthorizationFollowUps">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+          <End Role="AuthorizationRequests" Type="CareManagement.Store.AuthorizationRequests" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AuthorizationFollowUps" Type="CareManagement.Store.AuthorizationFollowUps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuthorizationRequests">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Principal>
+            <Dependent Role="AuthorizationFollowUps">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+          <End Role="AuthorizationRequests" Type="CareManagement.Store.AuthorizationRequests" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AuthorizationNotes" Type="CareManagement.Store.AuthorizationNotes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuthorizationRequests">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Principal>
+            <Dependent Role="AuthorizationNotes">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationRequests_AccountId_Accounts_AccountId">
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="1" />
+          <End Role="AuthorizationRequests" Type="CareManagement.Store.AuthorizationRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="AuthorizationRequests">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationRequests_InsurerId_Insurers_InsurerId">
+          <End Role="Insurers" Type="CareManagement.Store.Insurers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AuthorizationRequests" Type="CareManagement.Store.AuthorizationRequests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurers">
+              <PropertyRef Name="InsurerId" />
+            </Principal>
+            <Dependent Role="AuthorizationRequests">
+              <PropertyRef Name="InsurerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facilities_AccountId_Accounts_AccountId">
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Facilities" Type="CareManagement.Store.Facilities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Facilities">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insurer_AccountId_Accounts_AccountId">
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Insurers" Type="CareManagement.Store.Insurers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Insurers">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalAppointments_AccountId_Accounts_AccountId">
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="1" />
+          <End Role="MedicalAppointments" Type="CareManagement.Store.MedicalAppointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="MedicalAppointments">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalAppointments_ProviderId_Providers_ProviderId">
+          <End Role="Providers" Type="CareManagement.Store.Providers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MedicalAppointments" Type="CareManagement.Store.MedicalAppointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Providers">
+              <PropertyRef Name="ProviderId" />
+            </Principal>
+            <Dependent Role="MedicalAppointments">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId">
+          <End Role="ScheduleUnits" Type="CareManagement.Store.ScheduleUnits" Multiplicity="0..1" />
+          <End Role="MedicalAppointments" Type="CareManagement.Store.MedicalAppointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScheduleUnits">
+              <PropertyRef Name="ScheduleUnitId" />
+            </Principal>
+            <Dependent Role="MedicalAppointments">
+              <PropertyRef Name="ScheduleUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medications_AccountId_Accounts_AccountId">
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Medications" Type="CareManagement.Store.Medications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Medications">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medications_DosageUnitId_DosageUnits_DosageUnitId">
+          <End Role="DosageUnits" Type="CareManagement.Store.DosageUnits" Multiplicity="0..1" />
+          <End Role="Medications" Type="CareManagement.Store.Medications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DosageUnits">
+              <PropertyRef Name="DosageUnitId" />
+            </Principal>
+            <Dependent Role="Medications">
+              <PropertyRef Name="DosageUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionPickups_AccountId_Accounts_AccountId">
+          <End Role="Accounts" Type="CareManagement.Store.Accounts" Multiplicity="1" />
+          <End Role="PrescriptionPickups" Type="CareManagement.Store.PrescriptionPickups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Accounts">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="PrescriptionPickups">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionPickups_MedicationId">
+          <End Role="Medications" Type="CareManagement.Store.Medications" Multiplicity="1" />
+          <End Role="PrescriptionPickups" Type="CareManagement.Store.PrescriptionPickups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medications">
+              <PropertyRef Name="MedicationId" />
+            </Principal>
+            <Dependent Role="PrescriptionPickups">
+              <PropertyRef Name="MedicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Providers_FacilityId_Facilities_FacilityId">
+          <End Role="Facilities" Type="CareManagement.Store.Facilities" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Providers" Type="CareManagement.Store.Providers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facilities">
+              <PropertyRef Name="FacilityId" />
+            </Principal>
+            <Dependent Role="Providers">
+              <PropertyRef Name="FacilityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="aspnet_AnyDataInTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TablesToCheck" Type="int" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Applications_CreateApplication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="InOut" />
+        </Function>
+        <Function Name="aspnet_CheckSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Feature" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_ChangePasswordQuestionAndAnswer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NewPasswordQuestion" Type="nvarchar" Mode="In" />
+          <Parameter Name="NewPasswordAnswer" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="PasswordQuestion" Type="nvarchar" Mode="In" />
+          <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsApproved" Type="bit" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+          <Parameter Name="CreateDate" Type="datetime" Mode="In" />
+          <Parameter Name="UniqueEmail" Type="int" Mode="In" />
+          <Parameter Name="PasswordFormat" Type="int" Mode="In" />
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
+        </Function>
+        <Function Name="aspnet_Membership_FindUsersByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmailToMatch" Type="nvarchar" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_FindUsersByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="PageIndex" Type="int" Mode="In" />
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_GetNumberOfUsersOnline" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="MinutesSinceLastInActive" Type="int" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_GetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
+          <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+          <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_GetPasswordWithFormat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_GetUserByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_GetUserByName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+          <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_GetUserByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+          <Parameter Name="UpdateLastActivity" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_ResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
+          <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
+          <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+          <Parameter Name="PasswordFormat" Type="int" Mode="In" />
+          <Parameter Name="PasswordAnswer" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_SetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="NewPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="PasswordSalt" Type="nvarchar" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+          <Parameter Name="PasswordFormat" Type="int" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_UnlockUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_UpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="Comment" Type="ntext" Mode="In" />
+          <Parameter Name="IsApproved" Type="bit" Mode="In" />
+          <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
+          <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
+          <Parameter Name="UniqueEmail" Type="int" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Membership_UpdateUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsPasswordCorrect" Type="bit" Mode="In" />
+          <Parameter Name="UpdateLastLoginActivityDate" Type="bit" Mode="In" />
+          <Parameter Name="MaxInvalidPasswordAttempts" Type="int" Mode="In" />
+          <Parameter Name="PasswordAttemptWindow" Type="int" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+          <Parameter Name="LastLoginDate" Type="datetime" Mode="In" />
+          <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="aspnet_RegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Feature" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsCurrentVersion" Type="bit" Mode="In" />
+          <Parameter Name="RemoveIncompatibleSchema" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Roles_CreateRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Roles_DeleteRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+          <Parameter Name="DeleteOnlyIfRoleIsEmpty" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Roles_GetAllRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Roles_RoleExists" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Setup_RemoveAllRoleMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_UnRegisterSchemaVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Feature" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompatibleSchemaVersion" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_Users_CreateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsUserAnonymous" Type="bit" Mode="In" />
+          <Parameter Name="LastActivityDate" Type="datetime" Mode="In" />
+          <Parameter Name="UserId" Type="uniqueidentifier" Mode="InOut" />
+        </Function>
+        <Function Name="aspnet_Users_DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="TablesToDeleteFrom" Type="int" Mode="In" />
+          <Parameter Name="NumTablesDeletedFrom" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="aspnet_UsersInRoles_AddUsersToRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
+          <Parameter Name="CurrentTimeUtc" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="aspnet_UsersInRoles_FindUsersInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserNameToMatch" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_UsersInRoles_GetRolesForUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_UsersInRoles_GetUsersInRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_UsersInRoles_IsUserInRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="aspnet_UsersInRoles_RemoveUsersFromRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ApplicationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="UserNames" Type="nvarchar" Mode="In" />
+          <Parameter Name="RoleNames" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="WriteToLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="log_date" Type="datetime" Mode="In" />
+          <Parameter Name="thread" Type="varchar" Mode="In" />
+          <Parameter Name="log_level" Type="varchar" Mode="In" />
+          <Parameter Name="logger" Type="varchar" Mode="In" />
+          <Parameter Name="message" Type="varchar" Mode="In" />
+          <Parameter Name="exception" Type="varchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CareManagement" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CareManagementContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__RefactorLog" EntityType="CareManagement.C__RefactorLog" />
+          <EntitySet Name="Accounts" EntityType="CareManagement.Account" />
+          <EntitySet Name="aspnet_Applications" EntityType="CareManagement.aspnet_Applications" />
+          <EntitySet Name="aspnet_Membership" EntityType="CareManagement.aspnet_Membership" />
+          <EntitySet Name="aspnet_Roles" EntityType="CareManagement.aspnet_Roles" />
+          <EntitySet Name="aspnet_SchemaVersions" EntityType="CareManagement.aspnet_SchemaVersions" />
+          <EntitySet Name="aspnet_Users" EntityType="CareManagement.aspnet_Users" />
+          <EntitySet Name="AuthorizationFollowUps" EntityType="CareManagement.AuthorizationFollowUp" />
+          <EntitySet Name="AuthorizationNotes" EntityType="CareManagement.AuthorizationNote" />
+          <EntitySet Name="AuthorizationRequests" EntityType="CareManagement.AuthorizationRequest" />
+          <EntitySet Name="DosageUnits" EntityType="CareManagement.DosageUnit" />
+          <EntitySet Name="Facilities" EntityType="CareManagement.Facility" />
+          <EntitySet Name="Insurers" EntityType="CareManagement.Insurer" />
+          <EntitySet Name="Logs" EntityType="CareManagement.Log" />
+          <EntitySet Name="MedicalAppointments" EntityType="CareManagement.MedicalAppointment" />
+          <EntitySet Name="Medications" EntityType="CareManagement.Medication" />
+          <EntitySet Name="PrescriptionPickups" EntityType="CareManagement.PrescriptionPickup" />
+          <EntitySet Name="Providers" EntityType="CareManagement.Provider" />
+          <EntitySet Name="ScheduleUnits" EntityType="CareManagement.ScheduleUnit" />
+          <EntitySet Name="vw_aspnet_Applications" EntityType="CareManagement.vw_aspnet_Applications" />
+          <EntitySet Name="vw_aspnet_MembershipUsers" EntityType="CareManagement.vw_aspnet_MembershipUsers" />
+          <EntitySet Name="vw_aspnet_Roles" EntityType="CareManagement.vw_aspnet_Roles" />
+          <EntitySet Name="vw_aspnet_Users" EntityType="CareManagement.vw_aspnet_Users" />
+          <EntitySet Name="vw_aspnet_UsersInRoles" EntityType="CareManagement.vw_aspnet_UsersInRoles" />
+          <AssociationSet Name="FK_Accounts_UserId_aspnet_Users_UserId" Association="CareManagement.FK_Accounts_UserId_aspnet_Users_UserId">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationFollowUps_AccountId_Accounts_AccountId" Association="CareManagement.FK_AuthorizationFollowUps_AccountId_Accounts_AccountId">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="AuthorizationFollowUp" EntitySet="AuthorizationFollowUps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationRequests_AccountId_Accounts_AccountId" Association="CareManagement.FK_AuthorizationRequests_AccountId_Accounts_AccountId">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="AuthorizationRequest" EntitySet="AuthorizationRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facilities_AccountId_Accounts_AccountId" Association="CareManagement.FK_Facilities_AccountId_Accounts_AccountId">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Facility" EntitySet="Facilities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Insurer_AccountId_Accounts_AccountId" Association="CareManagement.FK_Insurer_AccountId_Accounts_AccountId">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Insurer" EntitySet="Insurers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalAppointments_AccountId_Accounts_AccountId" Association="CareManagement.FK_MedicalAppointments_AccountId_Accounts_AccountId">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="MedicalAppointment" EntitySet="MedicalAppointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medications_AccountId_Accounts_AccountId" Association="CareManagement.FK_Medications_AccountId_Accounts_AccountId">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Medication" EntitySet="Medications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionPickups_AccountId_Accounts_AccountId" Association="CareManagement.FK_PrescriptionPickups_AccountId_Accounts_AccountId">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="PrescriptionPickup" EntitySet="PrescriptionPickups" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__Appli__3B75D760" Association="CareManagement.FK__aspnet_Me__Appli__3B75D760">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Ro__Appli__3D5E1FD2" Association="CareManagement.FK__aspnet_Ro__Appli__3D5E1FD2">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__Appli__3E52440B" Association="CareManagement.FK__aspnet_Us__Appli__3E52440B">
+            <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Me__UserI__3C69FB99" Association="CareManagement.FK__aspnet_Me__UserI__3C69FB99">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" Association="CareManagement.FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+            <End Role="AuthorizationRequest" EntitySet="AuthorizationRequests" />
+            <End Role="AuthorizationFollowUp" EntitySet="AuthorizationFollowUps" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" Association="CareManagement.FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+            <End Role="AuthorizationRequest" EntitySet="AuthorizationRequests" />
+            <End Role="AuthorizationNote" EntitySet="AuthorizationNotes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AuthorizationRequests_InsurerId_Insurers_InsurerId" Association="CareManagement.FK_AuthorizationRequests_InsurerId_Insurers_InsurerId">
+            <End Role="Insurer" EntitySet="Insurers" />
+            <End Role="AuthorizationRequest" EntitySet="AuthorizationRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medications_DosageUnitId_DosageUnits_DosageUnitId" Association="CareManagement.FK_Medications_DosageUnitId_DosageUnits_DosageUnitId">
+            <End Role="DosageUnit" EntitySet="DosageUnits" />
+            <End Role="Medication" EntitySet="Medications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Providers_FacilityId_Facilities_FacilityId" Association="CareManagement.FK_Providers_FacilityId_Facilities_FacilityId">
+            <End Role="Facility" EntitySet="Facilities" />
+            <End Role="Provider" EntitySet="Providers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalAppointments_ProviderId_Providers_ProviderId" Association="CareManagement.FK_MedicalAppointments_ProviderId_Providers_ProviderId">
+            <End Role="Provider" EntitySet="Providers" />
+            <End Role="MedicalAppointment" EntitySet="MedicalAppointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId" Association="CareManagement.FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId">
+            <End Role="ScheduleUnit" EntitySet="ScheduleUnits" />
+            <End Role="MedicalAppointment" EntitySet="MedicalAppointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PrescriptionPickups_MedicationId" Association="CareManagement.FK_PrescriptionPickups_MedicationId">
+            <End Role="Medication" EntitySet="Medications" />
+            <End Role="PrescriptionPickup" EntitySet="PrescriptionPickups" />
+          </AssociationSet>
+          <AssociationSet Name="aspnet_UsersInRoles" Association="CareManagement.aspnet_UsersInRoles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Type="Guid" Name="OperationKey" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="AccountId" />
+          </Key>
+          <Property Type="Int32" Name="AccountId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="UserId" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="aspnet_Users" Relationship="CareManagement.FK_Accounts_UserId_aspnet_Users_UserId" FromRole="Account" ToRole="aspnet_Users" />
+          <NavigationProperty Name="AuthorizationFollowUps" Relationship="CareManagement.FK_AuthorizationFollowUps_AccountId_Accounts_AccountId" FromRole="Account" ToRole="AuthorizationFollowUp" />
+          <NavigationProperty Name="AuthorizationRequests" Relationship="CareManagement.FK_AuthorizationRequests_AccountId_Accounts_AccountId" FromRole="Account" ToRole="AuthorizationRequest" />
+          <NavigationProperty Name="Facilities" Relationship="CareManagement.FK_Facilities_AccountId_Accounts_AccountId" FromRole="Account" ToRole="Facility" />
+          <NavigationProperty Name="Insurers" Relationship="CareManagement.FK_Insurer_AccountId_Accounts_AccountId" FromRole="Account" ToRole="Insurer" />
+          <NavigationProperty Name="MedicalAppointments" Relationship="CareManagement.FK_MedicalAppointments_AccountId_Accounts_AccountId" FromRole="Account" ToRole="MedicalAppointment" />
+          <NavigationProperty Name="Medications" Relationship="CareManagement.FK_Medications_AccountId_Accounts_AccountId" FromRole="Account" ToRole="Medication" />
+          <NavigationProperty Name="PrescriptionPickups" Relationship="CareManagement.FK_PrescriptionPickups_AccountId_Accounts_AccountId" FromRole="Account" ToRole="PrescriptionPickup" />
+        </EntityType>
+        <EntityType Name="aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Type="String" Name="ApplicationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredApplicationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="CareManagement.FK__aspnet_Me__Appli__3B75D760" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="CareManagement.FK__aspnet_Ro__Appli__3D5E1FD2" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+          <NavigationProperty Name="aspnet_Users" Relationship="CareManagement.FK__aspnet_Us__Appli__3E52440B" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+          <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobilePIN" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredEmail" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="CareManagement.FK__aspnet_Me__Appli__3B75D760" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Users" Relationship="CareManagement.FK__aspnet_Me__UserI__3C69FB99" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="CareManagement.FK__aspnet_Ro__Appli__3D5E1FD2" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Users" Relationship="CareManagement.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_SchemaVersions">
+          <Key>
+            <PropertyRef Name="Feature" />
+            <PropertyRef Name="CompatibleSchemaVersion" />
+          </Key>
+          <Property Type="String" Name="Feature" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CompatibleSchemaVersion" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsCurrentVersion" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="CareManagement.FK_Accounts_UserId_aspnet_Users_UserId" FromRole="aspnet_Users" ToRole="Account" />
+          <NavigationProperty Name="aspnet_Applications" Relationship="CareManagement.FK__aspnet_Us__Appli__3E52440B" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="CareManagement.FK__aspnet_Me__UserI__3C69FB99" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="CareManagement.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+        </EntityType>
+        <EntityType Name="AuthorizationFollowUp">
+          <Key>
+            <PropertyRef Name="AuthorizationFollowUpId" />
+          </Key>
+          <Property Type="Int32" Name="AuthorizationFollowUpId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="Int32" Name="AuthorizationRequestId" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="AppointmentDateTime" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Account" Relationship="CareManagement.FK_AuthorizationFollowUps_AccountId_Accounts_AccountId" FromRole="AuthorizationFollowUp" ToRole="Account" />
+          <NavigationProperty Name="AuthorizationRequest" Relationship="CareManagement.FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" FromRole="AuthorizationFollowUp" ToRole="AuthorizationRequest" />
+        </EntityType>
+        <EntityType Name="AuthorizationNote">
+          <Key>
+            <PropertyRef Name="AuthorizationNoteId" />
+          </Key>
+          <Property Type="Int32" Name="AuthorizationNoteId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AuthorizationRequestId" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="Created" Nullable="false" />
+          <Property Type="String" Name="Note" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="AuthorizationRequest" Relationship="CareManagement.FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" FromRole="AuthorizationNote" ToRole="AuthorizationRequest" />
+        </EntityType>
+        <EntityType Name="AuthorizationRequest">
+          <Key>
+            <PropertyRef Name="AuthorizationRequestId" />
+          </Key>
+          <Property Type="Int32" Name="AuthorizationRequestId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="Int32" Name="InsurerId" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Account" Relationship="CareManagement.FK_AuthorizationRequests_AccountId_Accounts_AccountId" FromRole="AuthorizationRequest" ToRole="Account" />
+          <NavigationProperty Name="AuthorizationFollowUps" Relationship="CareManagement.FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" FromRole="AuthorizationRequest" ToRole="AuthorizationFollowUp" />
+          <NavigationProperty Name="AuthorizationNotes" Relationship="CareManagement.FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" FromRole="AuthorizationRequest" ToRole="AuthorizationNote" />
+          <NavigationProperty Name="Insurer" Relationship="CareManagement.FK_AuthorizationRequests_InsurerId_Insurers_InsurerId" FromRole="AuthorizationRequest" ToRole="Insurer" />
+        </EntityType>
+        <EntityType Name="DosageUnit">
+          <Key>
+            <PropertyRef Name="DosageUnitId" />
+          </Key>
+          <Property Type="Int32" Name="DosageUnitId" Nullable="false" />
+          <Property Type="String" Name="Unit" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Medications" Relationship="CareManagement.FK_Medications_DosageUnitId_DosageUnits_DosageUnitId" FromRole="DosageUnit" ToRole="Medication" />
+        </EntityType>
+        <EntityType Name="Facility">
+          <Key>
+            <PropertyRef Name="FacilityId" />
+          </Key>
+          <Property Type="Int32" Name="FacilityId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Account" Relationship="CareManagement.FK_Facilities_AccountId_Accounts_AccountId" FromRole="Facility" ToRole="Account" />
+          <NavigationProperty Name="Providers" Relationship="CareManagement.FK_Providers_FacilityId_Facilities_FacilityId" FromRole="Facility" ToRole="Provider" />
+        </EntityType>
+        <EntityType Name="Insurer">
+          <Key>
+            <PropertyRef Name="InsurerId" />
+          </Key>
+          <Property Type="Int32" Name="InsurerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Account" Relationship="CareManagement.FK_Insurer_AccountId_Accounts_AccountId" FromRole="Insurer" ToRole="Account" />
+          <NavigationProperty Name="AuthorizationRequests" Relationship="CareManagement.FK_AuthorizationRequests_InsurerId_Insurers_InsurerId" FromRole="Insurer" ToRole="AuthorizationRequest" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="String" Name="Thread" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Level" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Logger" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Message" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Exception" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MedicalAppointment">
+          <Key>
+            <PropertyRef Name="MedicalAppointmentId" />
+          </Key>
+          <Property Type="Int32" Name="MedicalAppointmentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="Int32" Name="ProviderId" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="AppointmentDateTime" Nullable="false" />
+          <Property Type="Int32" Name="ScheduleUnitId" />
+          <Property Type="Decimal" Name="Length" Precision="18" Scale="0" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Account" Relationship="CareManagement.FK_MedicalAppointments_AccountId_Accounts_AccountId" FromRole="MedicalAppointment" ToRole="Account" />
+          <NavigationProperty Name="Provider" Relationship="CareManagement.FK_MedicalAppointments_ProviderId_Providers_ProviderId" FromRole="MedicalAppointment" ToRole="Provider" />
+          <NavigationProperty Name="ScheduleUnit" Relationship="CareManagement.FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId" FromRole="MedicalAppointment" ToRole="ScheduleUnit" />
+        </EntityType>
+        <EntityType Name="Medication">
+          <Key>
+            <PropertyRef Name="MedicationId" />
+          </Key>
+          <Property Type="Int32" Name="MedicationId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="DosageUnitId" />
+          <Property Type="Decimal" Name="Quantity" Precision="18" Scale="0" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Account" Relationship="CareManagement.FK_Medications_AccountId_Accounts_AccountId" FromRole="Medication" ToRole="Account" />
+          <NavigationProperty Name="DosageUnit" Relationship="CareManagement.FK_Medications_DosageUnitId_DosageUnits_DosageUnitId" FromRole="Medication" ToRole="DosageUnit" />
+          <NavigationProperty Name="PrescriptionPickups" Relationship="CareManagement.FK_PrescriptionPickups_MedicationId" FromRole="Medication" ToRole="PrescriptionPickup" />
+        </EntityType>
+        <EntityType Name="PrescriptionPickup">
+          <Key>
+            <PropertyRef Name="PrescriptionPickupId" />
+          </Key>
+          <Property Type="Int32" Name="PrescriptionPickupId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
+          <Property Type="Int32" Name="MedicationId" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="AppointmentDateTime" Nullable="false" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Account" Relationship="CareManagement.FK_PrescriptionPickups_AccountId_Accounts_AccountId" FromRole="PrescriptionPickup" ToRole="Account" />
+          <NavigationProperty Name="Medication" Relationship="CareManagement.FK_PrescriptionPickups_MedicationId" FromRole="PrescriptionPickup" ToRole="Medication" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="ProviderId" />
+          </Key>
+          <Property Type="Int32" Name="ProviderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FacilityId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Facility" Relationship="CareManagement.FK_Providers_FacilityId_Facilities_FacilityId" FromRole="Provider" ToRole="Facility" />
+          <NavigationProperty Name="MedicalAppointments" Relationship="CareManagement.FK_MedicalAppointments_ProviderId_Providers_ProviderId" FromRole="Provider" ToRole="MedicalAppointment" />
+        </EntityType>
+        <EntityType Name="ScheduleUnit">
+          <Key>
+            <PropertyRef Name="ScheduleUnitId" />
+          </Key>
+          <Property Type="Int32" Name="ScheduleUnitId" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="MedicalAppointments" Relationship="CareManagement.FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId" FromRole="ScheduleUnit" ToRole="MedicalAppointment" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_Applications">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="LoweredApplicationName" />
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Type="String" Name="ApplicationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredApplicationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_MembershipUsers">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowStart" />
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+          <Property Type="String" Name="MobilePIN" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredEmail" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+          <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" />
+          <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" />
+          <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+          <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowStart" Nullable="false" />
+          <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_Roles">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+            <PropertyRef Name="LoweredRoleName" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="RoleId" Nullable="false" />
+          <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredRoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_Users">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="LoweredUserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LoweredUserName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MobileAlias" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+          <Property Type="DateTime" Name="LastActivityDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="Guid" Name="RoleId" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Accounts_UserId_aspnet_Users_UserId">
+          <End Type="CareManagement.aspnet_Users" Role="aspnet_Users" Multiplicity="0..1" />
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationFollowUps_AccountId_Accounts_AccountId">
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="1" />
+          <End Type="CareManagement.AuthorizationFollowUp" Role="AuthorizationFollowUp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="AuthorizationFollowUp">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationRequests_AccountId_Accounts_AccountId">
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="1" />
+          <End Type="CareManagement.AuthorizationRequest" Role="AuthorizationRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="AuthorizationRequest">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facilities_AccountId_Accounts_AccountId">
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="1" />
+          <End Type="CareManagement.Facility" Role="Facility" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Facility">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Insurer_AccountId_Accounts_AccountId">
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="1" />
+          <End Type="CareManagement.Insurer" Role="Insurer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Insurer">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalAppointments_AccountId_Accounts_AccountId">
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="1" />
+          <End Type="CareManagement.MedicalAppointment" Role="MedicalAppointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="MedicalAppointment">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medications_AccountId_Accounts_AccountId">
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="1" />
+          <End Type="CareManagement.Medication" Role="Medication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Medication">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionPickups_AccountId_Accounts_AccountId">
+          <End Type="CareManagement.Account" Role="Account" Multiplicity="1" />
+          <End Type="CareManagement.PrescriptionPickup" Role="PrescriptionPickup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="PrescriptionPickup">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__Appli__3B75D760">
+          <End Type="CareManagement.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+          <End Type="CareManagement.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Ro__Appli__3D5E1FD2">
+          <End Type="CareManagement.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+          <End Type="CareManagement.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__Appli__3E52440B">
+          <End Type="CareManagement.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+          <End Type="CareManagement.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="aspnet_Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Me__UserI__3C69FB99">
+          <End Type="CareManagement.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="CareManagement.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+          <End Type="CareManagement.AuthorizationRequest" Role="AuthorizationRequest" Multiplicity="1" />
+          <End Type="CareManagement.AuthorizationFollowUp" Role="AuthorizationFollowUp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuthorizationRequest">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Principal>
+            <Dependent Role="AuthorizationFollowUp">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId">
+          <End Type="CareManagement.AuthorizationRequest" Role="AuthorizationRequest" Multiplicity="1" />
+          <End Type="CareManagement.AuthorizationNote" Role="AuthorizationNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AuthorizationRequest">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Principal>
+            <Dependent Role="AuthorizationNote">
+              <PropertyRef Name="AuthorizationRequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AuthorizationRequests_InsurerId_Insurers_InsurerId">
+          <End Type="CareManagement.Insurer" Role="Insurer" Multiplicity="1" />
+          <End Type="CareManagement.AuthorizationRequest" Role="AuthorizationRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Insurer">
+              <PropertyRef Name="InsurerId" />
+            </Principal>
+            <Dependent Role="AuthorizationRequest">
+              <PropertyRef Name="InsurerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medications_DosageUnitId_DosageUnits_DosageUnitId">
+          <End Type="CareManagement.DosageUnit" Role="DosageUnit" Multiplicity="0..1" />
+          <End Type="CareManagement.Medication" Role="Medication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DosageUnit">
+              <PropertyRef Name="DosageUnitId" />
+            </Principal>
+            <Dependent Role="Medication">
+              <PropertyRef Name="DosageUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Providers_FacilityId_Facilities_FacilityId">
+          <End Type="CareManagement.Facility" Role="Facility" Multiplicity="1" />
+          <End Type="CareManagement.Provider" Role="Provider" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Facility">
+              <PropertyRef Name="FacilityId" />
+            </Principal>
+            <Dependent Role="Provider">
+              <PropertyRef Name="FacilityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalAppointments_ProviderId_Providers_ProviderId">
+          <End Type="CareManagement.Provider" Role="Provider" Multiplicity="1" />
+          <End Type="CareManagement.MedicalAppointment" Role="MedicalAppointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderId" />
+            </Principal>
+            <Dependent Role="MedicalAppointment">
+              <PropertyRef Name="ProviderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId">
+          <End Type="CareManagement.ScheduleUnit" Role="ScheduleUnit" Multiplicity="0..1" />
+          <End Type="CareManagement.MedicalAppointment" Role="MedicalAppointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScheduleUnit">
+              <PropertyRef Name="ScheduleUnitId" />
+            </Principal>
+            <Dependent Role="MedicalAppointment">
+              <PropertyRef Name="ScheduleUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PrescriptionPickups_MedicationId">
+          <End Type="CareManagement.Medication" Role="Medication" Multiplicity="1" />
+          <End Type="CareManagement.PrescriptionPickup" Role="PrescriptionPickup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medication">
+              <PropertyRef Name="MedicationId" />
+            </Principal>
+            <Dependent Role="PrescriptionPickup">
+              <PropertyRef Name="MedicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="aspnet_UsersInRoles">
+          <End Type="CareManagement.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <End Type="CareManagement.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CareManagement" />
+        <Alias Key="Target" Value="CareManagement.Store" />
+        <EntityContainerMapping CdmEntityContainer="CareManagementContainer" StorageEntityContainer="CareManagementStoreContainer">
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="CareManagement.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="CareManagement.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Applications">
+            <EntityTypeMapping TypeName="CareManagement.aspnet_Applications">
+              <MappingFragment StoreEntitySet="aspnet_Applications">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="CareManagement.aspnet_Membership">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="CareManagement.aspnet_Roles">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_SchemaVersions">
+            <EntityTypeMapping TypeName="CareManagement.aspnet_SchemaVersions">
+              <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
+                <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
+                <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
+                <ScalarProperty Name="Feature" ColumnName="Feature" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="CareManagement.aspnet_Users">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuthorizationFollowUps">
+            <EntityTypeMapping TypeName="CareManagement.AuthorizationFollowUp">
+              <MappingFragment StoreEntitySet="AuthorizationFollowUps">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AppointmentDateTime" ColumnName="AppointmentDateTime" />
+                <ScalarProperty Name="AuthorizationRequestId" ColumnName="AuthorizationRequestId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="AuthorizationFollowUpId" ColumnName="AuthorizationFollowUpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuthorizationNotes">
+            <EntityTypeMapping TypeName="CareManagement.AuthorizationNote">
+              <MappingFragment StoreEntitySet="AuthorizationNotes">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="AuthorizationRequestId" ColumnName="AuthorizationRequestId" />
+                <ScalarProperty Name="AuthorizationNoteId" ColumnName="AuthorizationNoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuthorizationRequests">
+            <EntityTypeMapping TypeName="CareManagement.AuthorizationRequest">
+              <MappingFragment StoreEntitySet="AuthorizationRequests">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="InsurerId" ColumnName="InsurerId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="AuthorizationRequestId" ColumnName="AuthorizationRequestId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DosageUnits">
+            <EntityTypeMapping TypeName="CareManagement.DosageUnit">
+              <MappingFragment StoreEntitySet="DosageUnits">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="DosageUnitId" ColumnName="DosageUnitId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facilities">
+            <EntityTypeMapping TypeName="CareManagement.Facility">
+              <MappingFragment StoreEntitySet="Facilities">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Insurers">
+            <EntityTypeMapping TypeName="CareManagement.Insurer">
+              <MappingFragment StoreEntitySet="Insurers">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="InsurerId" ColumnName="InsurerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="CareManagement.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Thread" ColumnName="Thread" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicalAppointments">
+            <EntityTypeMapping TypeName="CareManagement.MedicalAppointment">
+              <MappingFragment StoreEntitySet="MedicalAppointments">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="ScheduleUnitId" ColumnName="ScheduleUnitId" />
+                <ScalarProperty Name="AppointmentDateTime" ColumnName="AppointmentDateTime" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="MedicalAppointmentId" ColumnName="MedicalAppointmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medications">
+            <EntityTypeMapping TypeName="CareManagement.Medication">
+              <MappingFragment StoreEntitySet="Medications">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="DosageUnitId" ColumnName="DosageUnitId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="MedicationId" ColumnName="MedicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PrescriptionPickups">
+            <EntityTypeMapping TypeName="CareManagement.PrescriptionPickup">
+              <MappingFragment StoreEntitySet="PrescriptionPickups">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="AppointmentDateTime" ColumnName="AppointmentDateTime" />
+                <ScalarProperty Name="MedicationId" ColumnName="MedicationId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="PrescriptionPickupId" ColumnName="PrescriptionPickupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Providers">
+            <EntityTypeMapping TypeName="CareManagement.Provider">
+              <MappingFragment StoreEntitySet="Providers">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
+                <ScalarProperty Name="ProviderId" ColumnName="ProviderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScheduleUnits">
+            <EntityTypeMapping TypeName="CareManagement.ScheduleUnit">
+              <MappingFragment StoreEntitySet="ScheduleUnits">
+                <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ScheduleUnitId" ColumnName="ScheduleUnitId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_Applications">
+            <EntityTypeMapping TypeName="CareManagement.vw_aspnet_Applications">
+              <MappingFragment StoreEntitySet="vw_aspnet_Applications">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_MembershipUsers">
+            <EntityTypeMapping TypeName="CareManagement.vw_aspnet_MembershipUsers">
+              <MappingFragment StoreEntitySet="vw_aspnet_MembershipUsers">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_Roles">
+            <EntityTypeMapping TypeName="CareManagement.vw_aspnet_Roles">
+              <MappingFragment StoreEntitySet="vw_aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_Users">
+            <EntityTypeMapping TypeName="CareManagement.vw_aspnet_Users">
+              <MappingFragment StoreEntitySet="vw_aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_aspnet_UsersInRoles">
+            <EntityTypeMapping TypeName="CareManagement.vw_aspnet_UsersInRoles">
+              <MappingFragment StoreEntitySet="vw_aspnet_UsersInRoles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="CareManagement.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CareManagement" ZoomLevel="29" >
+        <EntityTypeShape EntityType="CareManagement.C__RefactorLog" Width="1.5" PointX="2.5" PointY="17.375" Height="1.211080729166667" />
+        <EntityTypeShape EntityType="CareManagement.Account" Width="1.5" PointX="5.5" PointY="8.25" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="CareManagement.aspnet_Applications" Width="1.5" PointX="0.5" PointY="2" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CareManagement.aspnet_Membership" Width="1.5" PointX="0.5" PointY="7" Height="5.4417122395833317" />
+        <EntityTypeShape EntityType="CareManagement.aspnet_Roles" Width="1.5" PointX="2.75" PointY="2" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CareManagement.aspnet_SchemaVersions" Width="1.5" PointX="4.5" PointY="17.375" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="CareManagement.aspnet_Users" Width="1.5" PointX="3.125" PointY="6.75" Height="3.1340950520833317" />
+        <EntityTypeShape EntityType="CareManagement.AuthorizationFollowUp" Width="1.5" PointX="13.75" PointY="8.875" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="CareManagement.AuthorizationNote" Width="1.5" PointX="13.75" PointY="11.625" Height="2.172587890624996" />
+        <EntityTypeShape EntityType="CareManagement.AuthorizationRequest" Width="1.5" PointX="11.375" PointY="9.5" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="CareManagement.DosageUnit" Width="1.5" PointX="14.125" PointY="5.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="CareManagement.Facility" Width="1.5" PointX="5.5" PointY="13.625" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="CareManagement.Insurer" Width="1.5" PointX="8.375" PointY="9.875" Height="2.172587890624996" />
+        <EntityTypeShape EntityType="CareManagement.Log" Width="1.5" PointX="2.5" PointY="20.375" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CareManagement.MedicalAppointment" Width="1.5" PointX="11.375" PointY="12.625" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="CareManagement.Medication" Width="1.5" PointX="8.375" PointY="6.125" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="CareManagement.PrescriptionPickup" Width="1.5" PointX="11.375" PointY="6.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CareManagement.Provider" Width="1.5" PointX="8.375" PointY="13.625" Height="2.172587890624996" />
+        <EntityTypeShape EntityType="CareManagement.ScheduleUnit" Width="1.5" PointX="13.75" PointY="14.25" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="CareManagement.vw_aspnet_Applications" Width="1.5" PointX="4.5" PointY="20.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="CareManagement.vw_aspnet_MembershipUsers" Width="1.5" PointX="6.5" PointY="17.375" Height="5.4417122395833282" />
+        <EntityTypeShape EntityType="CareManagement.vw_aspnet_Roles" Width="1.5" PointX="8.5" PointY="17.375" Height="1.9802864583333282" />
+        <EntityTypeShape EntityType="CareManagement.vw_aspnet_Users" Width="1.5" PointX="8.5" PointY="20.375" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CareManagement.vw_aspnet_UsersInRoles" Width="1.5" PointX="2.5" PointY="24.375" Height="1.4033821614583246" />
+        <AssociationConnector Association="CareManagement.FK_Accounts_UserId_aspnet_Users_UserId" >
+          <ConnectorPoint PointX="4.625" PointY="9.0670475260416659" />
+          <ConnectorPoint PointX="5.5" PointY="9.0670475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_AuthorizationFollowUps_AccountId_Accounts_AccountId" >
+          <ConnectorPoint PointX="7" PointY="9.2449446614583337" />
+          <ConnectorPoint PointX="13.75" PointY="9.2449446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_AuthorizationRequests_AccountId_Accounts_AccountId" >
+          <ConnectorPoint PointX="7" PointY="9.65625" />
+          <ConnectorPoint PointX="11.375" PointY="9.65625" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_Facilities_AccountId_Accounts_AccountId" >
+          <ConnectorPoint PointX="6.25" PointY="11.768697916666667" />
+          <ConnectorPoint PointX="6.25" PointY="13.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_Insurer_AccountId_Accounts_AccountId" >
+          <ConnectorPoint PointX="7" PointY="10.821848958333334" />
+          <ConnectorPoint PointX="8.0416666666666661" PointY="10.821848958333334" />
+          <ConnectorPoint PointX="8.2083333333333339" PointY="10.821848958333334" />
+          <ConnectorPoint PointX="8.375" PointY="10.821848958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_MedicalAppointments_AccountId_Accounts_AccountId" >
+          <ConnectorPoint PointX="7" PointY="10.239049479166667" />
+          <ConnectorPoint PointX="8.125" PointY="10.239049479166667" />
+          <ConnectorPoint PointX="8.125" PointY="12.499492187500003" />
+          <ConnectorPoint PointX="12.125" PointY="12.499492187500003" />
+          <ConnectorPoint PointX="12.125" PointY="12.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_Medications_AccountId_Accounts_AccountId" >
+          <ConnectorPoint PointX="7" PointY="8.5622460937500016" />
+          <ConnectorPoint PointX="8.375" PointY="8.5622460937500016" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_PrescriptionPickups_AccountId_Accounts_AccountId" >
+          <ConnectorPoint PointX="7" PointY="8.9634407552083353" />
+          <ConnectorPoint PointX="11.375" PointY="8.9634407552083353" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK__aspnet_Me__Appli__3B75D760" >
+          <ConnectorPoint PointX="1.25" PointY="4.3648893229166674" />
+          <ConnectorPoint PointX="1.25" PointY="7" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK__aspnet_Ro__Appli__3D5E1FD2" >
+          <ConnectorPoint PointX="2" PointY="3.1824446614583337" />
+          <ConnectorPoint PointX="2.75" PointY="3.1824446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK__aspnet_Us__Appli__3E52440B" >
+          <ConnectorPoint PointX="2" PointY="4.3637344767628212" />
+          <ConnectorPoint PointX="2.375" PointY="4.7387344767628212" />
+          <ConnectorPoint PointX="2.375" PointY="8.3170475260416659" />
+          <ConnectorPoint PointX="3.125" PointY="8.3170475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK__aspnet_Me__UserI__3C69FB99" >
+          <ConnectorPoint PointX="3.125" PointY="9.1630712890624988" />
+          <ConnectorPoint PointX="2" PointY="9.1630712890624988" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_AuthorizationFollowUps_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" >
+          <ConnectorPoint PointX="12.875" PointY="10.466095377604166" />
+          <ConnectorPoint PointX="13.75" PointY="10.466095377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" >
+          <ConnectorPoint PointX="12.875" PointY="11.937246093750002" />
+          <ConnectorPoint PointX="13.75" PointY="11.937246093750002" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_AuthorizationRequests_InsurerId_Insurers_InsurerId" >
+          <ConnectorPoint PointX="9.875" PointY="10.961293945312498" />
+          <ConnectorPoint PointX="11.375" PointY="10.961293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_Medications_DosageUnitId_DosageUnits_DosageUnitId" >
+          <ConnectorPoint PointX="14.125" PointY="6.34375" />
+          <ConnectorPoint PointX="9.875" PointY="6.34375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_Providers_FacilityId_Facilities_FacilityId" >
+          <ConnectorPoint PointX="7" PointY="14.711293945312498" />
+          <ConnectorPoint PointX="8.375" PointY="14.711293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_MedicalAppointments_ProviderId_Providers_ProviderId" >
+          <ConnectorPoint PointX="9.875" PointY="14.692047526041669" />
+          <ConnectorPoint PointX="11.375" PointY="14.692047526041669" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_MedicalAppointments_ScheduleUnitId_ScheduleUnits_ScheduleUnitId" >
+          <ConnectorPoint PointX="13.75" PointY="15.004547526041669" />
+          <ConnectorPoint PointX="12.875" PointY="15.004547526041669" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.FK_PrescriptionPickups_MedicationId" >
+          <ConnectorPoint PointX="9.875" PointY="7.7497460937500016" />
+          <ConnectorPoint PointX="11.375" PointY="7.7497460937500016" />
+        </AssociationConnector>
+        <AssociationConnector Association="CareManagement.aspnet_UsersInRoles" >
+          <ConnectorPoint PointX="3.6875" PointY="4.3648893229166674" />
+          <ConnectorPoint PointX="3.6875" PointY="6.75" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

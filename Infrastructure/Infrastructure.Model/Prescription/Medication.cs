@@ -51,5 +51,15 @@ namespace Infrastructure.Model.Prescription
         [Required(ErrorMessage = "A name for the account is required.")]
         [StringLength(256, ErrorMessage = "Account names are restricted to a maximum of 256 characters")]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the units for the dosage for the medication
+        /// </summary>
+        public DosageUnits? DosageUnits { get; set; }
+
+        /// <summary>
+        /// Gets or sets the quantity per dose for the medication
+        /// </summary>
+        public decimal? Quantity { get; set; }
     }
 }

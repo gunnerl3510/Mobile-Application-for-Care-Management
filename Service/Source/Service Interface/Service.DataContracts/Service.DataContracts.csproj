@@ -41,12 +41,10 @@
     <Reference Include="System.Xml.Linq">
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Compile Include="GeneratedCode\AuthenticationCredentials.cs" />
-    <Compile Include="GeneratedCode\AuthenticationResponse.cs" />
-    <Compile Include="GeneratedCode\NewUser.cs" />
-    <Compile Include="GeneratedCode\UserCreated.cs" />
+    <Folder Include="GeneratedCode\" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
