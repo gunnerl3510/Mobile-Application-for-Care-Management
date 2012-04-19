@@ -49,6 +49,6 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime Created { get; set; }
+        public DateTimeOffset Created { get; set; }
     }
 }

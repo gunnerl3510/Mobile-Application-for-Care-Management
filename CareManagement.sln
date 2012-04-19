@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.ServiceContracts", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A510A994-B583-4B7A-8EC1-7F55CD465154}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service.Host", "Service\Tests\Service.Host\", "{2A0B83B7-60E3-4958-BDDF-E507F255DCF8}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service.Host", "Service\Tests\Service.Host", "{2A0B83B7-60E3-4958-BDDF-E507F255DCF8}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{BB3FDDFA-3570-4D98-9EA0-DD9E28D1FE3F}|Service.ServiceImplementation.ServiceImplementation.dll;{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}|Service.BusinessEntities.BusinessEntities.dll;{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}|Service.BusinessLogic.BusinessLogic.dll;{9445C59D-7CE2-4428-86FE-1C958D35E88C}|Service.DataAccess.DataAccess.dll;{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}|Service.DataContracts.DataContracts.dll;{FC4DF1F6-FFD7-4F36-BD9B-9EDCF658585A}|Service.FaultContracts.FaultContracts.dll;{F286DAB9-86C3-41E0-87A8-CA189DBD16CB}|Service.MessageContracts.MessageContracts.dll;{578F9393-D58D-4188-87DD-8C59E5F9F496}|Service.ServiceContracts.ServiceContracts.dll;"
