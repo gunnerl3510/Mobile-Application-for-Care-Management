@@ -2,29 +2,18 @@
 namespace Data.Repository.EF
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     using AccountModels = Infrastructure.Model.Account;
     using InsuranceModels = Infrastructure.Model.Insurance;
+    using MedicalModels = Infrastructure.Model.Medical;
+    using PrescriptionModels = Infrastructure.Model.Prescription;
+    using SchedulingModels = Infrastructure.Model.Scheduling;
 
     /// <summary>
     /// Maintains the EF entity to Model conversion mappings
     /// </summary>
     internal static class EntityConversionExtensions
     {
-        #region private static members
-
-        /// <summary>
-        /// The single instance of the Kbm2 EF data context
-        /// </summary>
-        // ReSharper disable StaticFieldInGenericType
-        private static readonly CareManagementContainer Container = new CareManagementContainer();
-        // ReSharper restore StaticFieldInGenericType
-
-        #endregion
-
         /// <summary>
         /// Converts an EF <seealso cref="Account"/> to a 
         /// <seealso cref="AccountModels.Account"/>
@@ -36,15 +25,15 @@ namespace Data.Repository.EF
         public static AccountModels.Account ToModelAccount(this Account account)
         {
             return new AccountModels.Account
-            {
-                Id = account.AccountId,
-                CurrentVersion = account.CurrentVersion,
-                EmailAddress = account.EmailAddress,
-                Name = account.Name,
-                // ReSharper disable PossibleInvalidOperationException
-                UserId = (Guid)account.UserId
-                // ReSharper restore PossibleInvalidOperationException
-            };
+                {
+                    Id = account.AccountId,
+                    CurrentVersion = account.CurrentVersion,
+                    EmailAddress = account.EmailAddress,
+                    Name = account.Name,
+                    // ReSharper disable PossibleInvalidOperationException
+                    UserId = (Guid)account.UserId
+                    // ReSharper restore PossibleInvalidOperationException
+                };
         }
 
         /// <summary>
@@ -58,12 +47,12 @@ namespace Data.Repository.EF
         public static InsuranceModels.Insurer ToModelInsurer(this Insurer insurer)
         {
             return new InsuranceModels.Insurer
-            {
-                AccountId = insurer.AccountId,
-                CurrentVersion = insurer.CurrentVersion,
-                Id = insurer.InsurerId,
-                Name = insurer.Name
-            };
+                {
+                    AccountId = insurer.AccountId,
+                    CurrentVersion = insurer.CurrentVersion,
+                    Id = insurer.InsurerId,
+                    Name = insurer.Name
+                };
         }
 
         /// <summary>
@@ -74,16 +63,17 @@ namespace Data.Repository.EF
         /// The <seealso cref="AuthorizationRequest"/> to convert
         /// </param>
         /// <returns>A <seealso cref="InsuranceModels.AuthorizationRequest"/></returns>
-        public static InsuranceModels.AuthorizationRequest ToModelAuthorizationRequest(this AuthorizationRequest request)
+        public static InsuranceModels.AuthorizationRequest ToModelAuthorizationRequest(
+            this AuthorizationRequest request)
         {
             return new InsuranceModels.AuthorizationRequest
-            {
-                AccountId = request.AccountId,
-                CurrentVersion = request.CurrentVersion,
-                Description = request.Description,
-                Id = request.AuthorizationRequestId,
-                InsurerId = request.InsurerId
-            };
+                {
+                    AccountId = request.AccountId,
+                    CurrentVersion = request.CurrentVersion,
+                    Description = request.Description,
+                    Id = request.AuthorizationRequestId,
+                    InsurerId = request.InsurerId
+                };
         }
 
         /// <summary>
@@ -97,13 +87,13 @@ namespace Data.Repository.EF
         public static InsuranceModels.AuthorizationNote ToModelAuthorizationNote(this AuthorizationNote note)
         {
             return new InsuranceModels.AuthorizationNote
-            {
-                AuthorizationRequestId = note.AuthorizationRequestId,
-                CurrentVersion = note.CurrentVersion,
-                Created = note.Created,
-                Id = note.AuthorizationNoteId,
-                Note = note.Note
-            };
+                {
+                    AuthorizationRequestId = note.AuthorizationRequestId,
+                    CurrentVersion = note.CurrentVersion,
+                    Created = note.Created,
+                    Id = note.AuthorizationNoteId,
+                    Note = note.Note
+                };
         }
 
         /// <summary>
@@ -114,16 +104,122 @@ namespace Data.Repository.EF
         /// The <seealso cref="AuthorizationFollowUp"/> to convert
         /// </param>
         /// <returns>A <seealso cref="InsuranceModels.AuthorizationNote"/></returns>
-        public static InsuranceModels.AuthorizationFollowUp ToModelAuthorizationFollowUp(this AuthorizationFollowUp followUp)
+        public static InsuranceModels.AuthorizationFollowUp ToModelAuthorizationFollowUp(
+            this AuthorizationFollowUp followUp)
         {
             return new InsuranceModels.AuthorizationFollowUp
+                {
+                    AccountId = followUp.AccountId,
+                    AppointmentDateTimeUtc = followUp.AppointmentDateTime,
+                    AuthorizationRequestId = followUp.AuthorizationRequestId,
+                    CurrentVersion = followUp.CurrentVersion,
+                    Description = followUp.Description,
+                    Id = followUp.AuthorizationFollowUpId
+                };
+        }
+
+        /// <summary>
+        /// Converts an EF <seealso cref="Facility"/> to a 
+        /// <seealso cref="MedicalModels.Facility"/>
+        /// </summary>
+        /// <param name="facility">
+        /// The <seealso cref="Facility"/> to convert
+        /// </param>
+        /// <returns>A <seealso cref="MedicalModels.Facility"/></returns>
+        public static MedicalModels.Facility ToModelFacility(this Facility facility)
+        {
+            return new MedicalModels.Facility
+                {
+                    AccountId = facility.AccountId,
+                    CurrentVersion = facility.CurrentVersion,
+                    Id = facility.FacilityId,
+                    Name = facility.Name
+                };
+        }
+
+        /// <summary>
+        /// Converts an EF <seealso cref="Provider"/> to a 
+        /// <seealso cref="MedicalModels.Provider"/>
+        /// </summary>
+        /// <param name="provider">
+        /// The <seealso cref="Provider"/> to convert
+        /// </param>
+        /// <returns>A <seealso cref="MedicalModels.Provider"/></returns>
+        public static MedicalModels.Provider ToModelProvider(this Provider provider)
+        {
+            return new MedicalModels.Provider
+                {
+                    CurrentVersion = provider.CurrentVersion,
+                    FacilityId = provider.FacilityId,
+                    Id = provider.ProviderId,
+                    Name = provider.Name
+                };
+        }
+
+        /// <summary>
+        /// Converts an EF <seealso cref="MedicalAppointment"/> to a 
+        /// <seealso cref="MedicalModels.MedicalAppointment"/>
+        /// </summary>
+        /// <param name="appointment">
+        /// The <seealso cref="MedicalAppointment"/> to convert
+        /// </param>
+        /// <returns>A <seealso cref="MedicalModels.MedicalAppointment"/></returns>
+        public static MedicalModels.MedicalAppointment ToModelMedicalAppointment(this MedicalAppointment appointment)
+        {
+            return new MedicalModels.MedicalAppointment
+                {
+                    AccountId = appointment.AccountId,
+                    AppointmentDateTimeUtc = appointment.AppointmentDateTime,
+                    AppointmentLengthUnits =
+                        (SchedulingModels.ScheduleUnits)
+                        (appointment.ScheduleUnitId.HasValue ? appointment.ScheduleUnitId.Value : 0),
+                    CurrentVersion = appointment.CurrentVersion,
+                    Description = appointment.Description,
+                    Id = appointment.ProviderId,
+                    Length = appointment.Length,
+                    ProviderId = appointment.ProviderId
+                };
+        }
+
+        /// <summary>
+        /// Converts an EF <seealso cref="Medication"/> to a 
+        /// <seealso cref="PrescriptionModels.Medication"/>
+        /// </summary>
+        /// <param name="medicine">
+        /// The <seealso cref="Medication"/> to convert
+        /// </param>
+        /// <returns>A <seealso cref="PrescriptionModels.Medication"/></returns>
+        public static PrescriptionModels.Medication ToModelMedication(this Medication medicine)
+        {
+            return new PrescriptionModels.Medication
+                {
+                    AccountId = medicine.AccountId,
+                    CurrentVersion = medicine.CurrentVersion,
+                    DosageUnits =
+                        (PrescriptionModels.DosageUnits)(medicine.DosageUnitId.HasValue ? medicine.DosageUnitId.Value : 0),
+                    Id = medicine.MedicationId,
+                    Name = medicine.Name,
+                    Quantity = medicine.Quantity
+                };
+        }
+
+        /// <summary>
+        /// Converts an EF <seealso cref="PrescriptionPickup"/> to a 
+        /// <seealso cref="PrescriptionModels.PrescriptionPickup"/>
+        /// </summary>
+        /// <param name="pickup">
+        /// The <seealso cref="PrescriptionPickup"/> to convert
+        /// </param>
+        /// <returns>A <seealso cref="PrescriptionModels.PrescriptionPickup"/></returns>
+        public static PrescriptionModels.PrescriptionPickup ToModelPrescriptionPickup(this PrescriptionPickup pickup)
+        {
+            return new PrescriptionModels.PrescriptionPickup
             {
-                AccountId = followUp.AccountId,
-                AppointmentDateTimeUtc = followUp.AppointmentDateTime,
-                AuthorizationRequestId = followUp.AuthorizationRequestId,
-                CurrentVersion = followUp.CurrentVersion,
-                Description = followUp.Description,
-                Id = followUp.AuthorizationFollowUpId
+                AccountId = pickup.AccountId,
+                AppointmentDateTimeUtc = pickup.AppointmentDateTime,
+                CurrentVersion = pickup.CurrentVersion,
+                Id = pickup.PrescriptionPickupId,
+                MedicationId = pickup.MedicationId
             };
         }
     }

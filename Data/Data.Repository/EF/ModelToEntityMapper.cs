@@ -15,6 +15,8 @@ namespace Data.Repository.EF
 
     using AccountModels = Infrastructure.Model.Account;
     using InsuranceModels = Infrastructure.Model.Insurance;
+    using MedicalModels = Infrastructure.Model.Medical;
+    using PrescriptionModels = Infrastructure.Model.Prescription;
 
     /// <summary>
     /// The static class used to map the business models to the EF models
@@ -106,6 +108,81 @@ namespace Data.Repository.EF
                                 return
                                     noteEntities.Select(EntityConversionExtensions.ToModelAuthorizationFollowUp) as IEnumerable<T>;
                             }
+                        },
+                    {
+                        typeof(MedicalModels.Facility),
+                        (context, facilities) =>
+                            {
+                                var facilityEntities =
+                                    ((IEnumerable<MedicalModels.Facility>)facilities).Select(
+                                        facility => facility.ToEfFacility()).ToList();
+
+                                facilityEntities.ForEach(
+                                    facility => EfEntityHelpers<Facility>.Upsert(context.Facilities, facility));
+
+                                return
+                                    facilityEntities.Select(EntityConversionExtensions.ToModelFacility) as IEnumerable<T>;
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.Provider),
+                        (context, providers) =>
+                            {
+                                var providerEntities =
+                                    ((IEnumerable<MedicalModels.Provider>)providers).Select(
+                                        provider => provider.ToEfProvider()).ToList();
+
+                                providerEntities.ForEach(
+                                    provider => EfEntityHelpers<Provider>.Upsert(context.Providers, provider));
+
+                                return
+                                    providerEntities.Select(EntityConversionExtensions.ToModelProvider) as IEnumerable<T>;
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.MedicalAppointment),
+                        (context, appointments) =>
+                            {
+                                var appointmentEntities =
+                                    ((IEnumerable<MedicalModels.MedicalAppointment>)appointments).Select(
+                                        appointment => appointment.ToEfAppointment()).ToList();
+
+                                appointmentEntities.ForEach(
+                                    appointment => EfEntityHelpers<MedicalAppointment>.Upsert(context.MedicalAppointments, appointment));
+
+                                return
+                                    appointmentEntities.Select(EntityConversionExtensions.ToModelMedicalAppointment) as IEnumerable<T>;
+                            }
+                        },
+                    {
+                        typeof(PrescriptionModels.Medication),
+                        (context, medicines) =>
+                            {
+                                var medicineEntities =
+                                    ((IEnumerable<PrescriptionModels.Medication>)medicines).Select(
+                                        medicine => medicine.ToEfMedication()).ToList();
+
+                                medicineEntities.ForEach(
+                                    medicine => EfEntityHelpers<Medication>.Upsert(context.Medications, medicine));
+
+                                return
+                                    medicineEntities.Select(EntityConversionExtensions.ToModelMedication) as IEnumerable<T>;
+                            }
+                        },
+                    {
+                        typeof(PrescriptionModels.PrescriptionPickup),
+                        (context, pickups) =>
+                            {
+                                var pickupEntities =
+                                    ((IEnumerable<PrescriptionModels.PrescriptionPickup>)pickups).Select(
+                                        pickup => pickup.ToEfPrescriptionPickup()).ToList();
+
+                                pickupEntities.ForEach(
+                                    pickup => EfEntityHelpers<PrescriptionPickup>.Upsert(context.PrescriptionPickups, pickup));
+
+                                return
+                                    pickupEntities.Select(EntityConversionExtensions.ToModelPrescriptionPickup) as IEnumerable<T>;
+                            }
                         }
                 };
 
@@ -178,6 +255,54 @@ namespace Data.Repository.EF
 
                                 noteEntities.ForEach(
                                     note => { EfEntityHelpers<AuthorizationNote>.Delete(context.AuthorizationNotes, note); });
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.Facility), 
+                        (context, facilities) =>
+                            {
+                                var facilityModels = facilities as IEnumerable<MedicalModels.Facility>;
+                                if (facilityModels == null)
+                                {
+                                    return;
+                                }
+
+                                var facilityEntities = facilityModels.Select(facility => facility.ToEfFacility()).ToList();
+
+                                facilityEntities.ForEach(
+                                    facility => { EfEntityHelpers<Facility>.Delete(context.Facilities, facility); });
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.Provider), 
+                        (context, providers) =>
+                            {
+                                var providerModels = providers as IEnumerable<MedicalModels.Provider>;
+                                if (providerModels == null)
+                                {
+                                    return;
+                                }
+
+                                var providerEntities = providerModels.Select(provider => provider.ToEfProvider()).ToList();
+
+                                providerEntities.ForEach(
+                                    provider => { EfEntityHelpers<Provider>.Delete(context.Providers, provider); });
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.MedicalAppointment), 
+                        (context, appointments) =>
+                            {
+                                var appointmentModels = appointments as IEnumerable<MedicalModels.MedicalAppointment>;
+                                if (appointmentModels == null)
+                                {
+                                    return;
+                                }
+
+                                var appointmentEntities = appointmentModels.Select(facility => facility.ToEfAppointment()).ToList();
+
+                                appointmentEntities.ForEach(
+                                    appointment => { EfEntityHelpers<MedicalAppointment>.Delete(context.MedicalAppointments, appointment); });
                             }
                         }
                 };

@@ -17,6 +17,9 @@ namespace Data.Repository.EF
 
     using AccountModels = Infrastructure.Model.Account;
     using InsuranceModels = Infrastructure.Model.Insurance;
+    using MedicalModels = Infrastructure.Model.Medical;
+    using PrescriptionModels = Infrastructure.Model.Prescription;
+    using SchedulingModels = Infrastructure.Model.Scheduling;
 
     /// <summary>
     /// Maps EF entities to Business Models
@@ -115,6 +118,98 @@ namespace Data.Repository.EF
                                                 CurrentVersion = followup.CurrentVersion,
                                                 Description = followup.Description,
                                                 Id = followup.AuthorizationFollowUpId
+                                            }) as IQueryable<T>;
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.Facility), 
+                        objectContext =>
+                            {
+                                return
+                                    objectContext.Facilities.Select(
+                                        facility =>
+                                        new MedicalModels.Facility
+                                            {
+                                                AccountId = facility.AccountId,
+                                                CurrentVersion = facility.CurrentVersion,
+                                                Id = facility.FacilityId,
+                                                Name = facility.Name
+                                            }) as IQueryable<T>;
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.Provider), 
+                        objectContext =>
+                            {
+                                return
+                                    objectContext.Providers.Select(
+                                        provider =>
+                                        new MedicalModels.Provider
+                                            {
+                                                CurrentVersion = provider.CurrentVersion,
+                                                FacilityId = provider.FacilityId,
+                                                Id = provider.ProviderId,
+                                                Name = provider.Name
+                                            }) as IQueryable<T>;
+                            }
+                        },
+                    {
+                        typeof(MedicalModels.MedicalAppointment), 
+                        objectContext =>
+                            {
+                                return
+                                    objectContext.MedicalAppointments.Select(
+                                        appointment =>
+                                        new MedicalModels.MedicalAppointment
+                                            {
+                                                AccountId = appointment.AccountId,
+                                                AppointmentDateTimeUtc = appointment.AppointmentDateTime,
+                                                AppointmentLengthUnits =
+                                                    (SchedulingModels.ScheduleUnits)
+                                                    (appointment.ScheduleUnitId.HasValue
+                                                         ? appointment.ScheduleUnitId.Value
+                                                         : 0),
+                                                CurrentVersion = appointment.CurrentVersion,
+                                                Description = appointment.Description,
+                                                Id = appointment.ProviderId,
+                                                Length = appointment.Length,
+                                                ProviderId = appointment.ProviderId
+                                            }) as IQueryable<T>;
+                            }
+                        },
+                    {
+                        typeof(PrescriptionModels.Medication), 
+                        objectContext =>
+                            {
+                                return
+                                    objectContext.Medications.Select(
+                                        medicine =>
+                                        new PrescriptionModels.Medication
+                                            {
+                                                AccountId = medicine.AccountId,
+                                                CurrentVersion = medicine.CurrentVersion,
+                                                DosageUnits =
+                                                    (PrescriptionModels.DosageUnits)(medicine.DosageUnitId.HasValue ? medicine.DosageUnitId.Value : 0),
+                                                Id = medicine.MedicationId,
+                                                Name = medicine.Name,
+                                                Quantity = medicine.Quantity
+                                            }) as IQueryable<T>;
+                            }
+                        },
+                    {
+                        typeof(PrescriptionModels.PrescriptionPickup), 
+                        objectContext =>
+                            {
+                                return
+                                    objectContext.PrescriptionPickups.Select(
+                                        pickup =>
+                                        new PrescriptionModels.PrescriptionPickup()
+                                            {
+                                                AccountId = pickup.AccountId,
+                                                AppointmentDateTimeUtc = pickup.AppointmentDateTime,
+                                                CurrentVersion = pickup.CurrentVersion,
+                                                Id = pickup.PrescriptionPickupId,
+                                                MedicationId = pickup.MedicationId
                                             }) as IQueryable<T>;
                             }
                         }
