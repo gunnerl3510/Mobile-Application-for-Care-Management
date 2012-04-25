@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="df054a22-ea2e-4946-8973-1198076528e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/CareManagementService/InsuranceServiceReference.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InsuranceServiceReference3.xsd" MetadataType="Schema" ID="3689ba6c-f2c0-435e-a467-beb1cad073e3" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd3" />
+    <MetadataFile FileName="InsuranceServiceReference31.xsd" MetadataType="Schema" ID="228a1e2e-e042-4d3b-baa0-37a1ceba0182" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd2" />
+    <MetadataFile FileName="InsuranceServiceReference32.xsd" MetadataType="Schema" ID="5c89d302-c434-4964-9623-e418cfdff35a" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd1" />
+    <MetadataFile FileName="InsuranceServiceReference33.xsd" MetadataType="Schema" ID="48334184-5eca-4abd-8166-c58e508b065e" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd0" />
+    <MetadataFile FileName="InsuranceService1.wsdl" MetadataType="Wsdl" ID="9bc98b51-a6dd-4a5f-bee1-db80ba17ae3f" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?wsdl" />
+    <MetadataFile FileName="InsuranceServiceReference1.disco" MetadataType="Disco" ID="116c24c0-0845-4e3a-9db7-780888511e8b" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

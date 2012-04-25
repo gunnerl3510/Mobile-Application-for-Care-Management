@@ -11,6 +11,7 @@ namespace Infrastructure.Model.Prescription
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
     using System.Web.Mvc;
 
     using Infrastructure.Model.Scheduling;
@@ -18,6 +19,7 @@ namespace Infrastructure.Model.Prescription
     /// <summary>
     /// Encapsulates prescription pickup appointment based data
     /// </summary>
+    [DataContract]
     public class PrescriptionPickup : IModel, IAppointment
     {
         #region Implementation of IModel
@@ -28,6 +30,7 @@ namespace Infrastructure.Model.Prescription
         [Key]
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int Id { get; set; }
 
         /// <summary>
@@ -36,6 +39,7 @@ namespace Infrastructure.Model.Prescription
         [HiddenInput]
         [Editable(false)]
         [Timestamp]
+        [DataMember]
         public byte[] CurrentVersion { get; set; }
 
         #endregion
@@ -46,6 +50,7 @@ namespace Infrastructure.Model.Prescription
         /// Gets or sets the date and time of the appointment in UTC time
         /// </summary>
         [Required]
+        [DataMember]
         public DateTimeOffset AppointmentDateTimeUtc { get; set; }
 
         #endregion
@@ -55,12 +60,14 @@ namespace Infrastructure.Model.Prescription
         /// </summary>
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int AccountId { get; set; }
 
         /// <summary>
         /// Gets or sets the medication identifier to which the prescription belongs
         /// </summary>
         [Required]
+        [DataMember]
         public int MedicationId { get; set; }
     }
 }

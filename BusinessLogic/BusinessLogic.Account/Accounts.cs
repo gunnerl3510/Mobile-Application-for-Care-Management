@@ -125,7 +125,7 @@ namespace BusinessLogic.Account
                 var newUserAccount = Membership.CreateUser(account.Name, password, account.EmailAddress);
 
                 // ReSharper disable PossibleNullReferenceException
-                account.UserId = (Guid)newUserAccount.ProviderUserKey;
+                account.UserId = ((Guid)newUserAccount.ProviderUserKey).ToString();
                 // ReSharper restore PossibleNullReferenceException
                 accountRepository.Add(account);
             }

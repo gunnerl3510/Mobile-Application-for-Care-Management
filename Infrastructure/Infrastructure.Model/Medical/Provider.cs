@@ -10,11 +10,13 @@
 namespace Infrastructure.Model.Medical
 {
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
     using System.Web.Mvc;
 
     /// <summary>
     /// Encapsulates medical provider information
     /// </summary>
+    [DataContract]
     public class Provider : IModel
     {
         #region Implementation of IModel
@@ -25,6 +27,7 @@ namespace Infrastructure.Model.Medical
         [Key]
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int Id { get; set; }
 
         /// <summary>
@@ -33,6 +36,7 @@ namespace Infrastructure.Model.Medical
         [HiddenInput]
         [Editable(false)]
         [Timestamp]
+        [DataMember]
         public byte[] CurrentVersion { get; set; }
 
         #endregion
@@ -42,6 +46,7 @@ namespace Infrastructure.Model.Medical
         /// </summary>
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int FacilityId { get; set; }
 
         /// <summary>
@@ -49,6 +54,7 @@ namespace Infrastructure.Model.Medical
         /// </summary>
         [Required(ErrorMessage = "A name for the account is required.")]
         [StringLength(256, ErrorMessage = "Account names are restricted to a maximum of 256 characters")]
+        [DataMember]
         public string Name { get; set; }
     }
 }

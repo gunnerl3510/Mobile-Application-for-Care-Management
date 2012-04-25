@@ -9,6 +9,7 @@
 
 namespace Data.Repository.EF
 {
+    using System;
     using System.Data.Objects.DataClasses;
 
     using AccountModels = Infrastructure.Model.Account;
@@ -29,13 +30,14 @@ namespace Data.Repository.EF
         /// <returns>An EF <c>Account</c> <c>EntityObject</c></returns>
         public static Account ToEfAccount(this AccountModels.Account account)
         {
+            Guid tempGuid;
             return new Account
                 {
                     AccountId = account.Id,
                     CurrentVersion = account.CurrentVersion,
                     EmailAddress = account.EmailAddress,
                     Name = account.Name,
-                    UserId = account.UserId
+                    UserId = Guid.TryParse(account.UserId, out tempGuid) ? tempGuid : default(Guid)
                 };
         }
 

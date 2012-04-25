@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\..\..\packages\Ninject.3.0.0.15\lib\net40\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
     </Reference>
@@ -45,19 +48,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GeneratedCode\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountService.cs" />
+    <Compile Include="GeneratedCode\AccountService.cs" />
+    <Compile Include="GeneratedCode\InsuranceService.cs" />
+    <Compile Include="GeneratedCode\MedicalService.cs" />
+    <Compile Include="GeneratedCode\PrescriptionService.cs" />
+    <Compile Include="InsuranceService.cs" />
+    <Compile Include="MedicalService.cs" />
+    <Compile Include="PrescriptionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Business Logic\Service.BusinessEntities\Service.BusinessEntities.csproj">
-      <Project>{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}</Project>
-      <Name>Service.BusinessEntities</Name>
+    <ProjectReference Include="..\..\..\..\BusinessLogic\BusinessLogic.Account\BusinessLogic.Account.csproj">
+      <Project>{150FD2E9-3497-474A-9A10-9E2CE8F49E9C}</Project>
+      <Name>BusinessLogic.Account</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Business Logic\Service.BusinessLogic\Service.BusinessLogic.csproj">
-      <Project>{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}</Project>
-      <Name>Service.BusinessLogic</Name>
+    <ProjectReference Include="..\..\..\..\BusinessLogic\BusinessLogic.Insurance\BusinessLogic.Insurance.csproj">
+      <Project>{AED9F645-99C6-4172-8D18-2F8BDD7922A2}</Project>
+      <Name>BusinessLogic.Insurance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BusinessLogic\BusinessLogic.Medical\BusinessLogic.Medical.csproj">
+      <Project>{A0CB42A8-2BD4-468E-83C0-73F19BC83202}</Project>
+      <Name>BusinessLogic.Medical</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\BusinessLogic\BusinessLogic.Prescription\BusinessLogic.Prescription.csproj">
+      <Project>{50CBCC3F-6043-40F2-9A88-EE2B27F928B4}</Project>
+      <Name>BusinessLogic.Prescription</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.Model\Infrastructure.Model.csproj">
+      <Project>{A844CD45-EDA4-4FA9-9DC7-E5EE299DE3DC}</Project>
+      <Name>Infrastructure.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service.DataContracts\Service.DataContracts.csproj">
       <Project>{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}</Project>

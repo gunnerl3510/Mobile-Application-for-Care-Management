@@ -11,11 +11,13 @@ namespace Infrastructure.Model.Insurance
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
     using System.Web.Mvc;
 
     /// <summary>
     /// Encapsulates authorization request based data
     /// </summary>
+    [DataContract]
     public class AuthorizationRequest : IModel
     {
         #region Implementation of IModel
@@ -26,6 +28,7 @@ namespace Infrastructure.Model.Insurance
         [Key]
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int Id { get; set; }
 
         /// <summary>
@@ -34,6 +37,7 @@ namespace Infrastructure.Model.Insurance
         [HiddenInput]
         [Editable(false)]
         [Timestamp]
+        [DataMember]
         public byte[] CurrentVersion { get; set; }
 
         #endregion
@@ -43,12 +47,14 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int AccountId { get; set; }
 
         /// <summary>
         /// Gets or sets the insurance company identifier to which the authorization request belongs
         /// </summary>
         [Required]
+        [DataMember]
         public int InsurerId { get; set; }
 
         /// <summary>
@@ -56,6 +62,7 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [Required]
         [StringLength(512, ErrorMessage = "The description of this authorization cannot exceed 512 characters.")]
+        [DataMember]
         public string Description { get; set; }
     }
 }

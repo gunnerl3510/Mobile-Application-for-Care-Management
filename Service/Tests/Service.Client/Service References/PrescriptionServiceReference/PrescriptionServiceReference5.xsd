@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Prescription" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Prescription" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="Medication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentVersion" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DosageUnits" nillable="true" type="tns:DosageUnits" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Medication" nillable="true" type="tns:Medication" />
+  <xs:simpleType name="DosageUnits">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Tablet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Milliliter">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Milligram">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Teaspoon">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tablespoon">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DosageUnits" nillable="true" type="tns:DosageUnits" />
+  <xs:complexType name="ArrayOfMedication">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Medication" nillable="true" type="tns:Medication" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedication" nillable="true" type="tns:ArrayOfMedication" />
+  <xs:complexType name="PrescriptionPickup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountId" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AppointmentDateTimeUtc" type="q1:DateTimeOffset" />
+      <xs:element minOccurs="0" name="CurrentVersion" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MedicationId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrescriptionPickup" nillable="true" type="tns:PrescriptionPickup" />
+  <xs:complexType name="ArrayOfPrescriptionPickup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrescriptionPickup" nillable="true" type="tns:PrescriptionPickup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrescriptionPickup" nillable="true" type="tns:ArrayOfPrescriptionPickup" />
+</xs:schema>

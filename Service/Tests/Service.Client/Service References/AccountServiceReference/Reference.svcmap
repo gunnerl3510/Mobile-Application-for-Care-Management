@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9b756bbf-92c9-4f74-bdd6-a981a4a851f7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/CareManagementService/AccountService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AccountService1.disco" MetadataType="Disco" ID="ff862fd4-d045-44f8-8cd1-f2838b682b3f" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/AccountService.svc?disco" />
+    <MetadataFile FileName="AccountService3.xsd" MetadataType="Schema" ID="97319c34-080b-4011-8707-2d9c86cdd1b1" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccountService31.xsd" MetadataType="Schema" ID="2f3e0312-d024-4a37-b573-432394a3bbeb" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccountService32.xsd" MetadataType="Schema" ID="6d3d6b97-77a5-4ca6-a29b-6a6ba29e2194" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AccountService1.wsdl" MetadataType="Wsdl" ID="cdd327b7-0a10-41d3-863e-f4a0c6384b6e" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/AccountService.svc?wsdl" />
+    <MetadataFile FileName="AccountService33.xsd" MetadataType="Schema" ID="44884a6f-7590-4278-8a1a-5629a3243a3b" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

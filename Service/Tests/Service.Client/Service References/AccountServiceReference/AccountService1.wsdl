@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://CareManagement.Model/2012/Accounts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccountService" targetNamespace="http://CareManagement.Model/2012/Accounts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="Account_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://CareManagement.Model/2012/Accounts/Imports">
+      <xsd:import schemaLocation="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd0" namespace="http://CareManagement.Model/2012/Accounts" />
+      <xsd:import schemaLocation="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Account" />
+      <xsd:import schemaLocation="http://lerwick-lt/CareManagementService/AccountService.svc?xsd=xsd3" namespace="http://CareManagement.Model/2012/Insurance" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddAccountMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountMessage" />
+  </wsdl:message>
+  <wsdl:message name="AccountContract_AddAccount_OutputMessage" />
+  <wsdl:message name="AccountMessage">
+    <wsdl:part name="Account" element="tns:Account" />
+  </wsdl:message>
+  <wsdl:message name="AccountContract_DeleteAccount_OutputMessage" />
+  <wsdl:message name="AccountContract_UpdateAccount_OutputMessage" />
+  <wsdl:message name="AccountIdMessage">
+    <wsdl:part xmlns:q1="http://CareManagement.Model/2012/Insurance" name="AccountId" element="q1:AccountId" />
+  </wsdl:message>
+  <wsdl:portType name="AccountContract">
+    <wsdl:operation name="AddAccount">
+      <wsdl:input wsaw:Action="AddAccount" name="AddAccountMessage" message="tns:AddAccountMessage" />
+      <wsdl:output wsaw:Action="addaccount" message="tns:AccountContract_AddAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <wsdl:input wsaw:Action="DeleteAccount" name="AccountMessage" message="tns:AccountMessage" />
+      <wsdl:output wsaw:Action="deleteaccount" message="tns:AccountContract_DeleteAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <wsdl:input wsaw:Action="UpdateAccount" name="AccountMessage" message="tns:AccountMessage" />
+      <wsdl:output wsaw:Action="updateaccount" message="tns:AccountContract_UpdateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="GetAccount" name="AccountIdMessage" message="tns:AccountIdMessage" />
+      <wsdl:output wsaw:Action="getaccount" name="AccountMessage" message="tns:AccountMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Account" type="tns:AccountContract">
+    <wsp:PolicyReference URI="#Account_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddAccount">
+      <soap:operation soapAction="AddAccount" style="document" />
+      <wsdl:input name="AddAccountMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <soap:operation soapAction="DeleteAccount" style="document" />
+      <wsdl:input name="AccountMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap:operation soapAction="UpdateAccount" style="document" />
+      <wsdl:input name="AccountMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap:operation soapAction="GetAccount" style="document" />
+      <wsdl:input name="AccountIdMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AccountMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountService">
+    <wsdl:port name="Account" binding="tns:Account">
+      <soap:address location="https://lerwick-lt/CareManagementService/AccountService.svc/basicHttp" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

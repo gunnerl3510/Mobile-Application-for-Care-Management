@@ -11,11 +11,13 @@ namespace Infrastructure.Model.Account
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
     using System.Web.Mvc;
 
     /// <summary>
     /// Encapsulates account based data
     /// </summary>
+    [DataContract]
     public class Account : IModel
     {
         #region Implementation of IModel
@@ -26,6 +28,7 @@ namespace Infrastructure.Model.Account
         [Key]
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int Id { get; set; }
 
         /// <summary>
@@ -34,6 +37,7 @@ namespace Infrastructure.Model.Account
         [HiddenInput]
         [Editable(false)]
         [Timestamp]
+        [DataMember]
         public byte[] CurrentVersion { get; set; }
 
         #endregion
@@ -43,6 +47,7 @@ namespace Infrastructure.Model.Account
         /// </summary>
         [Required(ErrorMessage = "A name for the account is required.")]
         [StringLength(256, ErrorMessage = "Account names are restricted to a maximum of 256 characters")]
+        [DataMember]
         public string Name { get; set; }
 
         /// <summary>
@@ -50,7 +55,10 @@ namespace Infrastructure.Model.Account
         /// </summary>
         [Required(ErrorMessage = "An email address is required for the account.")]
         [StringLength(100, ErrorMessage = "Account email addresses are restricted to a maximum of 100 characters")]
+        [DataMember]
         public string EmailAddress { get; set; }
+
+        private Guid userId;
 
         /// <summary>
         /// Gets or sets the unique id for the user's relationship to the
@@ -58,6 +66,17 @@ namespace Infrastructure.Model.Account
         /// </summary>
         [ScaffoldColumn(false)]
         [Editable(false)]
-        public Guid UserId { get; set; }
+        [DataMember]
+        public string UserId
+        {
+            get { return userId.ToString(); }
+            set
+            {
+                if (!Guid.TryParse(value, out userId))
+                {
+                    userId = default(Guid);
+                }
+            }
+        }        
     }
 }

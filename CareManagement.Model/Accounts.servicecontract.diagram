@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<serviceContractDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Accounts">
+  <serviceContractModelMoniker Id="a4a306e9-b4dd-4c1a-abe2-390619183b59" />
+  <nestedChildShapes>
+    <serviceShape Id="6170e744-4a6c-46b4-af06-0a6076a1df19" isExpanded="false" absoluteBounds="0.5, 0.5, 1.5, 0.4">
+      <serviceMoniker Id="62addf00-b06e-43ae-8f72-bb2dc7655a64" />
+    </serviceShape>
+    <serviceContractShape Id="3c9a3b55-85b4-408b-96c6-efb7e21ad8a2" absoluteBounds="0.5, 1.875, 1.5, 0.375">
+      <serviceContractMoniker name="/a4a306e9-b4dd-4c1a-abe2-390619183b59/AccountContract" />
+    </serviceContractShape>
+    <serviceConnector edgePoints="[(1.25 : 0.9); (1.25 : 1.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="a2a99593-2a34-4d79-9c31-8759acdcf4e1">
+      <nodes>
+        <serviceShapeMoniker Id="6170e744-4a6c-46b4-af06-0a6076a1df19" />
+        <serviceContractShapeMoniker Id="3c9a3b55-85b4-408b-96c6-efb7e21ad8a2" />
+      </nodes>
+    </serviceConnector>
+    <operationShape Id="8767524c-bd30-4322-bb2e-9688ff794a50" absoluteBounds="2.5, 1.75, 1.5, 0.75938964843750023">
+      <operationMoniker Id="af03f9bd-1170-4627-88ae-39347a5cd2a4" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5ec9878-81e7-47ee-aa53-4e69bc7a90ea" absoluteBounds="2.515, 2.16, 1.4700000000000002, 0.2493896484375" name="Faults" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </operationShape>
+    <operationConnector edgePoints="[(2 : 2.0625); (2.5 : 2.0625)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="096ae312-0e53-4109-8819-6eefa07035a1">
+      <nodes>
+        <serviceContractShapeMoniker Id="3c9a3b55-85b4-408b-96c6-efb7e21ad8a2" />
+        <operationShapeMoniker Id="8767524c-bd30-4322-bb2e-9688ff794a50" />
+      </nodes>
+    </operationConnector>
+    <messageShape Id="c7451aa8-71e3-4c08-9146-381f979d408f" absoluteBounds="5.125, 3.25, 1.5, 0.95169108072916675">
+      <messageMoniker Id="aee31d5f-1652-4fbc-9a08-f32c50c3f3ed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="270db090-8232-4091-a113-c22efb12df60" absoluteBounds="5.14, 3.66, 1.4700000000000002, 0.44169108072916663" name="Parts" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </messageShape>
+    <messageOperationConnector edgePoints="[(5.125 : 2.12969482421875); (4 : 2.12969482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="8295600c-96eb-44ad-ab6f-8bc00704d9e5">
+      <nodes>
+        <messageShapeMoniker Id="f3f93dc5-7717-4066-94f5-a4d5c2ce32b7" />
+        <operationShapeMoniker Id="8767524c-bd30-4322-bb2e-9688ff794a50" />
+      </nodes>
+    </messageOperationConnector>
+    <operationShape Id="a85cf3a6-b13e-40b3-adba-4a4ac0871f9d" absoluteBounds="2.5, 3.25, 1.5, 0.75938964843750023">
+      <operationMoniker Id="22060383-690e-433e-9075-8c0fb880ce2b" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eb99b354-cd76-4739-b929-3b0a28114385" absoluteBounds="2.515, 3.66, 1.4700000000000002, 0.2493896484375" name="Faults" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </operationShape>
+    <operationConnector edgePoints="[(1.25 : 2.25); (1.25 : 3.62969482421875); (1.57291916666667 : 3.62969482421875 : JumpStart); (1.73958583333333 : 3.62969482421875 : JumpEnd); (2.5 : 3.62969482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="096ae312-0e53-4109-8819-6eefa07035a1">
+      <nodes>
+        <serviceContractShapeMoniker Id="3c9a3b55-85b4-408b-96c6-efb7e21ad8a2" />
+        <operationShapeMoniker Id="a85cf3a6-b13e-40b3-adba-4a4ac0871f9d" />
+      </nodes>
+    </operationConnector>
+    <operationShape Id="cc0ed605-ebf8-4ddd-8118-907440fbb672" absoluteBounds="2.5, 4.75, 1.5, 0.75938964843749979">
+      <operationMoniker Id="5d43fbbb-55a4-453f-bdd4-c8744994ebd5" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3c6d67a-152d-4410-ac30-11dd1bcc1953" absoluteBounds="2.515, 5.16, 1.4700000000000002, 0.2493896484375" name="Faults" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </operationShape>
+    <operationConnector edgePoints="[(1.6562525 : 2.25); (1.6562525 : 5.12969482421875); (2.5 : 5.12969482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="096ae312-0e53-4109-8819-6eefa07035a1">
+      <nodes>
+        <serviceContractShapeMoniker Id="3c9a3b55-85b4-408b-96c6-efb7e21ad8a2" />
+        <operationShapeMoniker Id="cc0ed605-ebf8-4ddd-8118-907440fbb672" />
+      </nodes>
+    </operationConnector>
+    <operationShape Id="1e98ed15-f654-4737-8c34-d83f73f6f016" absoluteBounds="2.5, 6.625, 1.5, 0.75938964843749979">
+      <operationMoniker Id="00ec5010-0ce5-433f-a2e4-b45efb7f3a84" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e02d13c5-5326-438c-bae6-66b853766d41" absoluteBounds="2.515, 7.035, 1.4700000000000002, 0.2493896484375" name="Faults" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </operationShape>
+    <operationConnector edgePoints="[(0.8437475 : 2.25); (0.8437475 : 7.00469482421875); (2.5 : 7.00469482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="096ae312-0e53-4109-8819-6eefa07035a1">
+      <nodes>
+        <serviceContractShapeMoniker Id="3c9a3b55-85b4-408b-96c6-efb7e21ad8a2" />
+        <operationShapeMoniker Id="1e98ed15-f654-4737-8c34-d83f73f6f016" />
+      </nodes>
+    </operationConnector>
+    <messageShape Id="e09a4cd1-b882-4a53-ab2c-abc7b742ce4f" absoluteBounds="5.125, 6.5, 1.5, 0.95169108072916675">
+      <messageMoniker Id="ebb6ec61-a16d-424c-9b00-9e34af188aec" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8705d3e8-75f3-400c-8c81-1b3229c37196" absoluteBounds="5.14, 6.91, 1.4700000000000002, 0.44169108072916663" name="Parts" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </messageShape>
+    <messageOperationConnector edgePoints="[(5.125 : 7.00469482421875); (4 : 7.00469482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="8295600c-96eb-44ad-ab6f-8bc00704d9e5">
+      <nodes>
+        <messageShapeMoniker Id="e09a4cd1-b882-4a53-ab2c-abc7b742ce4f" />
+        <operationShapeMoniker Id="1e98ed15-f654-4737-8c34-d83f73f6f016" />
+      </nodes>
+    </messageOperationConnector>
+    <messageOperationConnector edgePoints="[(5.125 : 3.93011759440104); (4.45833333333333 : 3.93011759440104 : JumpStart); (4.29166666666667 : 3.93011759440104 : JumpEnd); (4 : 3.93011759440104)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="8295600c-96eb-44ad-ab6f-8bc00704d9e5">
+      <nodes>
+        <messageShapeMoniker Id="c7451aa8-71e3-4c08-9146-381f979d408f" />
+        <operationShapeMoniker Id="a85cf3a6-b13e-40b3-adba-4a4ac0871f9d" />
+      </nodes>
+    </messageOperationConnector>
+    <messageOperationConnector edgePoints="[(5.875 : 4.20169108072917); (5.875 : 5.12969482421875); (4.45833333333333 : 5.12969482421875 : JumpStart); (4.29166666666667 : 5.12969482421875 : JumpEnd); (4 : 5.12969482421875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="8295600c-96eb-44ad-ab6f-8bc00704d9e5">
+      <nodes>
+        <messageShapeMoniker Id="c7451aa8-71e3-4c08-9146-381f979d408f" />
+        <operationShapeMoniker Id="cc0ed605-ebf8-4ddd-8118-907440fbb672" />
+      </nodes>
+    </messageOperationConnector>
+    <messageOperationConnector edgePoints="[(4 : 6.78359541210938); (4.375 : 6.78359541210938); (4.375 : 3.72584554036458); (5.125 : 3.72584554036458)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="02d27431-b5de-4fed-80f3-ccbd93466f72">
+      <nodes>
+        <operationShapeMoniker Id="1e98ed15-f654-4737-8c34-d83f73f6f016" />
+        <messageShapeMoniker Id="c7451aa8-71e3-4c08-9146-381f979d408f" />
+      </nodes>
+    </messageOperationConnector>
+    <messageShape Id="f3f93dc5-7717-4066-94f5-a4d5c2ce32b7" absoluteBounds="5.125, 1.75, 1.5, 1.1439925130208333">
+      <messageMoniker Id="8f41d1d5-886f-4ad6-a775-8947b5a46ad1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2327acd5-4f2c-4fbb-96f7-47fb80453fb2" absoluteBounds="5.14, 2.16, 1.4700000000000002, 0.63399251302083326" name="Parts" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </messageShape>
+  </nestedChildShapes>
+</serviceContractDiagram>

@@ -49,7 +49,7 @@ namespace Data.Repository.EF
                                                 EmailAddress = account.EmailAddress,
                                                 Id = account.AccountId,
                                                 Name = account.Name,
-                                                UserId = (Guid)account.UserId
+                                                UserId = account.UserId.HasValue ? account.UserId.ToString() : null
                                             }) as IQueryable<T>;
                             }
                         },

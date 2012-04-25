@@ -15,16 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{C0DA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{2BB54CD7-232B-40BB-9962-620B8192E939}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic", "Business Logic", "{E18BBEAF-4AB5-4749-AFEB-C570A3D105F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.BusinessEntities", "Service\Source\Business Logic\Service.BusinessEntities\Service.BusinessEntities.csproj", "{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.BusinessLogic", "Service\Source\Business Logic\Service.BusinessLogic\Service.BusinessLogic.csproj", "{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource Access", "Resource Access", "{CE90E861-D234-4BBF-8F46-ABFBB713DBDA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.DataAccess", "Service\Source\Resource Access\Service.DataAccess\Service.DataAccess.csproj", "{9445C59D-7CE2-4428-86FE-1C958D35E88C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Interface", "Service Interface", "{CA7A79AF-8F40-4CBE-B305-43C08CE16F56}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.DataContracts", "Service\Source\Service Interface\Service.DataContracts\Service.DataContracts.csproj", "{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}"
@@ -39,10 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.ServiceContracts", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A510A994-B583-4B7A-8EC1-7F55CD465154}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service.Host", "Service\Tests\Service.Host", "{2A0B83B7-60E3-4958-BDDF-E507F255DCF8}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service.Host", "Service\Tests\Service.Host\", "{2A0B83B7-60E3-4958-BDDF-E507F255DCF8}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{BB3FDDFA-3570-4D98-9EA0-DD9E28D1FE3F}|Service.ServiceImplementation.ServiceImplementation.dll;{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}|Service.BusinessEntities.BusinessEntities.dll;{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}|Service.BusinessLogic.BusinessLogic.dll;{9445C59D-7CE2-4428-86FE-1C958D35E88C}|Service.DataAccess.DataAccess.dll;{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}|Service.DataContracts.DataContracts.dll;{FC4DF1F6-FFD7-4F36-BD9B-9EDCF658585A}|Service.FaultContracts.FaultContracts.dll;{F286DAB9-86C3-41E0-87A8-CA189DBD16CB}|Service.MessageContracts.MessageContracts.dll;{578F9393-D58D-4188-87DD-8C59E5F9F496}|Service.ServiceContracts.ServiceContracts.dll;"
+		ProjectReferences = "{BB3FDDFA-3570-4D98-9EA0-DD9E28D1FE3F}|Service.ServiceImplementation.ServiceImplementation.dll;{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}|Service.DataContracts.DataContracts.dll;{FC4DF1F6-FFD7-4F36-BD9B-9EDCF658585A}|Service.FaultContracts.FaultContracts.dll;{F286DAB9-86C3-41E0-87A8-CA189DBD16CB}|Service.MessageContracts.MessageContracts.dll;{578F9393-D58D-4188-87DD-8C59E5F9F496}|Service.ServiceContracts.ServiceContracts.dll;{A844CD45-EDA4-4FA9-9DC7-E5EE299DE3DC}|Infrastructure.Model.dll;{0CD88831-F3C4-465C-949B-23E567DC28FD}|Infrastructure.Helpers.dll;{B8FC01F6-FC7D-46FF-900F-5A5A6DC02F65}|Data.Repository.dll;{EA68B403-46DF-4C40-A652-E36BAFC57D32}|Infrastructure.Logging.dll;{150FD2E9-3497-474A-9A10-9E2CE8F49E9C}|BusinessLogic.Account.dll;{D273A314-DF97-49C1-B5E2-F365BE7A2713}|BusinessLogic.Helpers.dll;{ACD3B600-1870-4F4C-A493-432CE2D8A1EA}|Infrastructure.Security.dll;{AED9F645-99C6-4172-8D18-2F8BDD7922A2}|BusinessLogic.Insurance.dll;{A0CB42A8-2BD4-468E-83C0-73F19BC83202}|BusinessLogic.Medical.dll;{50CBCC3F-6043-40F2-9A88-EE2B27F928B4}|BusinessLogic.Prescription.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Service.Host"
 		Debug.AspNetCompiler.PhysicalPath = "Service\Tests\Service.Host\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Service.Host\"
@@ -57,11 +47,14 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service.Host", "Service\Tes
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "52270"
+		VWDPort = "4538"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Client", "Service\Tests\Service.Client\Service.Client.csproj", "{2CA91385-4DF3-4EDF-BDE5-5A425B996956}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A0B83B7-60E3-4958-BDDF-E507F255DCF8} = {2A0B83B7-60E3-4958-BDDF-E507F255DCF8}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functional Tests", "Functional Tests", "{F0C3232D-A89A-4ED5-A654-6F4959E153D2}"
 EndProject
@@ -107,18 +100,6 @@ Global
 		{3F51A180-A4AF-4E62-9024-EE5F0366B890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F51A180-A4AF-4E62-9024-EE5F0366B890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F51A180-A4AF-4E62-9024-EE5F0366B890}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9445C59D-7CE2-4428-86FE-1C958D35E88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9445C59D-7CE2-4428-86FE-1C958D35E88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9445C59D-7CE2-4428-86FE-1C958D35E88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9445C59D-7CE2-4428-86FE-1C958D35E88C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -204,12 +185,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2BB54CD7-232B-40BB-9962-620B8192E939} = {C0DA2788-F1DB-4F26-B365-FC69B37BFE93}
 		{A510A994-B583-4B7A-8EC1-7F55CD465154} = {C0DA2788-F1DB-4F26-B365-FC69B37BFE93}
-		{E18BBEAF-4AB5-4749-AFEB-C570A3D105F6} = {2BB54CD7-232B-40BB-9962-620B8192E939}
-		{CE90E861-D234-4BBF-8F46-ABFBB713DBDA} = {2BB54CD7-232B-40BB-9962-620B8192E939}
 		{CA7A79AF-8F40-4CBE-B305-43C08CE16F56} = {2BB54CD7-232B-40BB-9962-620B8192E939}
-		{8D4B721F-BA3A-4AC2-BA9B-68383E1E8BF8} = {E18BBEAF-4AB5-4749-AFEB-C570A3D105F6}
-		{024FD961-54B7-46D1-A7CC-9CF1EF2E58A7} = {E18BBEAF-4AB5-4749-AFEB-C570A3D105F6}
-		{9445C59D-7CE2-4428-86FE-1C958D35E88C} = {CE90E861-D234-4BBF-8F46-ABFBB713DBDA}
 		{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6} = {CA7A79AF-8F40-4CBE-B305-43C08CE16F56}
 		{FC4DF1F6-FFD7-4F36-BD9B-9EDCF658585A} = {CA7A79AF-8F40-4CBE-B305-43C08CE16F56}
 		{F286DAB9-86C3-41E0-87A8-CA189DBD16CB} = {CA7A79AF-8F40-4CBE-B305-43C08CE16F56}

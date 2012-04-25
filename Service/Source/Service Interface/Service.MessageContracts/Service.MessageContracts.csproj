@@ -42,13 +42,45 @@
     <Reference Include="System.Xml.Linq">
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="GeneratedCode\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="GeneratedCode\AccountIdMessage.cs" />
+    <Compile Include="GeneratedCode\AccountMessage.cs" />
+    <Compile Include="GeneratedCode\AddAccountMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationFollowUpIdMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationFollowUpMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationFollowUpsMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationNoteIdMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationNoteMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationNotesMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationRequestIdMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationRequestMessage.cs" />
+    <Compile Include="GeneratedCode\AuthorizationRequestsMessage.cs" />
+    <Compile Include="GeneratedCode\FacilitiesMessage.cs" />
+    <Compile Include="GeneratedCode\FacilityIdMessage.cs" />
+    <Compile Include="GeneratedCode\FacilityMessage.cs" />
+    <Compile Include="GeneratedCode\InsurerIdMessage.cs" />
+    <Compile Include="GeneratedCode\InsurerMessage.cs" />
+    <Compile Include="GeneratedCode\InsurersMessage.cs" />
+    <Compile Include="GeneratedCode\MedicalAppointmentIdMessage.cs" />
+    <Compile Include="GeneratedCode\MedicalAppointmentMessage.cs" />
+    <Compile Include="GeneratedCode\MedicalAppointmentsMessage.cs" />
+    <Compile Include="GeneratedCode\MedicationIdMessage.cs" />
+    <Compile Include="GeneratedCode\MedicationMessage.cs" />
+    <Compile Include="GeneratedCode\MedicationsMessage.cs" />
+    <Compile Include="GeneratedCode\PrescriptionPickupIdMessage.cs" />
+    <Compile Include="GeneratedCode\PrescriptionPickupMessage.cs" />
+    <Compile Include="GeneratedCode\PrescriptionPickupsMessage.cs" />
+    <Compile Include="GeneratedCode\ProviderIdMessage.cs" />
+    <Compile Include="GeneratedCode\ProviderMessage.cs" />
+    <Compile Include="GeneratedCode\ProvidersMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Infrastructure\Infrastructure.Model\Infrastructure.Model.csproj">
+      <Project>{A844CD45-EDA4-4FA9-9DC7-E5EE299DE3DC}</Project>
+      <Name>Infrastructure.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Service.DataContracts\Service.DataContracts.csproj">
       <Project>{79CDAA60-9CAA-41DE-9E22-7B0E1E1370A6}</Project>
       <Name>Service.DataContracts</Name>

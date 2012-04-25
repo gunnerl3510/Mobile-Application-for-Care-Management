@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://CareManagement.Model/2012/Medical" elementFormDefault="qualified" targetNamespace="http://CareManagement.Model/2012/Medical" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lerwick-lt/CareManagementService/MedicalServiceReference.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical" />
+  <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical" name="Facility" nillable="true" type="q1:Facility" />
+  <xs:element name="FacilityId" type="xs:int" />
+  <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical" name="Facilities" nillable="true" type="q2:ArrayOfFacility" />
+  <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical" name="Provider" nillable="true" type="q3:Provider" />
+  <xs:element name="ProviderId" type="xs:int" />
+  <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical" name="Providers" nillable="true" type="q4:ArrayOfProvider" />
+  <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical" name="MedicalAppointment" nillable="true" type="q5:MedicalAppointment" />
+  <xs:element name="MedicalAppointmentId" type="xs:int" />
+  <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical" name="MedicalAppointments" nillable="true" type="q6:ArrayOfMedicalAppointment" />
+</xs:schema>

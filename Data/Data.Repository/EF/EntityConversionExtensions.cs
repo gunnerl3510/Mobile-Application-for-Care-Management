@@ -31,7 +31,7 @@ namespace Data.Repository.EF
                     EmailAddress = account.EmailAddress,
                     Name = account.Name,
                     // ReSharper disable PossibleInvalidOperationException
-                    UserId = (Guid)account.UserId
+                    UserId = account.UserId.HasValue ? account.UserId.ToString() : null
                     // ReSharper restore PossibleInvalidOperationException
                 };
         }

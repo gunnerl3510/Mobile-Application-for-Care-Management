@@ -11,6 +11,7 @@ namespace Infrastructure.Model.Insurance
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Runtime.Serialization;
     using System.Web.Mvc;
 
     using Infrastructure.Model.Scheduling;
@@ -18,6 +19,7 @@ namespace Infrastructure.Model.Insurance
     /// <summary>
     /// Encapsulates authorization follow-up based data
     /// </summary>
+    [DataContract]
     public class AuthorizationFollowUp : IModel, IAppointment
     {
         #region Implementation of IModel
@@ -28,6 +30,7 @@ namespace Infrastructure.Model.Insurance
         [Key]
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int Id { get; set; }
 
         /// <summary>
@@ -36,6 +39,7 @@ namespace Infrastructure.Model.Insurance
         [HiddenInput]
         [Editable(false)]
         [Timestamp]
+        [DataMember]
         public byte[] CurrentVersion { get; set; }
 
         #endregion
@@ -47,6 +51,7 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [Required]
         [DataType(DataType.DateTime)]
+        [DataMember]
         public DateTimeOffset AppointmentDateTimeUtc { get; set; }
 
         #endregion
@@ -56,6 +61,7 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int AccountId { get; set; }
 
         /// <summary>
@@ -63,12 +69,14 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [HiddenInput]
         [Editable(false)]
+        [DataMember]
         public int AuthorizationRequestId { get; set; }
 
         /// <summary>
         /// Gets or sets the description for this follow up
         /// </summary>
         [StringLength(512, ErrorMessage = "The maximum length for the description is 512 characters.")]
+        [DataMember]
         public string Description { get; set; }
     }
 }

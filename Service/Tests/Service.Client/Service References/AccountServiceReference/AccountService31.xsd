@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://CareManagement.Model/2012/Insurance" elementFormDefault="qualified" targetNamespace="http://CareManagement.Model/2012/Insurance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AccountId" type="xs:int" />
+</xs:schema>
