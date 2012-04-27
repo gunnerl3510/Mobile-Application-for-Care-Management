@@ -35,33 +35,7 @@ namespace Data.Repository.EF
         /// </summary>
         // ReSharper disable StaticFieldInGenericType
         private static readonly CareManagementContainer Container = new CareManagementContainer();
-
         // ReSharper restore StaticFieldInGenericType
-
-        /// <summary>
-        /// Locking mechanism
-        /// </summary>
-        // ReSharper disable StaticFieldInGenericType
-        private static readonly object SyncRoot = new object();
-
-        // ReSharper restore StaticFieldInGenericType
-
-        /// <summary>
-        /// The single instance of the EfAccountRepository
-        /// </summary>
-        private static volatile EfRepository<T> instance;
-
-        #endregion
-
-        #region constructors
-
-        /// <summary>
-        /// Prevents a default instance of the EfRepository class 
-        /// from being created
-        /// </summary>
-        private EfRepository()
-        {
-        }
 
         #endregion
 
@@ -72,33 +46,6 @@ namespace Data.Repository.EF
         /// </summary>
         [Inject]
         public static ILogger<EfRepository<T>> Log { get; set; }
-
-        #endregion
-
-        #region public properties
-
-        /// <summary>
-        /// Gets the single static instance of the EfAccountRepository class in a
-        /// double-checked thread safe manner.
-        /// </summary>
-        public static EfRepository<T> Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    lock (SyncRoot)
-                    {
-                        if (instance == null)
-                        {
-                            instance = new EfRepository<T>();
-                        }
-                    }
-                }
-
-                return instance;
-            }
-        }
 
         #endregion
 

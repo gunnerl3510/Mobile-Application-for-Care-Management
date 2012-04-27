@@ -59,11 +59,8 @@ namespace ASP.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            throw new Exception();
-            kernel.Bind(typeof(IReadOnlyRepository<>)).To(typeof(EfRepository<>));
-            kernel.Bind(typeof(IRepository<>)).To(typeof(EfRepository<>));
+            kernel.Bind(new Type[] { typeof(IReadOnlyRepository<>), typeof(IRepository<>) }).To(typeof(EfRepository<>));
             kernel.Bind(typeof(ILogger<>)).To(typeof(Log4NetLogger<>));
-            kernel.Bind<IKernel>().ToConstant(kernel);
         }        
     }
 }
