@@ -9,10 +9,9 @@
 
 namespace Service.ServiceImplementation
 {
-    using System.Security.Permissions;
-    using System.ServiceModel;
-
     using BusinessLogic.Account;
+
+    using Infrastructure.Security;
 
     using Ninject;
 
@@ -60,7 +59,7 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the account to add and the password
         /// </param>
-        public override void AddAccount(Service.MessageContracts.AddAccountMessage request)
+        public override void AddAccount(Service.MessageContracts.AddAccountRequestMessage request)
         {
             accountsManager.AddAccount(request.Account, request.Password);
         }
@@ -71,10 +70,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the account to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteAccount(Service.MessageContracts.AccountMessage request)
+        public override void DeleteAccount(Service.MessageContracts.AccountRequestMessage request)
         {
-            accountsManager.DeleteAccount(request.Account, ServiceSecurityContext.Current.PrimaryIdentity);
+            accountsManager.DeleteAccount(request.Account, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -83,10 +81,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the account to update
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateAccount(Service.MessageContracts.AccountMessage request)
+        public override void UpdateAccount(Service.MessageContracts.AccountRequestMessage request)
         {
-            accountsManager.UpdateAccount(request.Account, ServiceSecurityContext.Current.PrimaryIdentity);
+            accountsManager.UpdateAccount(request.Account, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -98,12 +95,11 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// An message containing the requested account
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public override Service.MessageContracts.AccountMessage GetAccount(Service.MessageContracts.AccountIdMessage request)
         {
             return new Service.MessageContracts.AccountMessage
             {
-                Account = accountsManager.GetAccountById(request.AccountId, ServiceSecurityContext.Current.PrimaryIdentity)
+                Account = accountsManager.GetAccountById(request.AccountId, request.User.GetIdentity())
             };
         }
 

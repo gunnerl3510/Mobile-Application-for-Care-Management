@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://CareManagement.Model/2012/Accounts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccountService" targetNamespace="http://CareManagement.Model/2012/Accounts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://CareManagement.Model/2012/Accounts/Imports">
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/AccountsServiceReference.svc?xsd=xsd0" namespace="http://CareManagement.Model/2012/Accounts" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/AccountsServiceReference.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/AccountsServiceReference.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Account" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/AccountsServiceReference.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddAccountRequestMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="AccountContract_AddAccount_OutputMessage" />
+  <wsdl:message name="AccountRequestMessage">
+    <wsdl:part name="parameters" element="tns:AccountRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="AccountContract_DeleteAccount_OutputMessage" />
+  <wsdl:message name="AccountContract_UpdateAccount_OutputMessage" />
+  <wsdl:message name="AccountIdMessage">
+    <wsdl:part name="parameters" element="tns:AccountIdMessage" />
+  </wsdl:message>
+  <wsdl:message name="AccountMessage">
+    <wsdl:part name="Account" element="tns:Account" />
+  </wsdl:message>
+  <wsdl:portType name="AccountContract">
+    <wsdl:operation name="AddAccount">
+      <wsdl:input wsaw:Action="AddAccount" name="AddAccountRequestMessage" message="tns:AddAccountRequestMessage" />
+      <wsdl:output wsaw:Action="addaccount" message="tns:AccountContract_AddAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <wsdl:input wsaw:Action="DeleteAccount" name="AccountRequestMessage" message="tns:AccountRequestMessage" />
+      <wsdl:output wsaw:Action="deleteaccount" message="tns:AccountContract_DeleteAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <wsdl:input wsaw:Action="UpdateAccount" name="AccountRequestMessage" message="tns:AccountRequestMessage" />
+      <wsdl:output wsaw:Action="updateaccount" message="tns:AccountContract_UpdateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="GetAccount" name="AccountIdMessage" message="tns:AccountIdMessage" />
+      <wsdl:output wsaw:Action="getaccount" name="AccountMessage" message="tns:AccountMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountsBasicHttp" type="tns:AccountContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddAccount">
+      <soap:operation soapAction="AddAccount" style="document" />
+      <wsdl:input name="AddAccountRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <soap:operation soapAction="DeleteAccount" style="document" />
+      <wsdl:input name="AccountRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap:operation soapAction="UpdateAccount" style="document" />
+      <wsdl:input name="AccountRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap:operation soapAction="GetAccount" style="document" />
+      <wsdl:input name="AccountIdMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AccountMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccountService">
+    <wsdl:port name="AccountsBasicHttp" binding="tns:AccountsBasicHttp">
+      <soap:address location="http://localhost:4538/Service.Host/AccountsServiceReference.svc/basicHttp" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

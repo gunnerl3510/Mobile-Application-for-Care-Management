@@ -16,16 +16,24 @@ namespace Service.MessageContracts
 	/// <summary>
 	/// Service Contract Class - AuthorizationRequestIdMessage
 	/// </summary>
-	[WCF::MessageContract(IsWrapped = false)] 
+	[WCF::MessageContract(WrapperName = "AuthorizationRequestIdMessage", WrapperNamespace = "http://CareManagement.Model/2012/Insurance")] 
 	public partial class AuthorizationRequestIdMessage
 	{
 		private int authorizationRequestId;
+	 	private Infrastructure.Model.Security.UserLogin user;
 	 		
 		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "AuthorizationRequestId")]
 		public int AuthorizationRequestId
 		{
 			get { return authorizationRequestId; }
 			set { authorizationRequestId = value; }
+		}
+			
+		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "User")]
+		public Infrastructure.Model.Security.UserLogin User
+		{
+			get { return user; }
+			set { user = value; }
 		}
 	}
 }

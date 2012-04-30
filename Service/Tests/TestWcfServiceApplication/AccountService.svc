@@ -1,1 +1,0 @@
-<%@ServiceHost language="c#" Debug="true" Service="Service.ServiceImplementation.AccountService" Factory="Ninject.Extensions.Wcf.NinjectServiceHostFactory" %>

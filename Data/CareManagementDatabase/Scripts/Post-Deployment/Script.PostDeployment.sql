@@ -26,6 +26,10 @@ EXEC sp_tableoption N'aspnet_Membership', 'text in row', 3000
 
 GO
 
+EXEC sp_addrolemember 'db_owner', 'care.management.application'
+
+GO
+
 :r .\SynchronizeReferenceData\SynchronizeDosageUnits.sql
 
 GO

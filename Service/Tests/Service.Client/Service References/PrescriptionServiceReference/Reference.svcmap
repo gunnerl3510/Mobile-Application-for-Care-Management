@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3435d819-a1b6-4386-a1aa-85bd81b13037" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0b2fd2a2-d106-43ab-9214-e479bbad109c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,16 +18,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/CareManagementService/PrescriptionServiceReference.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PrescriptionServiceReference5.xsd" MetadataType="Schema" ID="4a904779-927f-4805-825b-8c10603521f5" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?xsd=xsd1" />
-    <MetadataFile FileName="PrescriptionServiceReference51.xsd" MetadataType="Schema" ID="1c9987a6-968d-4b9d-9cee-f1cdce8e3596" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?xsd=xsd0" />
-    <MetadataFile FileName="PrescriptionServiceReference52.xsd" MetadataType="Schema" ID="6bce61d5-5966-442e-a24d-6f9628053226" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?xsd=xsd3" />
-    <MetadataFile FileName="PrescriptionServiceReference53.xsd" MetadataType="Schema" ID="3b3cb71d-836e-4419-81e2-c1bd57977361" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?xsd=xsd2" />
-    <MetadataFile FileName="PrescriptionServiceReference1.disco" MetadataType="Disco" ID="9faeb697-99c5-4719-9136-4c129b9c3b61" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?disco" />
-    <MetadataFile FileName="PrescriptionServiceReference54.xsd" MetadataType="Schema" ID="f68f8c7a-832b-49d8-b937-7631705f1ba2" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?xsd=xsd4" />
-    <MetadataFile FileName="PrescriptionService1.wsdl" MetadataType="Wsdl" ID="d9b86deb-b06d-4f3a-8029-463d52bffbd5" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/PrescriptionServiceReference.svc?wsdl" />
+    <MetadataFile FileName="PrescriptionServiceReference.disco" MetadataType="Disco" ID="350426a5-0a86-449c-96e6-c4005a777b07" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?disco" />
+    <MetadataFile FileName="PrescriptionServiceReference.xsd" MetadataType="Schema" ID="7e34a02e-58b4-4a67-a6e0-6a795959a148" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd4" />
+    <MetadataFile FileName="PrescriptionServiceReference1.xsd" MetadataType="Schema" ID="06a9f558-04ea-497a-a3e7-5366a5529ebd" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd5" />
+    <MetadataFile FileName="PrescriptionServiceReference2.xsd" MetadataType="Schema" ID="27e8623e-6ba8-4047-a5c2-d35262c1ad2d" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd3" />
+    <MetadataFile FileName="PrescriptionServiceReference3.xsd" MetadataType="Schema" ID="512a182a-fef3-49e9-ae98-503d9a8e1907" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd1" />
+    <MetadataFile FileName="PrescriptionServiceReference4.xsd" MetadataType="Schema" ID="5faef48c-2a06-497b-a452-13c612a642cb" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd2" />
+    <MetadataFile FileName="PrescriptionServiceReference5.xsd" MetadataType="Schema" ID="9c9ac971-5d1f-481f-a910-79b9903ee7dc" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd0" />
+    <MetadataFile FileName="PrescriptionService.wsdl" MetadataType="Wsdl" ID="1c303fd0-f824-438c-82e6-25be9b2a9880" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

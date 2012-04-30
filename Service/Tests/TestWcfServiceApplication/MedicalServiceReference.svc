@@ -1,1 +1,1 @@
-<%@ServiceHost language="c#" Debug="true" Service="Service.ServiceImplementation.MedicalService" %>
+<%@ServiceHost language="c#" Debug="true" Service="Service.ServiceImplementation.MedicalService" Factory="Ninject.Extensions.Wcf.NinjectServiceHostFactory" %>

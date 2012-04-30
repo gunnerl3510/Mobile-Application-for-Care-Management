@@ -23,17 +23,17 @@ namespace Service.ServiceImplementation
 	{
 		#region AccountContract Members
 
-		public virtual void AddAccount(Service.MessageContracts.AddAccountMessage request)
+		public virtual void AddAccount(Service.MessageContracts.AddAccountRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteAccount(Service.MessageContracts.AccountMessage request)
+		public virtual void DeleteAccount(Service.MessageContracts.AccountRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateAccount(Service.MessageContracts.AccountMessage request)
+		public virtual void UpdateAccount(Service.MessageContracts.AccountRequestMessage request)
 		{
 			
 		}

@@ -50,8 +50,26 @@ namespace Infrastructure.Model.Prescription
         /// Gets or sets the date and time of the appointment in UTC time
         /// </summary>
         [Required]
-        [DataMember]
         public DateTimeOffset AppointmentDateTimeUtc { get; set; }
+
+        /// <summary>
+        /// Gets or sets the AppointmentDateTimeUtc using a string value
+        /// </summary>
+        [ScaffoldColumn(false)]
+        [DataMember]
+        public string AppointmentDateTimeUtcString
+        {
+            get
+            {
+                return AppointmentDateTimeUtc.ToString();
+            }
+
+            set
+            {
+                DateTimeOffset tempDateTime;
+                AppointmentDateTimeUtc = DateTimeOffset.TryParse(value, out tempDateTime) ? tempDateTime : default(DateTimeOffset);
+            }
+        }
 
         #endregion
 

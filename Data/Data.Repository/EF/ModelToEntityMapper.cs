@@ -258,6 +258,22 @@ namespace Data.Repository.EF
                             }
                         },
                     {
+                        typeof(InsuranceModels.AuthorizationFollowUp), 
+                        (context, notes) =>
+                            {
+                                var followUpModel = notes as IEnumerable<InsuranceModels.AuthorizationFollowUp>;
+                                if (followUpModel == null)
+                                {
+                                    return;
+                                }
+
+                                var followUpEntities = followUpModel.Select(followUp => followUp.ToEfAuthorizationFollowUp()).ToList();
+
+                                followUpEntities.ForEach(
+                                    followUp => { EfEntityHelpers<AuthorizationFollowUp>.Delete(context.AuthorizationFollowUps, followUp); });
+                            }
+                        },
+                    {
                         typeof(MedicalModels.Facility), 
                         (context, facilities) =>
                             {
@@ -303,6 +319,38 @@ namespace Data.Repository.EF
 
                                 appointmentEntities.ForEach(
                                     appointment => { EfEntityHelpers<MedicalAppointment>.Delete(context.MedicalAppointments, appointment); });
+                            }
+                        },
+                    {
+                        typeof(PrescriptionModels.Medication), 
+                        (context, medications) =>
+                            {
+                                var medicationModels = medications as IEnumerable<PrescriptionModels.Medication>;
+                                if (medicationModels == null)
+                                {
+                                    return;
+                                }
+
+                                var medicationEntities = medicationModels.Select(medication => medication.ToEfMedication()).ToList();
+
+                                medicationEntities.ForEach(
+                                    medication => { EfEntityHelpers<Medication>.Delete(context.Medications, medication); });
+                            }
+                        },
+                    {
+                        typeof(PrescriptionModels.PrescriptionPickup), 
+                        (context, pickups) =>
+                            {
+                                var pickupModels = pickups as IEnumerable<PrescriptionModels.PrescriptionPickup>;
+                                if (pickupModels == null)
+                                {
+                                    return;
+                                }
+
+                                var prescriptionEntities = pickupModels.Select(pickup => pickup.ToEfPrescriptionPickup()).ToList();
+
+                                prescriptionEntities.ForEach(
+                                    pickup => { EfEntityHelpers<PrescriptionPickup>.Delete(context.PrescriptionPickups, pickup); });
                             }
                         }
                 };

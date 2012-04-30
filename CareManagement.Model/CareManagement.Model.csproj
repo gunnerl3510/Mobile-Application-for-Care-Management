@@ -32,9 +32,9 @@
     <None Include="Accounts.servicecontract.diagram">
       <DependentUpon>Accounts.servicecontract</DependentUpon>
     </None>
-    <None Include="CareManagement.host" />
-    <None Include="CareManagement.host.diagram">
-      <DependentUpon>CareManagement.host</DependentUpon>
+    <None Include="CareManagementHost.host" />
+    <None Include="CareManagementHost.host.diagram">
+      <DependentUpon>CareManagementHost.host</DependentUpon>
     </None>
     <None Include="Insurance.servicecontract" />
     <None Include="Insurance.servicecontract.diagram">

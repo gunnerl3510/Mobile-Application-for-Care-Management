@@ -23,92 +23,92 @@ namespace Service.ServiceImplementation
 	{
 		#region MedicalContract Members
 
-		public virtual void AddFacility(Service.MessageContracts.FacilityMessage request)
+		public virtual void AddFacility(Service.MessageContracts.FacilityRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteFacility(Service.MessageContracts.FacilityMessage request)
+		public virtual void DeleteFacility(Service.MessageContracts.FacilityRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateFacility(Service.MessageContracts.FacilityMessage request)
+		public virtual void UpdateFacility(Service.MessageContracts.FacilityRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.FacilityMessage GetFacility(Service.MessageContracts.FacilityIdMessage request)
+		public virtual Service.MessageContracts.FacilityMessage GetFacility(Service.MessageContracts.FacilityIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual void AddProvider(Service.MessageContracts.ProviderMessage request)
+		public virtual void AddProvider(Service.MessageContracts.ProviderRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteProvider(Service.MessageContracts.ProviderMessage request)
+		public virtual void DeleteProvider(Service.MessageContracts.ProviderRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateProvider(Service.MessageContracts.ProviderMessage request)
+		public virtual void UpdateProvider(Service.MessageContracts.ProviderRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.ProviderMessage GetProvider(Service.MessageContracts.ProviderIdMessage request)
+		public virtual Service.MessageContracts.ProviderMessage GetProvider(Service.MessageContracts.ProviderIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.ProvidersMessage GetProviderByFacility(Service.MessageContracts.FacilityIdMessage request)
+		public virtual Service.MessageContracts.ProvidersMessage GetProviderByFacility(Service.MessageContracts.FacilityIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual void AddMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request)
+		public virtual void AddMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request)
+		public virtual void DeleteMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request)
+		public virtual void UpdateMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.MedicalAppointmentMessage GetMedicalAppointment(Service.MessageContracts.MedicalAppointmentIdMessage request)
+		public virtual Service.MessageContracts.MedicalAppointmentMessage GetMedicalAppointment(Service.MessageContracts.MedicalAppointmentIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.MessageContracts.FacilityIdMessage request)
+		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.MessageContracts.FacilityIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.MessageContracts.ProviderIdMessage request)
+		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.MessageContracts.ProviderIdRequestMessage request)
 		{
 			return null;
 		}

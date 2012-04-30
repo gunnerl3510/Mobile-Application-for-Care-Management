@@ -17,6 +17,7 @@ namespace Infrastructure.Model.Insurance
     /// <summary>
     /// Encapsulates authorization request note based data
     /// </summary>
+    [DataContract]
     public class AuthorizationNote : IModel
     {
         #region Implementation of IModel
@@ -61,7 +62,24 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [Required]
         [DataType(DataType.DateTime)]
-        [DataMember]
         public DateTimeOffset Created { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Created property using a string
+        /// </summary>
+        [ScaffoldColumn(false)]
+        [DataMember]
+        public string CreatedString
+        {
+            get
+            {
+                return Created.ToString();
+            }
+            set
+            {
+                DateTimeOffset tempDateTime;
+                Created = DateTimeOffset.TryParse(value, out tempDateTime) ? tempDateTime : default(DateTimeOffset);
+            }
+        }
     }
 }

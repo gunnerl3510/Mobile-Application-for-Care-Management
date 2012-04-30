@@ -58,7 +58,12 @@ namespace Infrastructure.Model.Account
         [DataMember]
         public string EmailAddress { get; set; }
 
-        private Guid userId;
+        /// <summary>
+        /// The underlying Guid for the UserId
+        /// </summary>
+        [ScaffoldColumn(false)]
+        [Editable(false)]
+        public Guid? UserId { get; set; }
 
         /// <summary>
         /// Gets or sets the unique id for the user's relationship to the
@@ -67,15 +72,14 @@ namespace Infrastructure.Model.Account
         [ScaffoldColumn(false)]
         [Editable(false)]
         [DataMember]
-        public string UserId
+        public string UserIdString
         {
-            get { return userId.ToString(); }
+            get { return UserId.ToString(); }
             set
             {
-                if (!Guid.TryParse(value, out userId))
-                {
-                    userId = default(Guid);
-                }
+                Guid tempGuid;
+
+                UserId = Guid.TryParse(value, out tempGuid) ? tempGuid : default(Guid);
             }
         }        
     }

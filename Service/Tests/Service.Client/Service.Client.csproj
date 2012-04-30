@@ -49,7 +49,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service References\AccountServiceReference\Reference.cs">
+    <Compile Include="Service References\AccountsServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -86,35 +86,38 @@
     <Compile Include="ResultsGrid.designer.cs">
       <DependentUpon>ResultsGrid.cs</DependentUpon>
     </Compile>
-    <None Include="Service References\AccountServiceReference\AccountService1.wsdl" />
-    <None Include="Service References\AccountServiceReference\AccountService3.xsd">
+    <None Include="Service References\AccountsServiceReference\AccountService.wsdl" />
+    <None Include="Service References\AccountsServiceReference\AccountsServiceReference.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountServiceReference\AccountService31.xsd">
+    <None Include="Service References\AccountsServiceReference\AccountsServiceReference1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountServiceReference\AccountService32.xsd">
+    <None Include="Service References\AccountsServiceReference\AccountsServiceReference2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountServiceReference\AccountService33.xsd">
+    <None Include="Service References\AccountsServiceReference\AccountsServiceReference3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AccountServiceReference\Service.Client.AccountServiceReference.Account.datasource">
+    <None Include="Service References\AccountsServiceReference\Service.Client.AccountsServiceReference.Account.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InsuranceServiceReference\InsuranceService1.wsdl" />
-    <None Include="Service References\InsuranceServiceReference\InsuranceServiceReference3.xsd">
+    <None Include="Service References\InsuranceServiceReference\InsuranceReference.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InsuranceServiceReference\InsuranceServiceReference31.xsd">
+    <None Include="Service References\InsuranceServiceReference\InsuranceReference1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InsuranceServiceReference\InsuranceServiceReference32.xsd">
+    <None Include="Service References\InsuranceServiceReference\InsuranceReference2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InsuranceServiceReference\InsuranceServiceReference33.xsd">
+    <None Include="Service References\InsuranceServiceReference\InsuranceReference3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\InsuranceServiceReference\InsuranceReference4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InsuranceServiceReference\InsuranceService.wsdl" />
     <None Include="Service References\InsuranceServiceReference\Service.Client.InsuranceServiceReference.AuthorizationFollowUp.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -127,23 +130,26 @@
     <None Include="Service References\InsuranceServiceReference\Service.Client.InsuranceServiceReference.Insurer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MedicalServiceReference\MedicalService1.wsdl" />
+    <None Include="Service References\MedicalServiceReference\MedicalService.wsdl" />
+    <None Include="Service References\MedicalServiceReference\MedicalServiceReference.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MedicalServiceReference\MedicalServiceReference1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MedicalServiceReference\MedicalServiceReference2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MedicalServiceReference\MedicalServiceReference3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MedicalServiceReference\MedicalServiceReference4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MedicalServiceReference\MedicalServiceReference5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MedicalServiceReference\MedicalServiceReference51.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MedicalServiceReference\MedicalServiceReference52.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MedicalServiceReference\MedicalServiceReference53.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MedicalServiceReference\MedicalServiceReference54.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MedicalServiceReference\MedicalServiceReference55.xsd">
+    <None Include="Service References\MedicalServiceReference\MedicalServiceReference6.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MedicalServiceReference\Service.Client.MedicalServiceReference.Facility.datasource">
@@ -155,20 +161,23 @@
     <None Include="Service References\MedicalServiceReference\Service.Client.MedicalServiceReference.Provider.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PrescriptionServiceReference\PrescriptionService1.wsdl" />
+    <None Include="Service References\PrescriptionServiceReference\PrescriptionService.wsdl" />
+    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference51.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference52.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference53.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\PrescriptionServiceReference\Service.Client.PrescriptionServiceReference.Medication.datasource">
@@ -182,22 +191,28 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\AccountServiceReference\" />
+    <WCFMetadataStorage Include="Service References\AccountsServiceReference\" />
     <WCFMetadataStorage Include="Service References\InsuranceServiceReference\" />
     <WCFMetadataStorage Include="Service References\MedicalServiceReference\" />
     <WCFMetadataStorage Include="Service References\PrescriptionServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AccountServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\AccountsServiceReference\AccountsServiceReference.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AccountServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AccountsServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AccountServiceReference\Reference.svcmap">
+    <None Include="Service References\AccountsServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AccountsServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InsuranceServiceReference\InsuranceReference.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\InsuranceServiceReference\configuration91.svcinfo" />
@@ -212,16 +227,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PrescriptionServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PrescriptionServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PrescriptionServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <None Include="Service References\MedicalServiceReference\MedicalServiceReference.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MedicalServiceReference\configuration91.svcinfo" />
@@ -236,16 +242,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AccountServiceReference\AccountService1.disco" />
+    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\InsuranceServiceReference\InsuranceServiceReference1.disco" />
+    <None Include="Service References\PrescriptionServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MedicalServiceReference\MedicalServiceReference1.disco" />
+    <None Include="Service References\PrescriptionServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PrescriptionServiceReference\PrescriptionServiceReference1.disco" />
+    <None Include="Service References\PrescriptionServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

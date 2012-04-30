@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="df054a22-ea2e-4946-8973-1198076528e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bc16a8b5-430c-4f5b-bcf1-cd17f49c9a8a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,15 +18,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/CareManagementService/InsuranceServiceReference.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:4538/Service.Host/InsuranceReference.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="InsuranceServiceReference3.xsd" MetadataType="Schema" ID="3689ba6c-f2c0-435e-a467-beb1cad073e3" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd3" />
-    <MetadataFile FileName="InsuranceServiceReference31.xsd" MetadataType="Schema" ID="228a1e2e-e042-4d3b-baa0-37a1ceba0182" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd2" />
-    <MetadataFile FileName="InsuranceServiceReference32.xsd" MetadataType="Schema" ID="5c89d302-c434-4964-9623-e418cfdff35a" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd1" />
-    <MetadataFile FileName="InsuranceServiceReference33.xsd" MetadataType="Schema" ID="48334184-5eca-4abd-8166-c58e508b065e" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?xsd=xsd0" />
-    <MetadataFile FileName="InsuranceService1.wsdl" MetadataType="Wsdl" ID="9bc98b51-a6dd-4a5f-bee1-db80ba17ae3f" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?wsdl" />
-    <MetadataFile FileName="InsuranceServiceReference1.disco" MetadataType="Disco" ID="116c24c0-0845-4e3a-9db7-780888511e8b" SourceId="1" SourceUrl="http://lerwick-lt/CareManagementService/InsuranceServiceReference.svc?disco" />
+    <MetadataFile FileName="InsuranceReference.xsd" MetadataType="Schema" ID="dba75820-fef3-4761-b094-553692307e13" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/InsuranceReference.svc?xsd=xsd4" />
+    <MetadataFile FileName="InsuranceReference1.xsd" MetadataType="Schema" ID="e981e9cd-bc9c-4fa2-96c5-288665a4bb7c" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/InsuranceReference.svc?xsd=xsd2" />
+    <MetadataFile FileName="InsuranceReference2.xsd" MetadataType="Schema" ID="afbf72d0-881f-4697-89f0-a62388da78c2" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/InsuranceReference.svc?xsd=xsd3" />
+    <MetadataFile FileName="InsuranceReference3.xsd" MetadataType="Schema" ID="6116ac51-c821-4516-8f25-5e848811e876" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/InsuranceReference.svc?xsd=xsd0" />
+    <MetadataFile FileName="InsuranceReference4.xsd" MetadataType="Schema" ID="d8439dbb-cafc-44fc-bd95-dbee33f35fcb" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/InsuranceReference.svc?xsd=xsd1" />
+    <MetadataFile FileName="InsuranceService.wsdl" MetadataType="Wsdl" ID="ea3fd0c0-dd7a-4483-9848-2a5b8f526838" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/InsuranceReference.svc?wsdl" />
+    <MetadataFile FileName="InsuranceReference.disco" MetadataType="Disco" ID="692f8c57-88e2-4892-bf6e-bdb96c147576" SourceId="1" SourceUrl="http://localhost:4538/Service.Host/InsuranceReference.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -51,6 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CareManagement.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EF\Account.cs" />
     <Compile Include="EF\EfEntityHelpers.cs" />
     <Compile Include="EF\EfRepository.cs" />
     <Compile Include="EF\EntityConversionExtensions.cs" />

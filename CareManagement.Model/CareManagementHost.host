@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hostDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4f762871-cfb2-4753-b0d6-caae71b57740" namespace="http://CareManagement.Model/2012/CareManagementHost" xmlns="http://schemas.microsoft.com/dsltools/HostDesigner">
+  <hostApplications>
+    <hostApplication Id="88638dce-d069-44f7-b396-01e00af949a0" name="CareManagementHostApplication" implementationProject="Service\Tests\TestWcfServiceApplication\TestWcfServiceApplication.csproj" implementationTechnology="{44e8a8c3-3651-4932-bae3-1faf3684e2f3}|WCF|WCF Extensions">
+      <serviceDescriptions>
+        <serviceReference Id="1c026b7f-0cd6-41b4-b15a-341ccebbd41d" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfServiceDescription&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;true&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" name="AccountsServiceReference" serviceImplementationType="modelbus://Microsoft.Practices.ServiceFactory.ServiceContracts.ServiceContractDslAdapter/Accounts/AccountService/.\Accounts.servicecontract%2f62addf00-b06e-43ae-8f72-bb2dc7655a64">
+          <endpoints>
+            <endpoint Id="1835ab2c-497b-4d9c-b6ca-0fba5dd907d2" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfEndpoint&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;basicHttpBinding&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" address="basicHttp" name="AccountsBasicHttp" />
+          </endpoints>
+        </serviceReference>
+        <serviceReference Id="96ae5156-2d6e-4218-91b3-0103f1ad5423" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfServiceDescription&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;true&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" name="InsuranceReference" serviceImplementationType="modelbus://Microsoft.Practices.ServiceFactory.ServiceContracts.ServiceContractDslAdapter/Insurance/InsuranceService/.\Insurance.servicecontract%2f61a40d03-f09f-4d80-91a7-62fcdebe125f">
+          <endpoints>
+            <endpoint Id="af89ba18-1e7c-43a3-b85f-a6fe45974463" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfEndpoint&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;basicHttpBinding&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" address="basicHttp" name="InsuranceBasicHttp" />
+          </endpoints>
+        </serviceReference>
+        <serviceReference Id="e0e9d54a-ebfe-4c60-899f-fa796bdaf07f" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfServiceDescription&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;true&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" name="MedicalServiceReference" serviceImplementationType="modelbus://Microsoft.Practices.ServiceFactory.ServiceContracts.ServiceContractDslAdapter/Medical/MedicalService/.\Medical.servicecontract%2f7a6a8f56-a81f-48dc-a093-de93470648c0">
+          <endpoints>
+            <endpoint Id="cd00291d-36c8-494d-a515-938b4bb21752" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfEndpoint&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;basicHttpBinding&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" address="basicHttp" name="MedicalBasicHttp" />
+          </endpoints>
+        </serviceReference>
+        <serviceReference Id="358a91a2-07e1-4d00-8797-e30b19a32c8f" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfServiceDescription&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;true&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" name="PrescriptionServiceReference" serviceImplementationType="modelbus://Microsoft.Practices.ServiceFactory.ServiceContracts.ServiceContractDslAdapter/Prescription/PrescriptionService/.\Prescription.servicecontract%2f4ebdbcc2-e0ce-4d53-9c8b-922f43f08fc4">
+          <endpoints>
+            <endpoint Id="905a4b16-7fab-4515-b59c-276c39acaf19" objectExtenderContainer="&lt;?xml version=&quot;1.0&quot;?&gt;&#xD;&#xA;&lt;ObjectExtenderContainer xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;&#xD;&#xA;  &lt;ObjectExtenders xsi:type=&quot;WcfEndpoint&quot;&gt;&#xD;&#xA;    &lt;IsRequired&gt;basicHttpBinding&lt;/IsRequired&gt;&#xD;&#xA;  &lt;/ObjectExtenders&gt;&#xD;&#xA;&lt;/ObjectExtenderContainer&gt;" address="basicHttp" name="PrescriptionBasicHttp" />
+          </endpoints>
+        </serviceReference>
+      </serviceDescriptions>
+    </hostApplication>
+  </hostApplications>
+  <clientApplications>
+    <clientApplication Id="6a9da50a-748c-42c4-bb94-64937007210a" name="CareManagementClientApplication" implementationTechnology="{44e8a8c3-3651-4932-bae3-1faf3684e2f3}|WCF|WCF Extensions" implementationProject="Service\Tests\Service.Client\Service.Client.csproj">
+      <proxies>
+        <proxy Id="6e1b39e8-7129-4328-adf4-7ae16612a2b3" name="AccountsProxy">
+          <endpoint>
+            <endpointMoniker Id="1835ab2c-497b-4d9c-b6ca-0fba5dd907d2" />
+          </endpoint>
+        </proxy>
+        <proxy Id="cb0e4050-d2f1-41c6-ab72-44c6e91f07c6" name="InsuranceProxy">
+          <endpoint>
+            <endpointMoniker Id="af89ba18-1e7c-43a3-b85f-a6fe45974463" />
+          </endpoint>
+        </proxy>
+        <proxy Id="f836af48-5f80-4e78-a906-bf6a7da1196d" name="MedicalProxy">
+          <endpoint>
+            <endpointMoniker Id="cd00291d-36c8-494d-a515-938b4bb21752" />
+          </endpoint>
+        </proxy>
+        <proxy Id="20cdc935-c4e1-43f4-a212-c5147d5a7b3e" name="PrescriptionProxy">
+          <endpoint>
+            <endpointMoniker Id="905a4b16-7fab-4515-b59c-276c39acaf19" />
+          </endpoint>
+        </proxy>
+      </proxies>
+    </clientApplication>
+  </clientApplications>
+</hostDesignerModel>

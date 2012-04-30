@@ -20,13 +20,13 @@ namespace Service.ServiceContracts
 	public partial interface IAccountContract 
 	{
 		[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "AddAccount", ReplyAction = "addaccount", ProtectionLevel = ProtectionLevel.None)]
-		void AddAccount(Service.MessageContracts.AddAccountMessage request);
+		void AddAccount(Service.MessageContracts.AddAccountRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "DeleteAccount", ReplyAction = "deleteaccount", ProtectionLevel = ProtectionLevel.None)]
-		void DeleteAccount(Service.MessageContracts.AccountMessage request);
+		void DeleteAccount(Service.MessageContracts.AccountRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "UpdateAccount", ReplyAction = "updateaccount", ProtectionLevel = ProtectionLevel.None)]
-		void UpdateAccount(Service.MessageContracts.AccountMessage request);
+		void UpdateAccount(Service.MessageContracts.AccountRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAccount", ReplyAction = "getaccount", ProtectionLevel = ProtectionLevel.None)]
 		Service.MessageContracts.AccountMessage GetAccount(Service.MessageContracts.AccountIdMessage request);

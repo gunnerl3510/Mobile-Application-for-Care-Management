@@ -25,17 +25,37 @@ namespace Data.Repository.EF
     /// <typeparam name="T">
     /// The <seealso cref="IModel"/> type tha the repository is designed for
     /// </typeparam>
-    public sealed class EfRepository<T> : IRepository<T>, IReadOnlyRepository<T>
+    public sealed class EfRepository<T> : IDisposable, IRepository<T>, IReadOnlyRepository<T>
         where T : IModel, new()
     {
-        #region private static members
+        #region private members
 
         /// <summary>
-        /// The single instance of the Care Management EF data context
+        /// The EF container object
         /// </summary>
-        // ReSharper disable StaticFieldInGenericType
-        private static readonly CareManagementContainer Container = new CareManagementContainer();
-        // ReSharper restore StaticFieldInGenericType
+        private CareManagementContainer container;
+
+        /// <summary>
+        /// The <seealso cref="ILogger{T}"/> to use for logging
+        /// </summary>
+        private ILogger<EfRepository<T>> logger;
+
+        #endregion
+
+        #region constructors
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EfRepository{T}"/> class
+        /// </summary>
+        /// <param name="logger">
+        /// The <seealso cref="ILogger{T}"/> object to use for logging
+        /// </param>
+        public EfRepository(ILogger<EfRepository<T>> logger)
+        {
+            container = new CareManagementContainer();
+
+            this.logger = logger;
+        }
 
         #endregion
 
@@ -44,7 +64,6 @@ namespace Data.Repository.EF
         /// <summary>
         /// Gets or sets the logging client
         /// </summary>
-        [Inject]
         public static ILogger<EfRepository<T>> Log { get; set; }
 
         #endregion
@@ -78,7 +97,7 @@ namespace Data.Repository.EF
         /// </returns>
         public IEnumerable<T> Add(IEnumerable<T> models)
         {
-            return ModelToEntityMapper<T>.UpsertMapper[typeof(T)](Container, models);
+            return ModelToEntityMapper<T>.UpsertMapper[typeof(T)](container, models);
         }
 
         /// <summary>
@@ -88,7 +107,8 @@ namespace Data.Repository.EF
         public void Update(T model)
         {
             var models = new List<T> { model }.AsEnumerable();
-            ModelToEntityMapper<T>.UpsertMapper[typeof(T)](Container, models);
+
+            ModelToEntityMapper<T>.UpsertMapper[typeof(T)](container, models);
         }
 
         /// <summary>
@@ -108,7 +128,7 @@ namespace Data.Repository.EF
         /// the repository</param>
         public void Delete(IEnumerable<T> models)
         {
-            ModelToEntityMapper<T>.DeleteMapper[typeof(T)](Container, models);
+            ModelToEntityMapper<T>.DeleteMapper[typeof(T)](container, models);
         }
 
         #endregion
@@ -125,7 +145,7 @@ namespace Data.Repository.EF
         {
             try
             {
-                return EntityToModelMapper<T>.Mapper[typeof(T)](Container);
+                return EntityToModelMapper<T>.Mapper[typeof(T)](container);
             }
             catch (Exception exception)
             {
@@ -181,6 +201,18 @@ namespace Data.Repository.EF
             }
 
             return Enumerable.Empty<T>().AsQueryable();
+        }
+
+        #endregion
+
+        #region IDisposable implementation
+
+        /// <summary>
+        /// The Dispose implementation for the <seealso cref="IDisposable"/> interface
+        /// </summary>
+        public void Dispose()
+        {
+            container.Dispose();
         }
 
         #endregion

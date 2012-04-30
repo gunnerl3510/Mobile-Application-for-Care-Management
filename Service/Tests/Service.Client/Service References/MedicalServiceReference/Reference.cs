@@ -108,6 +108,67 @@ namespace Service.Client.MedicalServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserLogin", Namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security")]
+    [System.SerializableAttribute()]
+    public partial class UserLogin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Provider", Namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Medical")]
     [System.SerializableAttribute()]
     public partial class Provider : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -367,97 +428,345 @@ namespace Service.Client.MedicalServiceReference {
         Hours = 2,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FacilityIdRequestMessage", Namespace="http://CareManagement.Model/2012/Medical")]
+    [System.SerializableAttribute()]
+    public partial class FacilityIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FacilityIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.MedicalServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FacilityId {
+            get {
+                return this.FacilityIdField;
+            }
+            set {
+                if ((this.FacilityIdField.Equals(value) != true)) {
+                    this.FacilityIdField = value;
+                    this.RaisePropertyChanged("FacilityId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.MedicalServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountIdRequestMessage", Namespace="http://CareManagement.Model/2012/Insurance")]
+    [System.SerializableAttribute()]
+    public partial class AccountIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AccountIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.MedicalServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AccountId {
+            get {
+                return this.AccountIdField;
+            }
+            set {
+                if ((this.AccountIdField.Equals(value) != true)) {
+                    this.AccountIdField = value;
+                    this.RaisePropertyChanged("AccountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.MedicalServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProviderIdRequestMessage", Namespace="http://CareManagement.Model/2012/Medical")]
+    [System.SerializableAttribute()]
+    public partial class ProviderIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProviderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.MedicalServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProviderId {
+            get {
+                return this.ProviderIdField;
+            }
+            set {
+                if ((this.ProviderIdField.Equals(value) != true)) {
+                    this.ProviderIdField = value;
+                    this.RaisePropertyChanged("ProviderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.MedicalServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MedicalAppointmentIdRequestMessage", Namespace="http://CareManagement.Model/2012/Medical")]
+    [System.SerializableAttribute()]
+    public partial class MedicalAppointmentIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MedicalAppointmentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.MedicalServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MedicalAppointmentId {
+            get {
+                return this.MedicalAppointmentIdField;
+            }
+            set {
+                if ((this.MedicalAppointmentIdField.Equals(value) != true)) {
+                    this.MedicalAppointmentIdField = value;
+                    this.RaisePropertyChanged("MedicalAppointmentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.MedicalServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://CareManagement.Model/2012/Medical", ConfigurationName="MedicalServiceReference.MedicalContract")]
     public interface MedicalContract {
         
         // CODEGEN: Generating message contract since the operation AddFacility is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Medical/MedicalContract/AddFacility", ReplyAction="addfacility")]
-        Service.Client.MedicalServiceReference.AddFacilityResponse AddFacility(Service.Client.MedicalServiceReference.FacilityMessage request);
+        Service.Client.MedicalServiceReference.AddFacilityResponse AddFacility(Service.Client.MedicalServiceReference.FacilityRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteFacility is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Medical/MedicalContract/DeleteFacility", ReplyAction="deletefacility")]
-        Service.Client.MedicalServiceReference.DeleteFacilityResponse DeleteFacility(Service.Client.MedicalServiceReference.FacilityMessage request);
+        Service.Client.MedicalServiceReference.DeleteFacilityResponse DeleteFacility(Service.Client.MedicalServiceReference.FacilityRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdateFacility is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Medical/MedicalContract/UpdateFacility", ReplyAction="updatefacility")]
-        Service.Client.MedicalServiceReference.UpdateFacilityResponse UpdateFacility(Service.Client.MedicalServiceReference.FacilityMessage request);
+        Service.Client.MedicalServiceReference.UpdateFacilityResponse UpdateFacility(Service.Client.MedicalServiceReference.FacilityRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetFacility is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Medical/MedicalContract/GetFacility", ReplyAction="getfacility")]
-        Service.Client.MedicalServiceReference.FacilityMessage GetFacility(Service.Client.MedicalServiceReference.FacilityIdMessage request);
+        Service.Client.MedicalServiceReference.FacilityMessage GetFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetFacilitiesByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetFacilitiesByAccount", ReplyAction="getfacilitiesbyaccount")]
-        Service.Client.MedicalServiceReference.FacilitiesMessage GetFacilitiesByAccount(Service.Client.MedicalServiceReference.AccountIdMessage request);
+        Service.Client.MedicalServiceReference.FacilitiesMessage GetFacilitiesByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation AddProvider is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="AddProvider", ReplyAction="addprovider")]
-        Service.Client.MedicalServiceReference.AddProviderResponse AddProvider(Service.Client.MedicalServiceReference.ProviderMessage request);
+        Service.Client.MedicalServiceReference.AddProviderResponse AddProvider(Service.Client.MedicalServiceReference.ProviderRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteProvider is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="DeleteProvider", ReplyAction="deleteprovider")]
-        Service.Client.MedicalServiceReference.DeleteProviderResponse DeleteProvider(Service.Client.MedicalServiceReference.ProviderMessage request);
+        Service.Client.MedicalServiceReference.DeleteProviderResponse DeleteProvider(Service.Client.MedicalServiceReference.ProviderRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdateProvider is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="UpdateProvider", ReplyAction="updateprovider")]
-        Service.Client.MedicalServiceReference.UpdateProviderResponse UpdateProvider(Service.Client.MedicalServiceReference.ProviderMessage request);
+        Service.Client.MedicalServiceReference.UpdateProviderResponse UpdateProvider(Service.Client.MedicalServiceReference.ProviderRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetProvider is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetProvider", ReplyAction="getprovider")]
-        Service.Client.MedicalServiceReference.ProviderMessage GetProvider(Service.Client.MedicalServiceReference.ProviderIdMessage request);
+        Service.Client.MedicalServiceReference.ProviderMessage GetProvider(Service.Client.MedicalServiceReference.ProviderIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetProviderByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetProviderByAccount", ReplyAction="getproviderbyaccount")]
-        Service.Client.MedicalServiceReference.ProvidersMessage GetProviderByAccount(Service.Client.MedicalServiceReference.AccountIdMessage request);
+        Service.Client.MedicalServiceReference.ProvidersMessage GetProviderByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetProviderByFacility is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetProviderByFacility", ReplyAction="getproviderbyfacility")]
-        Service.Client.MedicalServiceReference.ProvidersMessage GetProviderByFacility(Service.Client.MedicalServiceReference.FacilityIdMessage request);
+        Service.Client.MedicalServiceReference.ProvidersMessage GetProviderByFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation AddMedicalAppointment is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="AddMedicalAppointment", ReplyAction="addmedicalappointment")]
-        Service.Client.MedicalServiceReference.AddMedicalAppointmentResponse AddMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentMessage request);
+        Service.Client.MedicalServiceReference.AddMedicalAppointmentResponse AddMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteMedicalAppointment is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="DeleteMedicalAppointment", ReplyAction="deletemedicalappointment")]
-        Service.Client.MedicalServiceReference.DeleteMedicalAppointmentResponse DeleteMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentMessage request);
+        Service.Client.MedicalServiceReference.DeleteMedicalAppointmentResponse DeleteMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdateMedicalAppointment is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="UpdateMedicalAppointment", ReplyAction="updatemedicalappointment")]
-        Service.Client.MedicalServiceReference.UpdateMedicalAppointmentResponse UpdateMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentMessage request);
+        Service.Client.MedicalServiceReference.UpdateMedicalAppointmentResponse UpdateMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetMedicalAppointment is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetMedicalAppointment", ReplyAction="getmedicalappointment")]
-        Service.Client.MedicalServiceReference.MedicalAppointmentMessage GetMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentIdMessage request);
+        Service.Client.MedicalServiceReference.MedicalAppointmentMessage GetMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetMedicalAppointmentsByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetMedicalAppointmentsByAccount", ReplyAction="GetMedicalAppointmentsByAccount")]
-        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.Client.MedicalServiceReference.AccountIdMessage request);
+        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetMedicalAppointmentsByFacility is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetMedicalAppointmentsByFacility", ReplyAction="getmedicalappointmentsbyfacility")]
-        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.Client.MedicalServiceReference.FacilityIdMessage request);
+        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetMedicalAppointmentsByProvider is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetMedicalAppointmentsByProvider", ReplyAction="getmedicalappointmentsbyprovider")]
-        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.Client.MedicalServiceReference.ProviderIdMessage request);
+        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.Client.MedicalServiceReference.ProviderIdRequestMessage1 request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FacilityMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="FacilityRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Medical", IsWrapped=true)]
+    public partial class FacilityRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
         public Service.Client.MedicalServiceReference.Facility Facility;
         
-        public FacilityMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=1)]
+        public Service.Client.MedicalServiceReference.UserLogin User;
+        
+        public FacilityRequestMessage() {
         }
         
-        public FacilityMessage(Service.Client.MedicalServiceReference.Facility Facility) {
+        public FacilityRequestMessage(Service.Client.MedicalServiceReference.Facility Facility, Service.Client.MedicalServiceReference.UserLogin User) {
             this.Facility = Facility;
+            this.User = User;
         }
     }
     
@@ -495,16 +804,16 @@ namespace Service.Client.MedicalServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class FacilityIdMessage {
+    public partial class FacilityIdRequestMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
-        public int FacilityId;
+        public Service.Client.MedicalServiceReference.FacilityIdRequestMessage FacilityIdRequestMessage;
         
-        public FacilityIdMessage() {
+        public FacilityIdRequestMessage1() {
         }
         
-        public FacilityIdMessage(int FacilityId) {
-            this.FacilityId = FacilityId;
+        public FacilityIdRequestMessage1(Service.Client.MedicalServiceReference.FacilityIdRequestMessage FacilityIdRequestMessage) {
+            this.FacilityIdRequestMessage = FacilityIdRequestMessage;
         }
     }
     
@@ -512,16 +821,33 @@ namespace Service.Client.MedicalServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AccountIdMessage {
+    public partial class FacilityMessage {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
-        public int AccountId;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
+        public Service.Client.MedicalServiceReference.Facility Facility;
         
-        public AccountIdMessage() {
+        public FacilityMessage() {
         }
         
-        public AccountIdMessage(int AccountId) {
-            this.AccountId = AccountId;
+        public FacilityMessage(Service.Client.MedicalServiceReference.Facility Facility) {
+            this.Facility = Facility;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AccountIdRequestMessage1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
+        public Service.Client.MedicalServiceReference.AccountIdRequestMessage AccountIdRequestMessage;
+        
+        public AccountIdRequestMessage1() {
+        }
+        
+        public AccountIdRequestMessage1(Service.Client.MedicalServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            this.AccountIdRequestMessage = AccountIdRequestMessage;
         }
     }
     
@@ -545,17 +871,21 @@ namespace Service.Client.MedicalServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProviderMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="ProviderRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Medical", IsWrapped=true)]
+    public partial class ProviderRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
         public Service.Client.MedicalServiceReference.Provider Provider;
         
-        public ProviderMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=1)]
+        public Service.Client.MedicalServiceReference.UserLogin User;
+        
+        public ProviderRequestMessage() {
         }
         
-        public ProviderMessage(Service.Client.MedicalServiceReference.Provider Provider) {
+        public ProviderRequestMessage(Service.Client.MedicalServiceReference.Provider Provider, Service.Client.MedicalServiceReference.UserLogin User) {
             this.Provider = Provider;
+            this.User = User;
         }
     }
     
@@ -593,16 +923,33 @@ namespace Service.Client.MedicalServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ProviderIdMessage {
+    public partial class ProviderIdRequestMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
-        public int ProviderId;
+        public Service.Client.MedicalServiceReference.ProviderIdRequestMessage ProviderIdRequestMessage;
         
-        public ProviderIdMessage() {
+        public ProviderIdRequestMessage1() {
         }
         
-        public ProviderIdMessage(int ProviderId) {
-            this.ProviderId = ProviderId;
+        public ProviderIdRequestMessage1(Service.Client.MedicalServiceReference.ProviderIdRequestMessage ProviderIdRequestMessage) {
+            this.ProviderIdRequestMessage = ProviderIdRequestMessage;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ProviderMessage {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
+        public Service.Client.MedicalServiceReference.Provider Provider;
+        
+        public ProviderMessage() {
+        }
+        
+        public ProviderMessage(Service.Client.MedicalServiceReference.Provider Provider) {
+            this.Provider = Provider;
         }
     }
     
@@ -626,17 +973,21 @@ namespace Service.Client.MedicalServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MedicalAppointmentMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MedicalAppointmentRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Medical", IsWrapped=true)]
+    public partial class MedicalAppointmentRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
         public Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment;
         
-        public MedicalAppointmentMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=1)]
+        public Service.Client.MedicalServiceReference.UserLogin User;
+        
+        public MedicalAppointmentRequestMessage() {
         }
         
-        public MedicalAppointmentMessage(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment) {
+        public MedicalAppointmentRequestMessage(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment, Service.Client.MedicalServiceReference.UserLogin User) {
             this.MedicalAppointment = MedicalAppointment;
+            this.User = User;
         }
     }
     
@@ -674,16 +1025,33 @@ namespace Service.Client.MedicalServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MedicalAppointmentIdMessage {
+    public partial class MedicalAppointmentIdRequestMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
-        public int MedicalAppointmentId;
+        public Service.Client.MedicalServiceReference.MedicalAppointmentIdRequestMessage MedicalAppointmentIdRequestMessage;
         
-        public MedicalAppointmentIdMessage() {
+        public MedicalAppointmentIdRequestMessage1() {
         }
         
-        public MedicalAppointmentIdMessage(int MedicalAppointmentId) {
-            this.MedicalAppointmentId = MedicalAppointmentId;
+        public MedicalAppointmentIdRequestMessage1(Service.Client.MedicalServiceReference.MedicalAppointmentIdRequestMessage MedicalAppointmentIdRequestMessage) {
+            this.MedicalAppointmentIdRequestMessage = MedicalAppointmentIdRequestMessage;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class MedicalAppointmentMessage {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Medical", Order=0)]
+        public Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment;
+        
+        public MedicalAppointmentMessage() {
+        }
+        
+        public MedicalAppointmentMessage(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment) {
+            this.MedicalAppointment = MedicalAppointment;
         }
     }
     
@@ -732,208 +1100,217 @@ namespace Service.Client.MedicalServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.AddFacilityResponse Service.Client.MedicalServiceReference.MedicalContract.AddFacility(Service.Client.MedicalServiceReference.FacilityMessage request) {
+        Service.Client.MedicalServiceReference.AddFacilityResponse Service.Client.MedicalServiceReference.MedicalContract.AddFacility(Service.Client.MedicalServiceReference.FacilityRequestMessage request) {
             return base.Channel.AddFacility(request);
         }
         
-        public void AddFacility(Service.Client.MedicalServiceReference.Facility Facility) {
-            Service.Client.MedicalServiceReference.FacilityMessage inValue = new Service.Client.MedicalServiceReference.FacilityMessage();
+        public void AddFacility(Service.Client.MedicalServiceReference.Facility Facility, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.FacilityRequestMessage inValue = new Service.Client.MedicalServiceReference.FacilityRequestMessage();
             inValue.Facility = Facility;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.AddFacilityResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).AddFacility(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.DeleteFacilityResponse Service.Client.MedicalServiceReference.MedicalContract.DeleteFacility(Service.Client.MedicalServiceReference.FacilityMessage request) {
+        Service.Client.MedicalServiceReference.DeleteFacilityResponse Service.Client.MedicalServiceReference.MedicalContract.DeleteFacility(Service.Client.MedicalServiceReference.FacilityRequestMessage request) {
             return base.Channel.DeleteFacility(request);
         }
         
-        public void DeleteFacility(Service.Client.MedicalServiceReference.Facility Facility) {
-            Service.Client.MedicalServiceReference.FacilityMessage inValue = new Service.Client.MedicalServiceReference.FacilityMessage();
+        public void DeleteFacility(Service.Client.MedicalServiceReference.Facility Facility, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.FacilityRequestMessage inValue = new Service.Client.MedicalServiceReference.FacilityRequestMessage();
             inValue.Facility = Facility;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.DeleteFacilityResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).DeleteFacility(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.UpdateFacilityResponse Service.Client.MedicalServiceReference.MedicalContract.UpdateFacility(Service.Client.MedicalServiceReference.FacilityMessage request) {
+        Service.Client.MedicalServiceReference.UpdateFacilityResponse Service.Client.MedicalServiceReference.MedicalContract.UpdateFacility(Service.Client.MedicalServiceReference.FacilityRequestMessage request) {
             return base.Channel.UpdateFacility(request);
         }
         
-        public void UpdateFacility(Service.Client.MedicalServiceReference.Facility Facility) {
-            Service.Client.MedicalServiceReference.FacilityMessage inValue = new Service.Client.MedicalServiceReference.FacilityMessage();
+        public void UpdateFacility(Service.Client.MedicalServiceReference.Facility Facility, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.FacilityRequestMessage inValue = new Service.Client.MedicalServiceReference.FacilityRequestMessage();
             inValue.Facility = Facility;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.UpdateFacilityResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).UpdateFacility(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.FacilityMessage Service.Client.MedicalServiceReference.MedicalContract.GetFacility(Service.Client.MedicalServiceReference.FacilityIdMessage request) {
+        Service.Client.MedicalServiceReference.FacilityMessage Service.Client.MedicalServiceReference.MedicalContract.GetFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 request) {
             return base.Channel.GetFacility(request);
         }
         
-        public Service.Client.MedicalServiceReference.Facility GetFacility(int FacilityId) {
-            Service.Client.MedicalServiceReference.FacilityIdMessage inValue = new Service.Client.MedicalServiceReference.FacilityIdMessage();
-            inValue.FacilityId = FacilityId;
+        public Service.Client.MedicalServiceReference.Facility GetFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage FacilityIdRequestMessage) {
+            Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.FacilityIdRequestMessage1();
+            inValue.FacilityIdRequestMessage = FacilityIdRequestMessage;
             Service.Client.MedicalServiceReference.FacilityMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetFacility(inValue);
             return retVal.Facility;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.FacilitiesMessage Service.Client.MedicalServiceReference.MedicalContract.GetFacilitiesByAccount(Service.Client.MedicalServiceReference.AccountIdMessage request) {
+        Service.Client.MedicalServiceReference.FacilitiesMessage Service.Client.MedicalServiceReference.MedicalContract.GetFacilitiesByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage1 request) {
             return base.Channel.GetFacilitiesByAccount(request);
         }
         
-        public Service.Client.MedicalServiceReference.Facility[] GetFacilitiesByAccount(int AccountId) {
-            Service.Client.MedicalServiceReference.AccountIdMessage inValue = new Service.Client.MedicalServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.MedicalServiceReference.Facility[] GetFacilitiesByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            Service.Client.MedicalServiceReference.AccountIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.AccountIdRequestMessage1();
+            inValue.AccountIdRequestMessage = AccountIdRequestMessage;
             Service.Client.MedicalServiceReference.FacilitiesMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetFacilitiesByAccount(inValue);
             return retVal.Facilities;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.AddProviderResponse Service.Client.MedicalServiceReference.MedicalContract.AddProvider(Service.Client.MedicalServiceReference.ProviderMessage request) {
+        Service.Client.MedicalServiceReference.AddProviderResponse Service.Client.MedicalServiceReference.MedicalContract.AddProvider(Service.Client.MedicalServiceReference.ProviderRequestMessage request) {
             return base.Channel.AddProvider(request);
         }
         
-        public void AddProvider(Service.Client.MedicalServiceReference.Provider Provider) {
-            Service.Client.MedicalServiceReference.ProviderMessage inValue = new Service.Client.MedicalServiceReference.ProviderMessage();
+        public void AddProvider(Service.Client.MedicalServiceReference.Provider Provider, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.ProviderRequestMessage inValue = new Service.Client.MedicalServiceReference.ProviderRequestMessage();
             inValue.Provider = Provider;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.AddProviderResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).AddProvider(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.DeleteProviderResponse Service.Client.MedicalServiceReference.MedicalContract.DeleteProvider(Service.Client.MedicalServiceReference.ProviderMessage request) {
+        Service.Client.MedicalServiceReference.DeleteProviderResponse Service.Client.MedicalServiceReference.MedicalContract.DeleteProvider(Service.Client.MedicalServiceReference.ProviderRequestMessage request) {
             return base.Channel.DeleteProvider(request);
         }
         
-        public void DeleteProvider(Service.Client.MedicalServiceReference.Provider Provider) {
-            Service.Client.MedicalServiceReference.ProviderMessage inValue = new Service.Client.MedicalServiceReference.ProviderMessage();
+        public void DeleteProvider(Service.Client.MedicalServiceReference.Provider Provider, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.ProviderRequestMessage inValue = new Service.Client.MedicalServiceReference.ProviderRequestMessage();
             inValue.Provider = Provider;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.DeleteProviderResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).DeleteProvider(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.UpdateProviderResponse Service.Client.MedicalServiceReference.MedicalContract.UpdateProvider(Service.Client.MedicalServiceReference.ProviderMessage request) {
+        Service.Client.MedicalServiceReference.UpdateProviderResponse Service.Client.MedicalServiceReference.MedicalContract.UpdateProvider(Service.Client.MedicalServiceReference.ProviderRequestMessage request) {
             return base.Channel.UpdateProvider(request);
         }
         
-        public void UpdateProvider(Service.Client.MedicalServiceReference.Provider Provider) {
-            Service.Client.MedicalServiceReference.ProviderMessage inValue = new Service.Client.MedicalServiceReference.ProviderMessage();
+        public void UpdateProvider(Service.Client.MedicalServiceReference.Provider Provider, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.ProviderRequestMessage inValue = new Service.Client.MedicalServiceReference.ProviderRequestMessage();
             inValue.Provider = Provider;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.UpdateProviderResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).UpdateProvider(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.ProviderMessage Service.Client.MedicalServiceReference.MedicalContract.GetProvider(Service.Client.MedicalServiceReference.ProviderIdMessage request) {
+        Service.Client.MedicalServiceReference.ProviderMessage Service.Client.MedicalServiceReference.MedicalContract.GetProvider(Service.Client.MedicalServiceReference.ProviderIdRequestMessage1 request) {
             return base.Channel.GetProvider(request);
         }
         
-        public Service.Client.MedicalServiceReference.Provider GetProvider(int ProviderId) {
-            Service.Client.MedicalServiceReference.ProviderIdMessage inValue = new Service.Client.MedicalServiceReference.ProviderIdMessage();
-            inValue.ProviderId = ProviderId;
+        public Service.Client.MedicalServiceReference.Provider GetProvider(Service.Client.MedicalServiceReference.ProviderIdRequestMessage ProviderIdRequestMessage) {
+            Service.Client.MedicalServiceReference.ProviderIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.ProviderIdRequestMessage1();
+            inValue.ProviderIdRequestMessage = ProviderIdRequestMessage;
             Service.Client.MedicalServiceReference.ProviderMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetProvider(inValue);
             return retVal.Provider;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.ProvidersMessage Service.Client.MedicalServiceReference.MedicalContract.GetProviderByAccount(Service.Client.MedicalServiceReference.AccountIdMessage request) {
+        Service.Client.MedicalServiceReference.ProvidersMessage Service.Client.MedicalServiceReference.MedicalContract.GetProviderByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage1 request) {
             return base.Channel.GetProviderByAccount(request);
         }
         
-        public Service.Client.MedicalServiceReference.Provider[] GetProviderByAccount(int AccountId) {
-            Service.Client.MedicalServiceReference.AccountIdMessage inValue = new Service.Client.MedicalServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.MedicalServiceReference.Provider[] GetProviderByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            Service.Client.MedicalServiceReference.AccountIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.AccountIdRequestMessage1();
+            inValue.AccountIdRequestMessage = AccountIdRequestMessage;
             Service.Client.MedicalServiceReference.ProvidersMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetProviderByAccount(inValue);
             return retVal.Providers;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.ProvidersMessage Service.Client.MedicalServiceReference.MedicalContract.GetProviderByFacility(Service.Client.MedicalServiceReference.FacilityIdMessage request) {
+        Service.Client.MedicalServiceReference.ProvidersMessage Service.Client.MedicalServiceReference.MedicalContract.GetProviderByFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 request) {
             return base.Channel.GetProviderByFacility(request);
         }
         
-        public Service.Client.MedicalServiceReference.Provider[] GetProviderByFacility(int FacilityId) {
-            Service.Client.MedicalServiceReference.FacilityIdMessage inValue = new Service.Client.MedicalServiceReference.FacilityIdMessage();
-            inValue.FacilityId = FacilityId;
+        public Service.Client.MedicalServiceReference.Provider[] GetProviderByFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage FacilityIdRequestMessage) {
+            Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.FacilityIdRequestMessage1();
+            inValue.FacilityIdRequestMessage = FacilityIdRequestMessage;
             Service.Client.MedicalServiceReference.ProvidersMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetProviderByFacility(inValue);
             return retVal.Providers;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.AddMedicalAppointmentResponse Service.Client.MedicalServiceReference.MedicalContract.AddMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentMessage request) {
+        Service.Client.MedicalServiceReference.AddMedicalAppointmentResponse Service.Client.MedicalServiceReference.MedicalContract.AddMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage request) {
             return base.Channel.AddMedicalAppointment(request);
         }
         
-        public void AddMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment) {
-            Service.Client.MedicalServiceReference.MedicalAppointmentMessage inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentMessage();
+        public void AddMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage();
             inValue.MedicalAppointment = MedicalAppointment;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.AddMedicalAppointmentResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).AddMedicalAppointment(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.DeleteMedicalAppointmentResponse Service.Client.MedicalServiceReference.MedicalContract.DeleteMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentMessage request) {
+        Service.Client.MedicalServiceReference.DeleteMedicalAppointmentResponse Service.Client.MedicalServiceReference.MedicalContract.DeleteMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage request) {
             return base.Channel.DeleteMedicalAppointment(request);
         }
         
-        public void DeleteMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment) {
-            Service.Client.MedicalServiceReference.MedicalAppointmentMessage inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentMessage();
+        public void DeleteMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage();
             inValue.MedicalAppointment = MedicalAppointment;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.DeleteMedicalAppointmentResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).DeleteMedicalAppointment(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.UpdateMedicalAppointmentResponse Service.Client.MedicalServiceReference.MedicalContract.UpdateMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentMessage request) {
+        Service.Client.MedicalServiceReference.UpdateMedicalAppointmentResponse Service.Client.MedicalServiceReference.MedicalContract.UpdateMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage request) {
             return base.Channel.UpdateMedicalAppointment(request);
         }
         
-        public void UpdateMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment) {
-            Service.Client.MedicalServiceReference.MedicalAppointmentMessage inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentMessage();
+        public void UpdateMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointment MedicalAppointment, Service.Client.MedicalServiceReference.UserLogin User) {
+            Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentRequestMessage();
             inValue.MedicalAppointment = MedicalAppointment;
+            inValue.User = User;
             Service.Client.MedicalServiceReference.UpdateMedicalAppointmentResponse retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).UpdateMedicalAppointment(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.MedicalAppointmentMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentIdMessage request) {
+        Service.Client.MedicalServiceReference.MedicalAppointmentMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentIdRequestMessage1 request) {
             return base.Channel.GetMedicalAppointment(request);
         }
         
-        public Service.Client.MedicalServiceReference.MedicalAppointment GetMedicalAppointment(int MedicalAppointmentId) {
-            Service.Client.MedicalServiceReference.MedicalAppointmentIdMessage inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentIdMessage();
-            inValue.MedicalAppointmentId = MedicalAppointmentId;
+        public Service.Client.MedicalServiceReference.MedicalAppointment GetMedicalAppointment(Service.Client.MedicalServiceReference.MedicalAppointmentIdRequestMessage MedicalAppointmentIdRequestMessage) {
+            Service.Client.MedicalServiceReference.MedicalAppointmentIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.MedicalAppointmentIdRequestMessage1();
+            inValue.MedicalAppointmentIdRequestMessage = MedicalAppointmentIdRequestMessage;
             Service.Client.MedicalServiceReference.MedicalAppointmentMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetMedicalAppointment(inValue);
             return retVal.MedicalAppointment;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointmentsByAccount(Service.Client.MedicalServiceReference.AccountIdMessage request) {
+        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointmentsByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage1 request) {
             return base.Channel.GetMedicalAppointmentsByAccount(request);
         }
         
-        public Service.Client.MedicalServiceReference.MedicalAppointment[] GetMedicalAppointmentsByAccount(int AccountId) {
-            Service.Client.MedicalServiceReference.AccountIdMessage inValue = new Service.Client.MedicalServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.MedicalServiceReference.MedicalAppointment[] GetMedicalAppointmentsByAccount(Service.Client.MedicalServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            Service.Client.MedicalServiceReference.AccountIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.AccountIdRequestMessage1();
+            inValue.AccountIdRequestMessage = AccountIdRequestMessage;
             Service.Client.MedicalServiceReference.MedicalAppointmentsMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetMedicalAppointmentsByAccount(inValue);
             return retVal.MedicalAppointments;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointmentsByFacility(Service.Client.MedicalServiceReference.FacilityIdMessage request) {
+        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointmentsByFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 request) {
             return base.Channel.GetMedicalAppointmentsByFacility(request);
         }
         
-        public Service.Client.MedicalServiceReference.MedicalAppointment[] GetMedicalAppointmentsByFacility(int FacilityId) {
-            Service.Client.MedicalServiceReference.FacilityIdMessage inValue = new Service.Client.MedicalServiceReference.FacilityIdMessage();
-            inValue.FacilityId = FacilityId;
+        public Service.Client.MedicalServiceReference.MedicalAppointment[] GetMedicalAppointmentsByFacility(Service.Client.MedicalServiceReference.FacilityIdRequestMessage FacilityIdRequestMessage) {
+            Service.Client.MedicalServiceReference.FacilityIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.FacilityIdRequestMessage1();
+            inValue.FacilityIdRequestMessage = FacilityIdRequestMessage;
             Service.Client.MedicalServiceReference.MedicalAppointmentsMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetMedicalAppointmentsByFacility(inValue);
             return retVal.MedicalAppointments;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointmentsByProvider(Service.Client.MedicalServiceReference.ProviderIdMessage request) {
+        Service.Client.MedicalServiceReference.MedicalAppointmentsMessage Service.Client.MedicalServiceReference.MedicalContract.GetMedicalAppointmentsByProvider(Service.Client.MedicalServiceReference.ProviderIdRequestMessage1 request) {
             return base.Channel.GetMedicalAppointmentsByProvider(request);
         }
         
-        public Service.Client.MedicalServiceReference.MedicalAppointment[] GetMedicalAppointmentsByProvider(int ProviderId) {
-            Service.Client.MedicalServiceReference.ProviderIdMessage inValue = new Service.Client.MedicalServiceReference.ProviderIdMessage();
-            inValue.ProviderId = ProviderId;
+        public Service.Client.MedicalServiceReference.MedicalAppointment[] GetMedicalAppointmentsByProvider(Service.Client.MedicalServiceReference.ProviderIdRequestMessage ProviderIdRequestMessage) {
+            Service.Client.MedicalServiceReference.ProviderIdRequestMessage1 inValue = new Service.Client.MedicalServiceReference.ProviderIdRequestMessage1();
+            inValue.ProviderIdRequestMessage = ProviderIdRequestMessage;
             Service.Client.MedicalServiceReference.MedicalAppointmentsMessage retVal = ((Service.Client.MedicalServiceReference.MedicalContract)(this)).GetMedicalAppointmentsByProvider(inValue);
             return retVal.MedicalAppointments;
         }

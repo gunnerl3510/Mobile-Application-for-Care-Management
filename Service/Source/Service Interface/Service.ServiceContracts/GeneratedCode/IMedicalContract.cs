@@ -20,58 +20,58 @@ namespace Service.ServiceContracts
 	public partial interface IMedicalContract 
 	{
 		[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Medical/MedicalContract/AddFacility", ReplyAction = "addfacility", ProtectionLevel = ProtectionLevel.None)]
-		void AddFacility(Service.MessageContracts.FacilityMessage request);
+		void AddFacility(Service.MessageContracts.FacilityRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Medical/MedicalContract/DeleteFacility", ReplyAction = "deletefacility", ProtectionLevel = ProtectionLevel.None)]
-		void DeleteFacility(Service.MessageContracts.FacilityMessage request);
+		void DeleteFacility(Service.MessageContracts.FacilityRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Medical/MedicalContract/UpdateFacility", ReplyAction = "updatefacility", ProtectionLevel = ProtectionLevel.None)]
-		void UpdateFacility(Service.MessageContracts.FacilityMessage request);
+		void UpdateFacility(Service.MessageContracts.FacilityRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Medical/MedicalContract/GetFacility", ReplyAction = "getfacility", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.FacilityMessage GetFacility(Service.MessageContracts.FacilityIdMessage request);
+		Service.MessageContracts.FacilityMessage GetFacility(Service.MessageContracts.FacilityIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetFacilitiesByAccount", ReplyAction = "getfacilitiesbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdMessage request);
+		Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "AddProvider", ReplyAction = "addprovider", ProtectionLevel = ProtectionLevel.None)]
-		void AddProvider(Service.MessageContracts.ProviderMessage request);
+		void AddProvider(Service.MessageContracts.ProviderRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "DeleteProvider", ReplyAction = "deleteprovider", ProtectionLevel = ProtectionLevel.None)]
-		void DeleteProvider(Service.MessageContracts.ProviderMessage request);
+		void DeleteProvider(Service.MessageContracts.ProviderRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "UpdateProvider", ReplyAction = "updateprovider", ProtectionLevel = ProtectionLevel.None)]
-		void UpdateProvider(Service.MessageContracts.ProviderMessage request);
+		void UpdateProvider(Service.MessageContracts.ProviderRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetProvider", ReplyAction = "getprovider", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.ProviderMessage GetProvider(Service.MessageContracts.ProviderIdMessage request);
+		Service.MessageContracts.ProviderMessage GetProvider(Service.MessageContracts.ProviderIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetProviderByAccount", ReplyAction = "getproviderbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdMessage request);
+		Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetProviderByFacility", ReplyAction = "getproviderbyfacility", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.ProvidersMessage GetProviderByFacility(Service.MessageContracts.FacilityIdMessage request);
+		Service.MessageContracts.ProvidersMessage GetProviderByFacility(Service.MessageContracts.FacilityIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "AddMedicalAppointment", ReplyAction = "addmedicalappointment", ProtectionLevel = ProtectionLevel.None)]
-		void AddMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request);
+		void AddMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "DeleteMedicalAppointment", ReplyAction = "deletemedicalappointment", ProtectionLevel = ProtectionLevel.None)]
-		void DeleteMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request);
+		void DeleteMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "UpdateMedicalAppointment", ReplyAction = "updatemedicalappointment", ProtectionLevel = ProtectionLevel.None)]
-		void UpdateMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request);
+		void UpdateMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetMedicalAppointment", ReplyAction = "getmedicalappointment", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.MedicalAppointmentMessage GetMedicalAppointment(Service.MessageContracts.MedicalAppointmentIdMessage request);
+		Service.MessageContracts.MedicalAppointmentMessage GetMedicalAppointment(Service.MessageContracts.MedicalAppointmentIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetMedicalAppointmentsByAccount", ReplyAction = "GetMedicalAppointmentsByAccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdMessage request);
+		Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetMedicalAppointmentsByFacility", ReplyAction = "getmedicalappointmentsbyfacility", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.MessageContracts.FacilityIdMessage request);
+		Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.MessageContracts.FacilityIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetMedicalAppointmentsByProvider", ReplyAction = "getmedicalappointmentsbyprovider", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.MessageContracts.ProviderIdMessage request);
+		Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.MessageContracts.ProviderIdRequestMessage request);
 		
 	}
 }

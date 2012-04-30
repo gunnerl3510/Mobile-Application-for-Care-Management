@@ -9,12 +9,11 @@
 
 namespace Service.ServiceImplementation
 {
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Security.Permissions;
-    using System.ServiceModel;
 
     using BusinessLogic.Insurance;
+
+    using Infrastructure.Security;
 
     using Ninject;
 
@@ -80,10 +79,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the insurer to add
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void AddInsurer(Service.MessageContracts.InsurerMessage request)
+        public override void AddInsurer(Service.MessageContracts.InsurerRequestMessage request)
         {
-            insuranceManager.CreateInsurer(request.Insurer, ServiceSecurityContext.Current.PrimaryIdentity);
+            insuranceManager.CreateInsurer(request.Insurer, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -92,10 +90,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the insurer to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteInsurer(Service.MessageContracts.InsurerMessage request)
+        public override void DeleteInsurer(Service.MessageContracts.InsurerRequestMessage request)
         {
-            insuranceManager.DeleteInsurer(request.Insurer, ServiceSecurityContext.Current.PrimaryIdentity);
+            insuranceManager.DeleteInsurer(request.Insurer, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -107,12 +104,11 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="Insurer"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.InsurerMessage GetInsurer(Service.MessageContracts.InsurerIdMessage request)
+        public override Service.MessageContracts.InsurerMessage GetInsurer(Service.MessageContracts.InsurerIdRequestMessage request)
         {
             return new Service.MessageContracts.InsurerMessage
             {
-                Insurer = insuranceManager.GetInsurerById(request.InsurerId, ServiceSecurityContext.Current.PrimaryIdentity)
+                Insurer = insuranceManager.GetInsurerById(request.InsurerId, request.User.GetIdentity())
             };
         }
 
@@ -122,10 +118,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the insurer to update
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateInsurer(Service.MessageContracts.InsurerMessage request)
+        public override void UpdateInsurer(Service.MessageContracts.InsurerRequestMessage request)
         {
-            insuranceManager.UpdateInsurer(request.Insurer, ServiceSecurityContext.Current.PrimaryIdentity);
+            insuranceManager.UpdateInsurer(request.Insurer, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -138,14 +133,13 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="Insurer"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdMessage request)
+        public override Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdRequestMessage request)
         {
             return new Service.MessageContracts.InsurersMessage
             {
                 Insurers = 
                     insuranceManager
-                        .GetInsurersByAccount(request.AccountId, ServiceSecurityContext.Current.PrimaryIdentity)
+                        .GetInsurersByAccount(request.AccountId, request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -156,10 +150,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the follow up to add
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void AddAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpMessage request)
+        public override void AddAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request)
         {
-            followUpManager.CreateAuthorizationFollowUp(request.AuthorizationFollowUp, ServiceSecurityContext.Current.PrimaryIdentity);
+            followUpManager.CreateAuthorizationFollowUp(request.AuthorizationFollowUp, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -168,10 +161,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the follow up to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpMessage request)
+        public override void DeleteAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request)
         {
-            followUpManager.DeleteAuthorizationFollowUp(request.AuthorizationFollowUp, ServiceSecurityContext.Current.PrimaryIdentity);
+            followUpManager.DeleteAuthorizationFollowUp(request.AuthorizationFollowUp, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -180,10 +172,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the follow up to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpMessage request)
+        public override void UpdateAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request)
         {
-            followUpManager.UpdateAuthorizationFollowUp(request.AuthorizationFollowUp, ServiceSecurityContext.Current.PrimaryIdentity);
+            followUpManager.UpdateAuthorizationFollowUp(request.AuthorizationFollowUp, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -196,8 +187,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="AuthorizationFollowUp"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdMessage request)
+        public override Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
         {
             return new Service.MessageContracts.AuthorizationFollowUpsMessage
             {
@@ -205,7 +195,7 @@ namespace Service.ServiceImplementation
                     followUpManager
                         .GetAuthorizationFollowUpsByAccount(
                             request.AccountId, 
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -220,7 +210,6 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="List{T}"/> of <seealso cref="Insurer"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public override Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAuthorizationRequest(Service.MessageContracts.AuthorizationRequestIdMessage request)
         {
             return new Service.MessageContracts.AuthorizationFollowUpsMessage
@@ -229,7 +218,7 @@ namespace Service.ServiceImplementation
                     followUpManager
                         .GetAuthorizationFollowUpsByAuthorizationRequest(
                             request.AuthorizationRequestId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -243,8 +232,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="AuthorizationFollowUp"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.AuthorizationFollowUpMessage GetAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpIdMessage request)
+        public override Service.MessageContracts.AuthorizationFollowUpMessage GetAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpIdRequestMessage request)
         {
             return new Service.MessageContracts.AuthorizationFollowUpMessage
             {
@@ -252,7 +240,7 @@ namespace Service.ServiceImplementation
                     followUpManager
                         .GetAuthorizationFollowUpById(
                             request.AuthorizationFollowUpId, 
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
             };
         }
 
@@ -262,10 +250,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the request to add
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void AddAuthorizationRequest(Service.MessageContracts.AuthorizationRequestMessage request)
+        public override void AddAuthorizationRequest(Service.MessageContracts.AuthorizationRequestRequestMessage request)
         {
-            requestManager.CreateAuthorizationRequest(request.AuthorizationRequest, ServiceSecurityContext.Current.PrimaryIdentity);
+            requestManager.CreateAuthorizationRequest(request.AuthorizationRequest, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -274,10 +261,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the request to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteAuthorizationRequest(Service.MessageContracts.AuthorizationRequestMessage request)
+        public override void DeleteAuthorizationRequest(Service.MessageContracts.AuthorizationRequestRequestMessage request)
         {
-            requestManager.DeleteAuthorizationRequest(request.AuthorizationRequest, ServiceSecurityContext.Current.PrimaryIdentity);
+            requestManager.DeleteAuthorizationRequest(request.AuthorizationRequest, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -286,10 +272,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the request to update
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateAuthorizationRequest(Service.MessageContracts.AuthorizationRequestMessage request)
+        public override void UpdateAuthorizationRequest(Service.MessageContracts.AuthorizationRequestRequestMessage request)
         {
-            requestManager.UpdateAuthorizationRequest(request.AuthorizationRequest, ServiceSecurityContext.Current.PrimaryIdentity);
+            requestManager.UpdateAuthorizationRequest(request.AuthorizationRequest, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -301,7 +286,6 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="AuthorizationRequest"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public override Service.MessageContracts.AuthorizationRequestMessage GetAuthorizationRequest(Service.MessageContracts.AuthorizationRequestIdMessage request)
         {
             return new Service.MessageContracts.AuthorizationRequestMessage
@@ -310,7 +294,7 @@ namespace Service.ServiceImplementation
                     requestManager
                         .GetAuthorizationRequestById(
                             request.AuthorizationRequestId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
             };
         }
 
@@ -324,8 +308,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="List{T}"/> of <seealso cref="AuthorizationRequest"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdMessage request)
+        public override Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
         {
             return new Service.MessageContracts.AuthorizationRequestsMessage
             {
@@ -333,7 +316,7 @@ namespace Service.ServiceImplementation
                     requestManager
                         .GetAuthorizationRequestsByAccount(
                             request.AccountId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -348,8 +331,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="List{T}"/> of <seealso cref="AuthorizationRequest"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByInsurer(Service.MessageContracts.InsurerIdMessage request)
+        public override Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByInsurer(Service.MessageContracts.InsurerIdRequestMessage request)
         {
             return new Service.MessageContracts.AuthorizationRequestsMessage
             {
@@ -357,7 +339,7 @@ namespace Service.ServiceImplementation
                     requestManager
                         .GetAuthorizationRequestsByInsurer(
                             request.InsurerId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -368,10 +350,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the note to add
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void AddAuthorizationNote(Service.MessageContracts.AuthorizationNoteMessage request)
+        public override void AddAuthorizationNote(Service.MessageContracts.AuthorizationNoteRequestMessage request)
         {
-            noteManager.CreateAuthorizationNote(request.AuthorizationNote, ServiceSecurityContext.Current.PrimaryIdentity);
+            noteManager.CreateAuthorizationNote(request.AuthorizationNote, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -380,10 +361,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the note to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteAuthorizationNote(Service.MessageContracts.AuthorizationNoteMessage request)
+        public override void DeleteAuthorizationNote(Service.MessageContracts.AuthorizationNoteRequestMessage request)
         {
-            noteManager.DeleteAuthorizationNote(request.AuthorizationNote, ServiceSecurityContext.Current.PrimaryIdentity);
+            noteManager.DeleteAuthorizationNote(request.AuthorizationNote, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -392,10 +372,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the note to update
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateAuthorizationNote(Service.MessageContracts.AuthorizationNoteMessage request)
+        public override void UpdateAuthorizationNote(Service.MessageContracts.AuthorizationNoteRequestMessage request)
         {
-            noteManager.UpdateAuthorizationNote(request.AuthorizationNote, ServiceSecurityContext.Current.PrimaryIdentity);
+            noteManager.UpdateAuthorizationNote(request.AuthorizationNote, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -407,8 +386,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="AuthorizationNote"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.AuthorizationNoteMessage GetAuthorizationNote(Service.MessageContracts.AuthorizationNoteIdMessage request)
+        public override Service.MessageContracts.AuthorizationNoteMessage GetAuthorizationNote(Service.MessageContracts.AuthorizationNoteIdRequestMessage request)
         {
             return new Service.MessageContracts.AuthorizationNoteMessage
             {
@@ -416,7 +394,7 @@ namespace Service.ServiceImplementation
                     noteManager
                         .GetAuthorizationNoteById(
                             request.AuthorizationNoteId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
             };
         }
 
@@ -430,8 +408,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="List{T}"/> of <seealso cref="AuthorizationNote"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdMessage request)
+        public override Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdRequestMessage request)
         {
             return new Service.MessageContracts.AuthorizationNotesMessage
             {
@@ -439,7 +416,7 @@ namespace Service.ServiceImplementation
                     noteManager
                         .GetAuthorizationNotesByAccount(
                             request.AccountId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -454,7 +431,6 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains the <seealso cref="List{T}"/> of <seealso cref="AuthorizationNote"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public override Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAuthorizationRequest(Service.MessageContracts.AuthorizationRequestIdMessage request)
         {
             return new Service.MessageContracts.AuthorizationNotesMessage
@@ -463,7 +439,7 @@ namespace Service.ServiceImplementation
                     noteManager
                         .GetAuthorizationNotesByAuthorizationRequest(
                             request.AuthorizationRequestId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                            request.User.GetIdentity())
                         .ToList()
             };
         }

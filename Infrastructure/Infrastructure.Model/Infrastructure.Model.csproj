@@ -60,6 +60,7 @@
     <Compile Include="Scheduling\Enumerations.cs" />
     <Compile Include="Scheduling\IAppointment.cs" />
     <Compile Include="Scheduling\IAppointmentDuration.cs" />
+    <Compile Include="Security\UserLogin.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Infrastructure.Helpers\Infrastructure.Helpers.csproj">

@@ -17,6 +17,7 @@ namespace Infrastructure.Model.Prescription
     /// <summary>
     /// Encapsulates medication based data
     /// </summary>
+    [DataContract]
     public class Medication : IModel
     {
         #region Implementation of IModel
@@ -62,6 +63,22 @@ namespace Infrastructure.Model.Prescription
         /// </summary>
         [DataMember]
         public DosageUnits? DosageUnits { get; set; }
+
+        /// <summary>
+        /// Gets or sets the int value of the AppointmentLengthUnits enum value
+        /// </summary>
+        public int? DosageUnitsValue
+        {
+            get
+            {
+                return (int?)DosageUnits;
+            }
+
+            set
+            {
+                DosageUnits = value.HasValue ? (DosageUnits)value.Value : (DosageUnits?)null;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the quantity per dose for the medication

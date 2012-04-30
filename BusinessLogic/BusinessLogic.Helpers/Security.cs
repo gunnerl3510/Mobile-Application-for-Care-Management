@@ -90,7 +90,7 @@ namespace BusinessLogic.Helpers
             }
 
             // ReSharper disable PossibleNullReferenceException
-            if (!ownerAccount.UserId.Equals(((Guid)user.ProviderUserKey).ToString()))
+            if (!ownerAccount.UserId.Equals((Guid)user.ProviderUserKey))
             // ReSharper restore PossibleNullReferenceException)
             {
                 throw new SecurityException(

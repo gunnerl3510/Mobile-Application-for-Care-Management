@@ -52,8 +52,26 @@ namespace Infrastructure.Model.Medical
         [Required]
         [DataType(DataType.DateTime)]
         [Display(Name = "Appointment Date and Time")]
-        [DataMember]
         public DateTimeOffset AppointmentDateTimeUtc { get; set; }
+
+        /// <summary>
+        /// Gets or sets the AppointmentDateTimeUtc using a string value
+        /// </summary>
+        [ScaffoldColumn(false)]
+        [DataMember]
+        public string AppointmentDateTimeUtcString
+        {
+            get
+            {
+                return AppointmentDateTimeUtc.ToString();
+            }
+
+            set
+            {
+                DateTimeOffset tempDateTime;
+                AppointmentDateTimeUtc = DateTimeOffset.TryParse(value, out tempDateTime) ? tempDateTime : default(DateTimeOffset);
+            }
+        }
 
         #endregion
 
@@ -65,6 +83,22 @@ namespace Infrastructure.Model.Medical
         [Display(Name = "Unit")]
         [DataMember]
         public ScheduleUnits? AppointmentLengthUnits { get; set; }
+
+        /// <summary>
+        /// Gets or sets the int value of the AppointmentLengthUnits enum value
+        /// </summary>
+        public int? AppointmentLengthUnitsValue
+        {
+            get
+            {
+                return (int?)AppointmentLengthUnits;
+            }
+
+            set
+            {
+                AppointmentLengthUnits = value.HasValue ? (ScheduleUnits)value.Value : (ScheduleUnits?)null;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the length of the appointment

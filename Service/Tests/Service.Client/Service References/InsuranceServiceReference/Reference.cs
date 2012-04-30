@@ -108,6 +108,67 @@ namespace Service.Client.InsuranceServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserLogin", Namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security")]
+    [System.SerializableAttribute()]
+    public partial class UserLogin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AuthorizationFollowUp", Namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Insurance")]
     [System.SerializableAttribute()]
     public partial class AuthorizationFollowUp : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -449,124 +510,433 @@ namespace Service.Client.InsuranceServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InsurerIdRequestMessage", Namespace="http://CareManagement.Model/2012/Insurance")]
+    [System.SerializableAttribute()]
+    public partial class InsurerIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InsurerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.InsuranceServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InsurerId {
+            get {
+                return this.InsurerIdField;
+            }
+            set {
+                if ((this.InsurerIdField.Equals(value) != true)) {
+                    this.InsurerIdField = value;
+                    this.RaisePropertyChanged("InsurerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.InsuranceServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountIdRequestMessage", Namespace="http://CareManagement.Model/2012/Insurance")]
+    [System.SerializableAttribute()]
+    public partial class AccountIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AccountIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.InsuranceServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AccountId {
+            get {
+                return this.AccountIdField;
+            }
+            set {
+                if ((this.AccountIdField.Equals(value) != true)) {
+                    this.AccountIdField = value;
+                    this.RaisePropertyChanged("AccountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.InsuranceServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuthorizationRequestIdMessage", Namespace="http://CareManagement.Model/2012/Insurance")]
+    [System.SerializableAttribute()]
+    public partial class AuthorizationRequestIdMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AuthorizationRequestIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.InsuranceServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuthorizationRequestId {
+            get {
+                return this.AuthorizationRequestIdField;
+            }
+            set {
+                if ((this.AuthorizationRequestIdField.Equals(value) != true)) {
+                    this.AuthorizationRequestIdField = value;
+                    this.RaisePropertyChanged("AuthorizationRequestId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.InsuranceServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuthorizationFollowUpIdRequestMessage", Namespace="http://CareManagement.Model/2012/Insurance")]
+    [System.SerializableAttribute()]
+    public partial class AuthorizationFollowUpIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AuthorizationFollowUpIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.InsuranceServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuthorizationFollowUpId {
+            get {
+                return this.AuthorizationFollowUpIdField;
+            }
+            set {
+                if ((this.AuthorizationFollowUpIdField.Equals(value) != true)) {
+                    this.AuthorizationFollowUpIdField = value;
+                    this.RaisePropertyChanged("AuthorizationFollowUpId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.InsuranceServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AuthorizationNoteIdRequestMessage", Namespace="http://CareManagement.Model/2012/Insurance")]
+    [System.SerializableAttribute()]
+    public partial class AuthorizationNoteIdRequestMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AuthorizationNoteIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.InsuranceServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AuthorizationNoteId {
+            get {
+                return this.AuthorizationNoteIdField;
+            }
+            set {
+                if ((this.AuthorizationNoteIdField.Equals(value) != true)) {
+                    this.AuthorizationNoteIdField = value;
+                    this.RaisePropertyChanged("AuthorizationNoteId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.InsuranceServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://CareManagement.Model/2012/Insurance", ConfigurationName="InsuranceServiceReference.InsuranceContract")]
     public interface InsuranceContract {
         
         // CODEGEN: Generating message contract since the operation AddInsurer is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/AddInsurer", ReplyAction="addinsurer")]
-        Service.Client.InsuranceServiceReference.AddInsurerResponse AddInsurer(Service.Client.InsuranceServiceReference.InsurerMessage request);
+        Service.Client.InsuranceServiceReference.AddInsurerResponse AddInsurer(Service.Client.InsuranceServiceReference.InsurerRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteInsurer is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/DeleteInsurer", ReplyAction="deleteinsurer")]
-        Service.Client.InsuranceServiceReference.DeleteInsurerResponse DeleteInsurer(Service.Client.InsuranceServiceReference.InsurerMessage request);
+        Service.Client.InsuranceServiceReference.DeleteInsurerResponse DeleteInsurer(Service.Client.InsuranceServiceReference.InsurerRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetInsurer is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/GetInsurer", ReplyAction="getinsurer")]
-        Service.Client.InsuranceServiceReference.InsurerMessage GetInsurer(Service.Client.InsuranceServiceReference.InsurerIdMessage request);
+        Service.Client.InsuranceServiceReference.InsurerMessage GetInsurer(Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation UpdateInsurer is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/UpdateInsurer", ReplyAction="updateinsurer")]
-        Service.Client.InsuranceServiceReference.UpdateInsurerResponse UpdateInsurer(Service.Client.InsuranceServiceReference.InsurerMessage request);
+        Service.Client.InsuranceServiceReference.UpdateInsurerResponse UpdateInsurer(Service.Client.InsuranceServiceReference.InsurerRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetInsurersByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/GetInsurersByAccount" +
             "", ReplyAction="getinsurersbyaccount")]
-        Service.Client.InsuranceServiceReference.InsurersMessage GetInsurersByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request);
+        Service.Client.InsuranceServiceReference.InsurersMessage GetInsurersByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation AddAuthorizationFollowUp is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/AddAuthorizationFoll" +
             "owUp", ReplyAction="addauthorizationfollowup")]
-        Service.Client.InsuranceServiceReference.AddAuthorizationFollowUpResponse AddAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage request);
+        Service.Client.InsuranceServiceReference.AddAuthorizationFollowUpResponse AddAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteAuthorizationFollowUp is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/DeleteAuthorizationF" +
             "ollowUp", ReplyAction="deleteauthorizationfollowup")]
-        Service.Client.InsuranceServiceReference.DeleteAuthorizationFollowUpResponse DeleteAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage request);
+        Service.Client.InsuranceServiceReference.DeleteAuthorizationFollowUpResponse DeleteAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdateAuthorizationFollowUp is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/UpdateAuthorizationF" +
             "ollowUp", ReplyAction="updateauthorizationfollowup")]
-        Service.Client.InsuranceServiceReference.UpdateAuthorizationFollowUpResponse UpdateAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage request);
+        Service.Client.InsuranceServiceReference.UpdateAuthorizationFollowUpResponse UpdateAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationFollowUpsByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/GetAuthorizationFoll" +
             "owUpsByAccount", ReplyAction="getauthorizationfollowupbyaccount")]
-        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationFollowUpsByAuthorizationRequest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/GetAuthorizationFoll" +
             "owUpsByAuthorizationRequest", ReplyAction="getauthorizationfollowupsbyauthorization")]
-        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationFollowUp is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="http://CareManagement.Model/2012/Insurance/InsuranceContract/GetAuthorizationFoll" +
             "owUp", ReplyAction="getauthorizationfollowup")]
-        Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage GetAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage GetAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation AddAuthorizationRequest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="AddAuthorizationRequest", ReplyAction="addauthorizationrequest")]
-        Service.Client.InsuranceServiceReference.AddAuthorizationRequestResponse AddAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestMessage request);
+        Service.Client.InsuranceServiceReference.AddAuthorizationRequestResponse AddAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteAuthorizationRequest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="DeleteAuthorizationRequest", ReplyAction="deleteauthorizationrequest")]
-        Service.Client.InsuranceServiceReference.DeleteAuthorizationRequestResponse DeleteAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestMessage request);
+        Service.Client.InsuranceServiceReference.DeleteAuthorizationRequestResponse DeleteAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdateAuthorizationRequest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="UpdateAuthorizationRequest", ReplyAction="updateauthorizationrequest")]
-        Service.Client.InsuranceServiceReference.UpdateAuthorizationRequestResponse UpdateAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestMessage request);
+        Service.Client.InsuranceServiceReference.UpdateAuthorizationRequestResponse UpdateAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationRequest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetAuthorizationRequest", ReplyAction="getauthorizationrequest")]
-        Service.Client.InsuranceServiceReference.AuthorizationRequestMessage GetAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationRequestMessage GetAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationRequestsByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetAuthorizationRequestsByAccount", ReplyAction="getauthorizationrequestsbyaccount")]
-        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationRequestsByInsurer is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetAuthorizationRequestsByInsurer", ReplyAction="getauthorizationrequestsbyinsurer")]
-        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage GetAuthorizationRequestsByInsurer(Service.Client.InsuranceServiceReference.InsurerIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage GetAuthorizationRequestsByInsurer(Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation AddAuthorizationNote is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="AddAuthorizationNote", ReplyAction="addauthorizationnote")]
-        Service.Client.InsuranceServiceReference.AddAuthorizationNoteResponse AddAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteMessage request);
+        Service.Client.InsuranceServiceReference.AddAuthorizationNoteResponse AddAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteAuthorizationNote is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="DeleteAuthorizationNote", ReplyAction="deleteauthorizationnote")]
-        Service.Client.InsuranceServiceReference.DeleteAuthorizationNoteResponse DeleteAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteMessage request);
+        Service.Client.InsuranceServiceReference.DeleteAuthorizationNoteResponse DeleteAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdateAuthorizationNote is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="UpdateAuthorizationNote", ReplyAction="updateauthorizationnote")]
-        Service.Client.InsuranceServiceReference.UpdateAuthorizationNoteResponse UpdateAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteMessage request);
+        Service.Client.InsuranceServiceReference.UpdateAuthorizationNoteResponse UpdateAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationNote is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetAuthorizationNote", ReplyAction="getauthorizationnote")]
-        Service.Client.InsuranceServiceReference.AuthorizationNoteMessage GetAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationNoteMessage GetAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationNotesByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetAuthorizationNotesByAccount", ReplyAction="getauthorizationnotesbyaccount")]
-        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetAuthorizationNotesByAuthorizationRequest is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetAuthorizationNotesByAuthorizationRequest", ReplyAction="getauthorizationnotesbyauthorizationrequest")]
-        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage GetAuthorizationNotesByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage request);
+        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage GetAuthorizationNotesByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class InsurerMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="InsurerRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Insurance", IsWrapped=true)]
+    public partial class InsurerRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
         public Service.Client.InsuranceServiceReference.Insurer Insurer;
         
-        public InsurerMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=1)]
+        public Service.Client.InsuranceServiceReference.UserLogin User;
+        
+        public InsurerRequestMessage() {
         }
         
-        public InsurerMessage(Service.Client.InsuranceServiceReference.Insurer Insurer) {
+        public InsurerRequestMessage(Service.Client.InsuranceServiceReference.Insurer Insurer, Service.Client.InsuranceServiceReference.UserLogin User) {
             this.Insurer = Insurer;
+            this.User = User;
         }
     }
     
@@ -594,16 +964,33 @@ namespace Service.Client.InsuranceServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class InsurerIdMessage {
+    public partial class InsurerIdRequestMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
-        public int InsurerId;
+        public Service.Client.InsuranceServiceReference.InsurerIdRequestMessage InsurerIdRequestMessage;
         
-        public InsurerIdMessage() {
+        public InsurerIdRequestMessage1() {
         }
         
-        public InsurerIdMessage(int InsurerId) {
-            this.InsurerId = InsurerId;
+        public InsurerIdRequestMessage1(Service.Client.InsuranceServiceReference.InsurerIdRequestMessage InsurerIdRequestMessage) {
+            this.InsurerIdRequestMessage = InsurerIdRequestMessage;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsurerMessage {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
+        public Service.Client.InsuranceServiceReference.Insurer Insurer;
+        
+        public InsurerMessage() {
+        }
+        
+        public InsurerMessage(Service.Client.InsuranceServiceReference.Insurer Insurer) {
+            this.Insurer = Insurer;
         }
     }
     
@@ -621,16 +1008,16 @@ namespace Service.Client.InsuranceServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AccountIdMessage {
+    public partial class AccountIdRequestMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
-        public int AccountId;
+        public Service.Client.InsuranceServiceReference.AccountIdRequestMessage AccountIdRequestMessage;
         
-        public AccountIdMessage() {
+        public AccountIdRequestMessage1() {
         }
         
-        public AccountIdMessage(int AccountId) {
-            this.AccountId = AccountId;
+        public AccountIdRequestMessage1(Service.Client.InsuranceServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            this.AccountIdRequestMessage = AccountIdRequestMessage;
         }
     }
     
@@ -654,17 +1041,21 @@ namespace Service.Client.InsuranceServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuthorizationFollowUpMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AuthorizationFollowUpRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Insurance", IsWrapped=true)]
+    public partial class AuthorizationFollowUpRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
         public Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp;
         
-        public AuthorizationFollowUpMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=1)]
+        public Service.Client.InsuranceServiceReference.UserLogin User;
+        
+        public AuthorizationFollowUpRequestMessage() {
         }
         
-        public AuthorizationFollowUpMessage(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp) {
+        public AuthorizationFollowUpRequestMessage(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp, Service.Client.InsuranceServiceReference.UserLogin User) {
             this.AuthorizationFollowUp = AuthorizationFollowUp;
+            this.User = User;
         }
     }
     
@@ -719,16 +1110,16 @@ namespace Service.Client.InsuranceServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuthorizationRequestIdMessage {
+    public partial class AuthorizationRequestIdMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
-        public int AuthorizationRequestId;
+        public Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage AuthorizationRequestIdMessage;
         
-        public AuthorizationRequestIdMessage() {
+        public AuthorizationRequestIdMessage1() {
         }
         
-        public AuthorizationRequestIdMessage(int AuthorizationRequestId) {
-            this.AuthorizationRequestId = AuthorizationRequestId;
+        public AuthorizationRequestIdMessage1(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage AuthorizationRequestIdMessage) {
+            this.AuthorizationRequestIdMessage = AuthorizationRequestIdMessage;
         }
     }
     
@@ -736,16 +1127,16 @@ namespace Service.Client.InsuranceServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuthorizationFollowUpIdMessage {
+    public partial class AuthorizationFollowUpIdRequestMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
-        public int AuthorizationFollowUpId;
+        public Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdRequestMessage AuthorizationFollowUpIdRequestMessage;
         
-        public AuthorizationFollowUpIdMessage() {
+        public AuthorizationFollowUpIdRequestMessage1() {
         }
         
-        public AuthorizationFollowUpIdMessage(int AuthorizationFollowUpId) {
-            this.AuthorizationFollowUpId = AuthorizationFollowUpId;
+        public AuthorizationFollowUpIdRequestMessage1(Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdRequestMessage AuthorizationFollowUpIdRequestMessage) {
+            this.AuthorizationFollowUpIdRequestMessage = AuthorizationFollowUpIdRequestMessage;
         }
     }
     
@@ -753,16 +1144,37 @@ namespace Service.Client.InsuranceServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuthorizationRequestMessage {
+    public partial class AuthorizationFollowUpMessage {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
+        public Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp;
+        
+        public AuthorizationFollowUpMessage() {
+        }
+        
+        public AuthorizationFollowUpMessage(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp) {
+            this.AuthorizationFollowUp = AuthorizationFollowUp;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AuthorizationRequestRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Insurance", IsWrapped=true)]
+    public partial class AuthorizationRequestRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
         public Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest;
         
-        public AuthorizationRequestMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=1)]
+        public Service.Client.InsuranceServiceReference.UserLogin User;
+        
+        public AuthorizationRequestRequestMessage() {
         }
         
-        public AuthorizationRequestMessage(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest) {
+        public AuthorizationRequestRequestMessage(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest, Service.Client.InsuranceServiceReference.UserLogin User) {
             this.AuthorizationRequest = AuthorizationRequest;
+            this.User = User;
         }
     }
     
@@ -800,6 +1212,23 @@ namespace Service.Client.InsuranceServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AuthorizationRequestMessage {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
+        public Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest;
+        
+        public AuthorizationRequestMessage() {
+        }
+        
+        public AuthorizationRequestMessage(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest) {
+            this.AuthorizationRequest = AuthorizationRequest;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AuthorizationRequestsMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
@@ -816,17 +1245,21 @@ namespace Service.Client.InsuranceServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuthorizationNoteMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="AuthorizationNoteRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Insurance", IsWrapped=true)]
+    public partial class AuthorizationNoteRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
         public Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote;
         
-        public AuthorizationNoteMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=1)]
+        public Service.Client.InsuranceServiceReference.UserLogin User;
+        
+        public AuthorizationNoteRequestMessage() {
         }
         
-        public AuthorizationNoteMessage(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote) {
+        public AuthorizationNoteRequestMessage(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote, Service.Client.InsuranceServiceReference.UserLogin User) {
             this.AuthorizationNote = AuthorizationNote;
+            this.User = User;
         }
     }
     
@@ -864,16 +1297,33 @@ namespace Service.Client.InsuranceServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuthorizationNoteIdMessage {
+    public partial class AuthorizationNoteIdRequestMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
-        public int AuthorizationNoteId;
+        public Service.Client.InsuranceServiceReference.AuthorizationNoteIdRequestMessage AuthorizationNoteIdRequestMessage;
         
-        public AuthorizationNoteIdMessage() {
+        public AuthorizationNoteIdRequestMessage1() {
         }
         
-        public AuthorizationNoteIdMessage(int AuthorizationNoteId) {
-            this.AuthorizationNoteId = AuthorizationNoteId;
+        public AuthorizationNoteIdRequestMessage1(Service.Client.InsuranceServiceReference.AuthorizationNoteIdRequestMessage AuthorizationNoteIdRequestMessage) {
+            this.AuthorizationNoteIdRequestMessage = AuthorizationNoteIdRequestMessage;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AuthorizationNoteMessage {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
+        public Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote;
+        
+        public AuthorizationNoteMessage() {
+        }
+        
+        public AuthorizationNoteMessage(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote) {
+            this.AuthorizationNote = AuthorizationNote;
         }
     }
     
@@ -922,265 +1372,277 @@ namespace Service.Client.InsuranceServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AddInsurerResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddInsurer(Service.Client.InsuranceServiceReference.InsurerMessage request) {
+        Service.Client.InsuranceServiceReference.AddInsurerResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddInsurer(Service.Client.InsuranceServiceReference.InsurerRequestMessage request) {
             return base.Channel.AddInsurer(request);
         }
         
-        public void AddInsurer(Service.Client.InsuranceServiceReference.Insurer Insurer) {
-            Service.Client.InsuranceServiceReference.InsurerMessage inValue = new Service.Client.InsuranceServiceReference.InsurerMessage();
+        public void AddInsurer(Service.Client.InsuranceServiceReference.Insurer Insurer, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.InsurerRequestMessage inValue = new Service.Client.InsuranceServiceReference.InsurerRequestMessage();
             inValue.Insurer = Insurer;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.AddInsurerResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).AddInsurer(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.DeleteInsurerResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteInsurer(Service.Client.InsuranceServiceReference.InsurerMessage request) {
+        Service.Client.InsuranceServiceReference.DeleteInsurerResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteInsurer(Service.Client.InsuranceServiceReference.InsurerRequestMessage request) {
             return base.Channel.DeleteInsurer(request);
         }
         
-        public void DeleteInsurer(Service.Client.InsuranceServiceReference.Insurer Insurer) {
-            Service.Client.InsuranceServiceReference.InsurerMessage inValue = new Service.Client.InsuranceServiceReference.InsurerMessage();
+        public void DeleteInsurer(Service.Client.InsuranceServiceReference.Insurer Insurer, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.InsurerRequestMessage inValue = new Service.Client.InsuranceServiceReference.InsurerRequestMessage();
             inValue.Insurer = Insurer;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.DeleteInsurerResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).DeleteInsurer(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.InsurerMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetInsurer(Service.Client.InsuranceServiceReference.InsurerIdMessage request) {
+        Service.Client.InsuranceServiceReference.InsurerMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetInsurer(Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1 request) {
             return base.Channel.GetInsurer(request);
         }
         
-        public Service.Client.InsuranceServiceReference.Insurer GetInsurer(int InsurerId) {
-            Service.Client.InsuranceServiceReference.InsurerIdMessage inValue = new Service.Client.InsuranceServiceReference.InsurerIdMessage();
-            inValue.InsurerId = InsurerId;
+        public Service.Client.InsuranceServiceReference.Insurer GetInsurer(Service.Client.InsuranceServiceReference.InsurerIdRequestMessage InsurerIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1();
+            inValue.InsurerIdRequestMessage = InsurerIdRequestMessage;
             Service.Client.InsuranceServiceReference.InsurerMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetInsurer(inValue);
             return retVal.Insurer;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.UpdateInsurerResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateInsurer(Service.Client.InsuranceServiceReference.InsurerMessage request) {
+        Service.Client.InsuranceServiceReference.UpdateInsurerResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateInsurer(Service.Client.InsuranceServiceReference.InsurerRequestMessage request) {
             return base.Channel.UpdateInsurer(request);
         }
         
-        public void UpdateInsurer(Service.Client.InsuranceServiceReference.Insurer Insurer) {
-            Service.Client.InsuranceServiceReference.InsurerMessage inValue = new Service.Client.InsuranceServiceReference.InsurerMessage();
+        public void UpdateInsurer(Service.Client.InsuranceServiceReference.Insurer Insurer, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.InsurerRequestMessage inValue = new Service.Client.InsuranceServiceReference.InsurerRequestMessage();
             inValue.Insurer = Insurer;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.UpdateInsurerResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).UpdateInsurer(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.InsurersMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetInsurersByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request) {
+        Service.Client.InsuranceServiceReference.InsurersMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetInsurersByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request) {
             return base.Channel.GetInsurersByAccount(request);
         }
         
-        public Service.Client.InsuranceServiceReference.Insurer[] GetInsurersByAccount(int AccountId) {
-            Service.Client.InsuranceServiceReference.AccountIdMessage inValue = new Service.Client.InsuranceServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.InsuranceServiceReference.Insurer[] GetInsurersByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.AccountIdRequestMessage1();
+            inValue.AccountIdRequestMessage = AccountIdRequestMessage;
             Service.Client.InsuranceServiceReference.InsurersMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetInsurersByAccount(inValue);
             return retVal.Insurers;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AddAuthorizationFollowUpResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage request) {
+        Service.Client.InsuranceServiceReference.AddAuthorizationFollowUpResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage request) {
             return base.Channel.AddAuthorizationFollowUp(request);
         }
         
-        public void AddAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp) {
-            Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage();
+        public void AddAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage();
             inValue.AuthorizationFollowUp = AuthorizationFollowUp;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.AddAuthorizationFollowUpResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).AddAuthorizationFollowUp(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.DeleteAuthorizationFollowUpResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage request) {
+        Service.Client.InsuranceServiceReference.DeleteAuthorizationFollowUpResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage request) {
             return base.Channel.DeleteAuthorizationFollowUp(request);
         }
         
-        public void DeleteAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp) {
-            Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage();
+        public void DeleteAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage();
             inValue.AuthorizationFollowUp = AuthorizationFollowUp;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.DeleteAuthorizationFollowUpResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).DeleteAuthorizationFollowUp(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.UpdateAuthorizationFollowUpResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage request) {
+        Service.Client.InsuranceServiceReference.UpdateAuthorizationFollowUpResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage request) {
             return base.Channel.UpdateAuthorizationFollowUp(request);
         }
         
-        public void UpdateAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp) {
-            Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage();
+        public void UpdateAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUp AuthorizationFollowUp, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpRequestMessage();
             inValue.AuthorizationFollowUp = AuthorizationFollowUp;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.UpdateAuthorizationFollowUpResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).UpdateAuthorizationFollowUp(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationFollowUpsByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationFollowUpsByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request) {
             return base.Channel.GetAuthorizationFollowUpsByAccount(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationFollowUp[] GetAuthorizationFollowUpsByAccount(int AccountId) {
-            Service.Client.InsuranceServiceReference.AccountIdMessage inValue = new Service.Client.InsuranceServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.InsuranceServiceReference.AuthorizationFollowUp[] GetAuthorizationFollowUpsByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.AccountIdRequestMessage1();
+            inValue.AccountIdRequestMessage = AccountIdRequestMessage;
             Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationFollowUpsByAccount(inValue);
             return retVal.AuthorizationFollowUps;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationFollowUpsByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationFollowUpsByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 request) {
             return base.Channel.GetAuthorizationFollowUpsByAuthorizationRequest(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationFollowUp[] GetAuthorizationFollowUpsByAuthorizationRequest(int AuthorizationRequestId) {
-            Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage();
-            inValue.AuthorizationRequestId = AuthorizationRequestId;
+        public Service.Client.InsuranceServiceReference.AuthorizationFollowUp[] GetAuthorizationFollowUpsByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage AuthorizationRequestIdMessage) {
+            Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1();
+            inValue.AuthorizationRequestIdMessage = AuthorizationRequestIdMessage;
             Service.Client.InsuranceServiceReference.AuthorizationFollowUpsMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationFollowUpsByAuthorizationRequest(inValue);
             return retVal.AuthorizationFollowUps;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdRequestMessage1 request) {
             return base.Channel.GetAuthorizationFollowUp(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationFollowUp GetAuthorizationFollowUp(int AuthorizationFollowUpId) {
-            Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdMessage();
-            inValue.AuthorizationFollowUpId = AuthorizationFollowUpId;
+        public Service.Client.InsuranceServiceReference.AuthorizationFollowUp GetAuthorizationFollowUp(Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdRequestMessage AuthorizationFollowUpIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.AuthorizationFollowUpIdRequestMessage1();
+            inValue.AuthorizationFollowUpIdRequestMessage = AuthorizationFollowUpIdRequestMessage;
             Service.Client.InsuranceServiceReference.AuthorizationFollowUpMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationFollowUp(inValue);
             return retVal.AuthorizationFollowUp;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AddAuthorizationRequestResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestMessage request) {
+        Service.Client.InsuranceServiceReference.AddAuthorizationRequestResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage request) {
             return base.Channel.AddAuthorizationRequest(request);
         }
         
-        public void AddAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest) {
-            Service.Client.InsuranceServiceReference.AuthorizationRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestMessage();
+        public void AddAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage();
             inValue.AuthorizationRequest = AuthorizationRequest;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.AddAuthorizationRequestResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).AddAuthorizationRequest(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.DeleteAuthorizationRequestResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestMessage request) {
+        Service.Client.InsuranceServiceReference.DeleteAuthorizationRequestResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage request) {
             return base.Channel.DeleteAuthorizationRequest(request);
         }
         
-        public void DeleteAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest) {
-            Service.Client.InsuranceServiceReference.AuthorizationRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestMessage();
+        public void DeleteAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage();
             inValue.AuthorizationRequest = AuthorizationRequest;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.DeleteAuthorizationRequestResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).DeleteAuthorizationRequest(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.UpdateAuthorizationRequestResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestMessage request) {
+        Service.Client.InsuranceServiceReference.UpdateAuthorizationRequestResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage request) {
             return base.Channel.UpdateAuthorizationRequest(request);
         }
         
-        public void UpdateAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest) {
-            Service.Client.InsuranceServiceReference.AuthorizationRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestMessage();
+        public void UpdateAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequest AuthorizationRequest, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestRequestMessage();
             inValue.AuthorizationRequest = AuthorizationRequest;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.UpdateAuthorizationRequestResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).UpdateAuthorizationRequest(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationRequestMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationRequestMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 request) {
             return base.Channel.GetAuthorizationRequest(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationRequest GetAuthorizationRequest(int AuthorizationRequestId) {
-            Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage();
-            inValue.AuthorizationRequestId = AuthorizationRequestId;
+        public Service.Client.InsuranceServiceReference.AuthorizationRequest GetAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage AuthorizationRequestIdMessage) {
+            Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1();
+            inValue.AuthorizationRequestIdMessage = AuthorizationRequestIdMessage;
             Service.Client.InsuranceServiceReference.AuthorizationRequestMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationRequest(inValue);
             return retVal.AuthorizationRequest;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationRequestsByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationRequestsByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request) {
             return base.Channel.GetAuthorizationRequestsByAccount(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationRequest[] GetAuthorizationRequestsByAccount(int AccountId) {
-            Service.Client.InsuranceServiceReference.AccountIdMessage inValue = new Service.Client.InsuranceServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.InsuranceServiceReference.AuthorizationRequest[] GetAuthorizationRequestsByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.AccountIdRequestMessage1();
+            inValue.AccountIdRequestMessage = AccountIdRequestMessage;
             Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationRequestsByAccount(inValue);
             return retVal.AuthorizationRequests;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationRequestsByInsurer(Service.Client.InsuranceServiceReference.InsurerIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationRequestsByInsurer(Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1 request) {
             return base.Channel.GetAuthorizationRequestsByInsurer(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationRequest[] GetAuthorizationRequestsByInsurer(int InsurerId) {
-            Service.Client.InsuranceServiceReference.InsurerIdMessage inValue = new Service.Client.InsuranceServiceReference.InsurerIdMessage();
-            inValue.InsurerId = InsurerId;
+        public Service.Client.InsuranceServiceReference.AuthorizationRequest[] GetAuthorizationRequestsByInsurer(Service.Client.InsuranceServiceReference.InsurerIdRequestMessage InsurerIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.InsurerIdRequestMessage1();
+            inValue.InsurerIdRequestMessage = InsurerIdRequestMessage;
             Service.Client.InsuranceServiceReference.AuthorizationRequestsMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationRequestsByInsurer(inValue);
             return retVal.AuthorizationRequests;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AddAuthorizationNoteResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteMessage request) {
+        Service.Client.InsuranceServiceReference.AddAuthorizationNoteResponse Service.Client.InsuranceServiceReference.InsuranceContract.AddAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage request) {
             return base.Channel.AddAuthorizationNote(request);
         }
         
-        public void AddAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote) {
-            Service.Client.InsuranceServiceReference.AuthorizationNoteMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteMessage();
+        public void AddAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage();
             inValue.AuthorizationNote = AuthorizationNote;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.AddAuthorizationNoteResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).AddAuthorizationNote(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.DeleteAuthorizationNoteResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteMessage request) {
+        Service.Client.InsuranceServiceReference.DeleteAuthorizationNoteResponse Service.Client.InsuranceServiceReference.InsuranceContract.DeleteAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage request) {
             return base.Channel.DeleteAuthorizationNote(request);
         }
         
-        public void DeleteAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote) {
-            Service.Client.InsuranceServiceReference.AuthorizationNoteMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteMessage();
+        public void DeleteAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage();
             inValue.AuthorizationNote = AuthorizationNote;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.DeleteAuthorizationNoteResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).DeleteAuthorizationNote(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.UpdateAuthorizationNoteResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteMessage request) {
+        Service.Client.InsuranceServiceReference.UpdateAuthorizationNoteResponse Service.Client.InsuranceServiceReference.InsuranceContract.UpdateAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage request) {
             return base.Channel.UpdateAuthorizationNote(request);
         }
         
-        public void UpdateAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote) {
-            Service.Client.InsuranceServiceReference.AuthorizationNoteMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteMessage();
+        public void UpdateAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNote AuthorizationNote, Service.Client.InsuranceServiceReference.UserLogin User) {
+            Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteRequestMessage();
             inValue.AuthorizationNote = AuthorizationNote;
+            inValue.User = User;
             Service.Client.InsuranceServiceReference.UpdateAuthorizationNoteResponse retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).UpdateAuthorizationNote(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationNoteMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationNoteMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteIdRequestMessage1 request) {
             return base.Channel.GetAuthorizationNote(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationNote GetAuthorizationNote(int AuthorizationNoteId) {
-            Service.Client.InsuranceServiceReference.AuthorizationNoteIdMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteIdMessage();
-            inValue.AuthorizationNoteId = AuthorizationNoteId;
+        public Service.Client.InsuranceServiceReference.AuthorizationNote GetAuthorizationNote(Service.Client.InsuranceServiceReference.AuthorizationNoteIdRequestMessage AuthorizationNoteIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.AuthorizationNoteIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.AuthorizationNoteIdRequestMessage1();
+            inValue.AuthorizationNoteIdRequestMessage = AuthorizationNoteIdRequestMessage;
             Service.Client.InsuranceServiceReference.AuthorizationNoteMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationNote(inValue);
             return retVal.AuthorizationNote;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationNotesByAccount(Service.Client.InsuranceServiceReference.AccountIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationNotesByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 request) {
             return base.Channel.GetAuthorizationNotesByAccount(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationNote[] GetAuthorizationNotesByAccount(int AccountId) {
-            Service.Client.InsuranceServiceReference.AccountIdMessage inValue = new Service.Client.InsuranceServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.InsuranceServiceReference.AuthorizationNote[] GetAuthorizationNotesByAccount(Service.Client.InsuranceServiceReference.AccountIdRequestMessage AccountIdRequestMessage) {
+            Service.Client.InsuranceServiceReference.AccountIdRequestMessage1 inValue = new Service.Client.InsuranceServiceReference.AccountIdRequestMessage1();
+            inValue.AccountIdRequestMessage = AccountIdRequestMessage;
             Service.Client.InsuranceServiceReference.AuthorizationNotesMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationNotesByAccount(inValue);
             return retVal.AuthorizationNotes;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationNotesByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage request) {
+        Service.Client.InsuranceServiceReference.AuthorizationNotesMessage Service.Client.InsuranceServiceReference.InsuranceContract.GetAuthorizationNotesByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 request) {
             return base.Channel.GetAuthorizationNotesByAuthorizationRequest(request);
         }
         
-        public Service.Client.InsuranceServiceReference.AuthorizationNote[] GetAuthorizationNotesByAuthorizationRequest(int AuthorizationRequestId) {
-            Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage();
-            inValue.AuthorizationRequestId = AuthorizationRequestId;
+        public Service.Client.InsuranceServiceReference.AuthorizationNote[] GetAuthorizationNotesByAuthorizationRequest(Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage AuthorizationRequestIdMessage) {
+            Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1 inValue = new Service.Client.InsuranceServiceReference.AuthorizationRequestIdMessage1();
+            inValue.AuthorizationRequestIdMessage = AuthorizationRequestIdMessage;
             Service.Client.InsuranceServiceReference.AuthorizationNotesMessage retVal = ((Service.Client.InsuranceServiceReference.InsuranceContract)(this)).GetAuthorizationNotesByAuthorizationRequest(inValue);
             return retVal.AuthorizationNotes;
         }

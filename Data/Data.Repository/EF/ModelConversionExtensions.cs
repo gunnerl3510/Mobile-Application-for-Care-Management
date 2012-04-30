@@ -30,14 +30,13 @@ namespace Data.Repository.EF
         /// <returns>An EF <c>Account</c> <c>EntityObject</c></returns>
         public static Account ToEfAccount(this AccountModels.Account account)
         {
-            Guid tempGuid;
             return new Account
                 {
                     AccountId = account.Id,
                     CurrentVersion = account.CurrentVersion,
                     EmailAddress = account.EmailAddress,
                     Name = account.Name,
-                    UserId = Guid.TryParse(account.UserId, out tempGuid) ? tempGuid : default(Guid)
+                    UserId = account.UserId
                 };
         }
 

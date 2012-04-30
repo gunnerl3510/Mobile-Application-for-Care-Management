@@ -71,11 +71,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AccountService.svc" />
-    <Content Include="InsuranceServiceReference.svc" />
+    <Content Include="AccountsServiceReference.svc" />
+    <Content Include="InsuranceReference.svc" />
     <Content Include="MedicalServiceReference.svc" />
     <Content Include="PrescriptionServiceReference.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -110,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

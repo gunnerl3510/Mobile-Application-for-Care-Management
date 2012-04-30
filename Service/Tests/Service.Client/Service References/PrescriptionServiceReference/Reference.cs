@@ -160,6 +160,67 @@ namespace Service.Client.PrescriptionServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserLogin", Namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security")]
+    [System.SerializableAttribute()]
+    public partial class UserLogin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UserName {
+            get {
+                return this.UserNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
+                    this.UserNameField = value;
+                    this.RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PrescriptionPickup", Namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Prescription")]
     [System.SerializableAttribute()]
     public partial class PrescriptionPickup : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -267,69 +328,256 @@ namespace Service.Client.PrescriptionServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MedicationIdMessage", Namespace="http://CareManagement.Model/2012/Prescription")]
+    [System.SerializableAttribute()]
+    public partial class MedicationIdMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MedicationIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.PrescriptionServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MedicationId {
+            get {
+                return this.MedicationIdField;
+            }
+            set {
+                if ((this.MedicationIdField.Equals(value) != true)) {
+                    this.MedicationIdField = value;
+                    this.RaisePropertyChanged("MedicationId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.PrescriptionServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccountIdMessage", Namespace="http://CareManagement.Model/2012/Accounts")]
+    [System.SerializableAttribute()]
+    public partial class AccountIdMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AccountIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.PrescriptionServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AccountId {
+            get {
+                return this.AccountIdField;
+            }
+            set {
+                if ((this.AccountIdField.Equals(value) != true)) {
+                    this.AccountIdField = value;
+                    this.RaisePropertyChanged("AccountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.PrescriptionServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PrescriptionPickupIdMessage", Namespace="http://CareManagement.Model/2012/Prescription")]
+    [System.SerializableAttribute()]
+    public partial class PrescriptionPickupIdMessage : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PrescriptionPickupIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Service.Client.PrescriptionServiceReference.UserLogin UserField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PrescriptionPickupId {
+            get {
+                return this.PrescriptionPickupIdField;
+            }
+            set {
+                if ((this.PrescriptionPickupIdField.Equals(value) != true)) {
+                    this.PrescriptionPickupIdField = value;
+                    this.RaisePropertyChanged("PrescriptionPickupId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Service.Client.PrescriptionServiceReference.UserLogin User {
+            get {
+                return this.UserField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserField, value) != true)) {
+                    this.UserField = value;
+                    this.RaisePropertyChanged("User");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://CareManagement.Model/2012/Prescription", ConfigurationName="PrescriptionServiceReference.PrescriptionContract")]
     public interface PrescriptionContract {
         
         // CODEGEN: Generating message contract since the operation AddMedication is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="AddMedication", ReplyAction="addmedication")]
-        Service.Client.PrescriptionServiceReference.AddMedicationResponse AddMedication(Service.Client.PrescriptionServiceReference.MedicationMessage request);
+        Service.Client.PrescriptionServiceReference.AddMedicationResponse AddMedication(Service.Client.PrescriptionServiceReference.MedicationRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeleteMedication is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="DeleteMedication", ReplyAction="deletemedication")]
-        Service.Client.PrescriptionServiceReference.DeleteMedicationResponse DeleteMedication(Service.Client.PrescriptionServiceReference.MedicationMessage request);
+        Service.Client.PrescriptionServiceReference.DeleteMedicationResponse DeleteMedication(Service.Client.PrescriptionServiceReference.MedicationRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdateMedication is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="UpdateMedication", ReplyAction="updatemedication")]
-        Service.Client.PrescriptionServiceReference.UpdateMedicationResponse UpdateMedication(Service.Client.PrescriptionServiceReference.MedicationMessage request);
+        Service.Client.PrescriptionServiceReference.UpdateMedicationResponse UpdateMedication(Service.Client.PrescriptionServiceReference.MedicationRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetMedication is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetMedication", ReplyAction="getmedication")]
-        Service.Client.PrescriptionServiceReference.MedicationMessage GetMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage request);
+        Service.Client.PrescriptionServiceReference.MedicationMessage GetMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetMedicationsByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetMedicationsByAccount", ReplyAction="getmedicationsbyaccount")]
-        Service.Client.PrescriptionServiceReference.MedicationsMessage GetMedicationsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage request);
+        Service.Client.PrescriptionServiceReference.MedicationsMessage GetMedicationsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage1 request);
         
         // CODEGEN: Generating message contract since the operation AddPrescriptionPickup is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="AddPrescriptionPickup", ReplyAction="addprescriptionpickup")]
-        Service.Client.PrescriptionServiceReference.AddPrescriptionPickupResponse AddPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage request);
+        Service.Client.PrescriptionServiceReference.AddPrescriptionPickupResponse AddPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation DeletePrescriptionPickup is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="DeletePrescriptionPickup", ReplyAction="deleteprescriptionpickup")]
-        Service.Client.PrescriptionServiceReference.DeletePrescriptionPickupResponse DeletePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage request);
+        Service.Client.PrescriptionServiceReference.DeletePrescriptionPickupResponse DeletePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation UpdatePrescriptionPickup is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="UpdatePrescriptionPickup", ReplyAction="updateprescriptionpickup")]
-        Service.Client.PrescriptionServiceReference.UpdatePrescriptionPickupResponse UpdatePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage request);
+        Service.Client.PrescriptionServiceReference.UpdatePrescriptionPickupResponse UpdatePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage request);
         
         // CODEGEN: Generating message contract since the operation GetPrescriptionPickup is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetPrescriptionPickup", ReplyAction="getprescriptionpickup")]
-        Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage GetPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage request);
+        Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage GetPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetPrescriptionPickupsByMedication is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetPrescriptionPickupsByMedication", ReplyAction="getprescriptionpickupsbymedication")]
-        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage GetPrescriptionPickupsByMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage request);
+        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage GetPrescriptionPickupsByMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage1 request);
         
         // CODEGEN: Generating message contract since the operation GetPrescriptionPickupsByAccount is neither RPC nor document wrapped.
         [System.ServiceModel.OperationContractAttribute(Action="GetPrescriptionPickupsByAccount", ReplyAction="getprescriptionpickupsbyaccount")]
-        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage request);
+        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage1 request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MedicationMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="MedicationRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Prescription", IsWrapped=true)]
+    public partial class MedicationRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=0)]
         public Service.Client.PrescriptionServiceReference.Medication Medication;
         
-        public MedicationMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=1)]
+        public Service.Client.PrescriptionServiceReference.UserLogin User;
+        
+        public MedicationRequestMessage() {
         }
         
-        public MedicationMessage(Service.Client.PrescriptionServiceReference.Medication Medication) {
+        public MedicationRequestMessage(Service.Client.PrescriptionServiceReference.Medication Medication, Service.Client.PrescriptionServiceReference.UserLogin User) {
             this.Medication = Medication;
+            this.User = User;
         }
     }
     
@@ -367,16 +615,16 @@ namespace Service.Client.PrescriptionServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MedicationIdMessage {
+    public partial class MedicationIdMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=0)]
-        public int MedicationId;
+        public Service.Client.PrescriptionServiceReference.MedicationIdMessage MedicationIdMessage;
         
-        public MedicationIdMessage() {
+        public MedicationIdMessage1() {
         }
         
-        public MedicationIdMessage(int MedicationId) {
-            this.MedicationId = MedicationId;
+        public MedicationIdMessage1(Service.Client.PrescriptionServiceReference.MedicationIdMessage MedicationIdMessage) {
+            this.MedicationIdMessage = MedicationIdMessage;
         }
     }
     
@@ -384,16 +632,33 @@ namespace Service.Client.PrescriptionServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AccountIdMessage {
+    public partial class MedicationMessage {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Insurance", Order=0)]
-        public int AccountId;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=0)]
+        public Service.Client.PrescriptionServiceReference.Medication Medication;
         
-        public AccountIdMessage() {
+        public MedicationMessage() {
         }
         
-        public AccountIdMessage(int AccountId) {
-            this.AccountId = AccountId;
+        public MedicationMessage(Service.Client.PrescriptionServiceReference.Medication Medication) {
+            this.Medication = Medication;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AccountIdMessage1 {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Accounts", Order=0)]
+        public Service.Client.PrescriptionServiceReference.AccountIdMessage AccountIdMessage;
+        
+        public AccountIdMessage1() {
+        }
+        
+        public AccountIdMessage1(Service.Client.PrescriptionServiceReference.AccountIdMessage AccountIdMessage) {
+            this.AccountIdMessage = AccountIdMessage;
         }
     }
     
@@ -417,17 +682,21 @@ namespace Service.Client.PrescriptionServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class PrescriptionPickupMessage {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="PrescriptionPickupRequestMessage", WrapperNamespace="http://CareManagement.Model/2012/Prescription", IsWrapped=true)]
+    public partial class PrescriptionPickupRequestMessage {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=0)]
         public Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup;
         
-        public PrescriptionPickupMessage() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=1)]
+        public Service.Client.PrescriptionServiceReference.UserLogin User;
+        
+        public PrescriptionPickupRequestMessage() {
         }
         
-        public PrescriptionPickupMessage(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup) {
+        public PrescriptionPickupRequestMessage(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup, Service.Client.PrescriptionServiceReference.UserLogin User) {
             this.PrescriptionPickup = PrescriptionPickup;
+            this.User = User;
         }
     }
     
@@ -465,16 +734,33 @@ namespace Service.Client.PrescriptionServiceReference {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class PrescriptionPickupIdMessage {
+    public partial class PrescriptionPickupIdMessage1 {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=0)]
-        public int PrescriptionPickupId;
+        public Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage PrescriptionPickupIdMessage;
         
-        public PrescriptionPickupIdMessage() {
+        public PrescriptionPickupIdMessage1() {
         }
         
-        public PrescriptionPickupIdMessage(int PrescriptionPickupId) {
-            this.PrescriptionPickupId = PrescriptionPickupId;
+        public PrescriptionPickupIdMessage1(Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage PrescriptionPickupIdMessage) {
+            this.PrescriptionPickupIdMessage = PrescriptionPickupIdMessage;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class PrescriptionPickupMessage {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://CareManagement.Model/2012/Prescription", Order=0)]
+        public Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup;
+        
+        public PrescriptionPickupMessage() {
+        }
+        
+        public PrescriptionPickupMessage(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup) {
+            this.PrescriptionPickup = PrescriptionPickup;
         }
     }
     
@@ -523,127 +809,133 @@ namespace Service.Client.PrescriptionServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.AddMedicationResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.AddMedication(Service.Client.PrescriptionServiceReference.MedicationMessage request) {
+        Service.Client.PrescriptionServiceReference.AddMedicationResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.AddMedication(Service.Client.PrescriptionServiceReference.MedicationRequestMessage request) {
             return base.Channel.AddMedication(request);
         }
         
-        public void AddMedication(Service.Client.PrescriptionServiceReference.Medication Medication) {
-            Service.Client.PrescriptionServiceReference.MedicationMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationMessage();
+        public void AddMedication(Service.Client.PrescriptionServiceReference.Medication Medication, Service.Client.PrescriptionServiceReference.UserLogin User) {
+            Service.Client.PrescriptionServiceReference.MedicationRequestMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationRequestMessage();
             inValue.Medication = Medication;
+            inValue.User = User;
             Service.Client.PrescriptionServiceReference.AddMedicationResponse retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).AddMedication(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.DeleteMedicationResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.DeleteMedication(Service.Client.PrescriptionServiceReference.MedicationMessage request) {
+        Service.Client.PrescriptionServiceReference.DeleteMedicationResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.DeleteMedication(Service.Client.PrescriptionServiceReference.MedicationRequestMessage request) {
             return base.Channel.DeleteMedication(request);
         }
         
-        public void DeleteMedication(Service.Client.PrescriptionServiceReference.Medication Medication) {
-            Service.Client.PrescriptionServiceReference.MedicationMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationMessage();
+        public void DeleteMedication(Service.Client.PrescriptionServiceReference.Medication Medication, Service.Client.PrescriptionServiceReference.UserLogin User) {
+            Service.Client.PrescriptionServiceReference.MedicationRequestMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationRequestMessage();
             inValue.Medication = Medication;
+            inValue.User = User;
             Service.Client.PrescriptionServiceReference.DeleteMedicationResponse retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).DeleteMedication(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.UpdateMedicationResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.UpdateMedication(Service.Client.PrescriptionServiceReference.MedicationMessage request) {
+        Service.Client.PrescriptionServiceReference.UpdateMedicationResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.UpdateMedication(Service.Client.PrescriptionServiceReference.MedicationRequestMessage request) {
             return base.Channel.UpdateMedication(request);
         }
         
-        public void UpdateMedication(Service.Client.PrescriptionServiceReference.Medication Medication) {
-            Service.Client.PrescriptionServiceReference.MedicationMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationMessage();
+        public void UpdateMedication(Service.Client.PrescriptionServiceReference.Medication Medication, Service.Client.PrescriptionServiceReference.UserLogin User) {
+            Service.Client.PrescriptionServiceReference.MedicationRequestMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationRequestMessage();
             inValue.Medication = Medication;
+            inValue.User = User;
             Service.Client.PrescriptionServiceReference.UpdateMedicationResponse retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).UpdateMedication(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.MedicationMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage request) {
+        Service.Client.PrescriptionServiceReference.MedicationMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage1 request) {
             return base.Channel.GetMedication(request);
         }
         
-        public Service.Client.PrescriptionServiceReference.Medication GetMedication(int MedicationId) {
-            Service.Client.PrescriptionServiceReference.MedicationIdMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationIdMessage();
-            inValue.MedicationId = MedicationId;
+        public Service.Client.PrescriptionServiceReference.Medication GetMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage MedicationIdMessage) {
+            Service.Client.PrescriptionServiceReference.MedicationIdMessage1 inValue = new Service.Client.PrescriptionServiceReference.MedicationIdMessage1();
+            inValue.MedicationIdMessage = MedicationIdMessage;
             Service.Client.PrescriptionServiceReference.MedicationMessage retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).GetMedication(inValue);
             return retVal.Medication;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.MedicationsMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetMedicationsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage request) {
+        Service.Client.PrescriptionServiceReference.MedicationsMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetMedicationsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage1 request) {
             return base.Channel.GetMedicationsByAccount(request);
         }
         
-        public Service.Client.PrescriptionServiceReference.Medication[] GetMedicationsByAccount(int AccountId) {
-            Service.Client.PrescriptionServiceReference.AccountIdMessage inValue = new Service.Client.PrescriptionServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.PrescriptionServiceReference.Medication[] GetMedicationsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage AccountIdMessage) {
+            Service.Client.PrescriptionServiceReference.AccountIdMessage1 inValue = new Service.Client.PrescriptionServiceReference.AccountIdMessage1();
+            inValue.AccountIdMessage = AccountIdMessage;
             Service.Client.PrescriptionServiceReference.MedicationsMessage retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).GetMedicationsByAccount(inValue);
             return retVal.Medications;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.AddPrescriptionPickupResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.AddPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage request) {
+        Service.Client.PrescriptionServiceReference.AddPrescriptionPickupResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.AddPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage request) {
             return base.Channel.AddPrescriptionPickup(request);
         }
         
-        public void AddPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup) {
-            Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage();
+        public void AddPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup, Service.Client.PrescriptionServiceReference.UserLogin User) {
+            Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage();
             inValue.PrescriptionPickup = PrescriptionPickup;
+            inValue.User = User;
             Service.Client.PrescriptionServiceReference.AddPrescriptionPickupResponse retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).AddPrescriptionPickup(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.DeletePrescriptionPickupResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.DeletePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage request) {
+        Service.Client.PrescriptionServiceReference.DeletePrescriptionPickupResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.DeletePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage request) {
             return base.Channel.DeletePrescriptionPickup(request);
         }
         
-        public void DeletePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup) {
-            Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage();
+        public void DeletePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup, Service.Client.PrescriptionServiceReference.UserLogin User) {
+            Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage();
             inValue.PrescriptionPickup = PrescriptionPickup;
+            inValue.User = User;
             Service.Client.PrescriptionServiceReference.DeletePrescriptionPickupResponse retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).DeletePrescriptionPickup(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.UpdatePrescriptionPickupResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.UpdatePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage request) {
+        Service.Client.PrescriptionServiceReference.UpdatePrescriptionPickupResponse Service.Client.PrescriptionServiceReference.PrescriptionContract.UpdatePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage request) {
             return base.Channel.UpdatePrescriptionPickup(request);
         }
         
-        public void UpdatePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup) {
-            Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage();
+        public void UpdatePrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickup PrescriptionPickup, Service.Client.PrescriptionServiceReference.UserLogin User) {
+            Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupRequestMessage();
             inValue.PrescriptionPickup = PrescriptionPickup;
+            inValue.User = User;
             Service.Client.PrescriptionServiceReference.UpdatePrescriptionPickupResponse retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).UpdatePrescriptionPickup(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage request) {
+        Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage1 request) {
             return base.Channel.GetPrescriptionPickup(request);
         }
         
-        public Service.Client.PrescriptionServiceReference.PrescriptionPickup GetPrescriptionPickup(int PrescriptionPickupId) {
-            Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage();
-            inValue.PrescriptionPickupId = PrescriptionPickupId;
+        public Service.Client.PrescriptionServiceReference.PrescriptionPickup GetPrescriptionPickup(Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage PrescriptionPickupIdMessage) {
+            Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage1 inValue = new Service.Client.PrescriptionServiceReference.PrescriptionPickupIdMessage1();
+            inValue.PrescriptionPickupIdMessage = PrescriptionPickupIdMessage;
             Service.Client.PrescriptionServiceReference.PrescriptionPickupMessage retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).GetPrescriptionPickup(inValue);
             return retVal.PrescriptionPickup;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetPrescriptionPickupsByMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage request) {
+        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetPrescriptionPickupsByMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage1 request) {
             return base.Channel.GetPrescriptionPickupsByMedication(request);
         }
         
-        public Service.Client.PrescriptionServiceReference.PrescriptionPickup[] GetPrescriptionPickupsByMedication(int MedicationId) {
-            Service.Client.PrescriptionServiceReference.MedicationIdMessage inValue = new Service.Client.PrescriptionServiceReference.MedicationIdMessage();
-            inValue.MedicationId = MedicationId;
+        public Service.Client.PrescriptionServiceReference.PrescriptionPickup[] GetPrescriptionPickupsByMedication(Service.Client.PrescriptionServiceReference.MedicationIdMessage MedicationIdMessage) {
+            Service.Client.PrescriptionServiceReference.MedicationIdMessage1 inValue = new Service.Client.PrescriptionServiceReference.MedicationIdMessage1();
+            inValue.MedicationIdMessage = MedicationIdMessage;
             Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).GetPrescriptionPickupsByMedication(inValue);
             return retVal.PrescriptionPickups;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetPrescriptionPickupsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage request) {
+        Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage Service.Client.PrescriptionServiceReference.PrescriptionContract.GetPrescriptionPickupsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage1 request) {
             return base.Channel.GetPrescriptionPickupsByAccount(request);
         }
         
-        public Service.Client.PrescriptionServiceReference.PrescriptionPickup[] GetPrescriptionPickupsByAccount(int AccountId) {
-            Service.Client.PrescriptionServiceReference.AccountIdMessage inValue = new Service.Client.PrescriptionServiceReference.AccountIdMessage();
-            inValue.AccountId = AccountId;
+        public Service.Client.PrescriptionServiceReference.PrescriptionPickup[] GetPrescriptionPickupsByAccount(Service.Client.PrescriptionServiceReference.AccountIdMessage AccountIdMessage) {
+            Service.Client.PrescriptionServiceReference.AccountIdMessage1 inValue = new Service.Client.PrescriptionServiceReference.AccountIdMessage1();
+            inValue.AccountIdMessage = AccountIdMessage;
             Service.Client.PrescriptionServiceReference.PrescriptionPickupsMessage retVal = ((Service.Client.PrescriptionServiceReference.PrescriptionContract)(this)).GetPrescriptionPickupsByAccount(inValue);
             return retVal.PrescriptionPickups;
         }

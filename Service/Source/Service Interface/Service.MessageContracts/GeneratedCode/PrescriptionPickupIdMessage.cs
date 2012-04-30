@@ -16,16 +16,24 @@ namespace Service.MessageContracts
 	/// <summary>
 	/// Service Contract Class - PrescriptionPickupIdMessage
 	/// </summary>
-	[WCF::MessageContract(IsWrapped = false)] 
+	[WCF::MessageContract(WrapperName = "PrescriptionPickupIdMessage", WrapperNamespace = "http://CareManagement.Model/2012/Prescription")] 
 	public partial class PrescriptionPickupIdMessage
 	{
 		private int prescriptionPickupId;
+	 	private Infrastructure.Model.Security.UserLogin user;
 	 		
 		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Prescription", Name = "PrescriptionPickupId")]
 		public int PrescriptionPickupId
 		{
 			get { return prescriptionPickupId; }
 			set { prescriptionPickupId = value; }
+		}
+			
+		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Prescription", Name = "User")]
+		public Infrastructure.Model.Security.UserLogin User
+		{
+			get { return user; }
+			set { user = value; }
 		}
 	}
 }

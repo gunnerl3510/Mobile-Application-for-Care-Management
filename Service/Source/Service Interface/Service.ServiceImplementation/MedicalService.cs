@@ -16,6 +16,8 @@ namespace Service.ServiceImplementation
 
     using BusinessLogic.Medical;
 
+    using Infrastructure.Security;
+
     using Ninject;
 
     /// <summary>
@@ -74,10 +76,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the facility to add
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void AddFacility(Service.MessageContracts.FacilityMessage request)
+        public override void AddFacility(Service.MessageContracts.FacilityRequestMessage request)
         {
-            facilityManager.CreateFacility(request.Facility, ServiceSecurityContext.Current.PrimaryIdentity);
+            facilityManager.CreateFacility(request.Facility, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -86,10 +87,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the facility to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteFacility(Service.MessageContracts.FacilityMessage request)
+        public override void DeleteFacility(Service.MessageContracts.FacilityRequestMessage request)
         {
-            facilityManager.DeleteFacility(request.Facility, ServiceSecurityContext.Current.PrimaryIdentity);
+            facilityManager.DeleteFacility(request.Facility, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -98,10 +98,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the facility to update
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateFacility(Service.MessageContracts.FacilityMessage request)
+        public override void UpdateFacility(Service.MessageContracts.FacilityRequestMessage request)
         {
-            facilityManager.UpdateFacility(request.Facility, ServiceSecurityContext.Current.PrimaryIdentity);
+            facilityManager.UpdateFacility(request.Facility, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -113,12 +112,11 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// An message containing the requested facility
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.FacilityMessage GetFacility(Service.MessageContracts.FacilityIdMessage request)
+        public override Service.MessageContracts.FacilityMessage GetFacility(Service.MessageContracts.FacilityIdRequestMessage request)
         {
             return new Service.MessageContracts.FacilityMessage
             {
-                Facility = facilityManager.GetFacilityById(request.FacilityId, ServiceSecurityContext.Current.PrimaryIdentity)
+                Facility = facilityManager.GetFacilityById(request.FacilityId,  request.User.GetIdentity())
             };
         }
 
@@ -132,8 +130,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="Facility"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdMessage request)
+        public override Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdRequestMessage request)
         {
             return new Service.MessageContracts.FacilitiesMessage
             {
@@ -141,7 +138,7 @@ namespace Service.ServiceImplementation
                     facilityManager
                         .GetFacilitiesByAccount(
                             request.AccountId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                             request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -152,10 +149,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the provider to add
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void AddProvider(Service.MessageContracts.ProviderMessage request)
+        public override void AddProvider(Service.MessageContracts.ProviderRequestMessage request)
         {
-            providerManager.CreateProvider(request.Provider, ServiceSecurityContext.Current.PrimaryIdentity);
+            providerManager.CreateProvider(request.Provider, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -164,10 +160,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the provider to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteProvider(Service.MessageContracts.ProviderMessage request)
+        public override void DeleteProvider(Service.MessageContracts.ProviderRequestMessage request)
         {
-            providerManager.DeleteProvider(request.Provider, ServiceSecurityContext.Current.PrimaryIdentity);
+            providerManager.DeleteProvider(request.Provider, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -176,10 +171,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the provider to update
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateProvider(Service.MessageContracts.ProviderMessage request)
+        public override void UpdateProvider(Service.MessageContracts.ProviderRequestMessage request)
         {
-            providerManager.UpdateProvider(request.Provider, ServiceSecurityContext.Current.PrimaryIdentity);
+            providerManager.UpdateProvider(request.Provider, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -191,12 +185,11 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// An message containing the requested provider
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.ProviderMessage GetProvider(Service.MessageContracts.ProviderIdMessage request)
+        public override Service.MessageContracts.ProviderMessage GetProvider(Service.MessageContracts.ProviderIdRequestMessage request)
         {
             return new Service.MessageContracts.ProviderMessage
             {
-                Provider = providerManager.GetProviderById(request.ProviderId, ServiceSecurityContext.Current.PrimaryIdentity)
+                Provider = providerManager.GetProviderById(request.ProviderId,  request.User.GetIdentity())
             };
         }
 
@@ -210,8 +203,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="Provider"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdMessage request)
+        public override Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdRequestMessage request)
         {
             return new Service.MessageContracts.ProvidersMessage
             {
@@ -219,7 +211,7 @@ namespace Service.ServiceImplementation
                     providerManager
                         .GetProvidersByAccount(
                             request.AccountId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                             request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -234,8 +226,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="Provider"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.ProvidersMessage GetProviderByFacility(Service.MessageContracts.FacilityIdMessage request)
+        public override Service.MessageContracts.ProvidersMessage GetProviderByFacility(Service.MessageContracts.FacilityIdRequestMessage request)
         {
             return new Service.MessageContracts.ProvidersMessage
             {
@@ -243,7 +234,7 @@ namespace Service.ServiceImplementation
                     providerManager
                         .GetProvidersByFacility(
                             request.FacilityId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                             request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -254,10 +245,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the appointment to add
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void AddMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request)
+        public override void AddMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request)
         {
-            appointmentsManager.CreateMedicalAppointment(request.MedicalAppointment, ServiceSecurityContext.Current.PrimaryIdentity);
+            appointmentsManager.CreateMedicalAppointment(request.MedicalAppointment, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -266,10 +256,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the appointment to delete
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void DeleteMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request)
+        public override void DeleteMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request)
         {
-            appointmentsManager.DeleteMedicalAppointment(request.MedicalAppointment, ServiceSecurityContext.Current.PrimaryIdentity);
+            appointmentsManager.DeleteMedicalAppointment(request.MedicalAppointment, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -278,10 +267,9 @@ namespace Service.ServiceImplementation
         /// <param name="request">
         /// The request containing the appointment to update
         /// </param>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override void UpdateMedicalAppointment(Service.MessageContracts.MedicalAppointmentMessage request)
+        public override void UpdateMedicalAppointment(Service.MessageContracts.MedicalAppointmentRequestMessage request)
         {
-            appointmentsManager.UpdateMedicalAppointment(request.MedicalAppointment, ServiceSecurityContext.Current.PrimaryIdentity);
+            appointmentsManager.UpdateMedicalAppointment(request.MedicalAppointment, request.User.GetIdentity());
         }
 
         /// <summary>
@@ -293,14 +281,13 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// An message containing the requested appointment
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.MedicalAppointmentMessage GetMedicalAppointment(Service.MessageContracts.MedicalAppointmentIdMessage request)
+        public override Service.MessageContracts.MedicalAppointmentMessage GetMedicalAppointment(Service.MessageContracts.MedicalAppointmentIdRequestMessage request)
         {
             return new Service.MessageContracts.MedicalAppointmentMessage
             {
                 MedicalAppointment =
                     appointmentsManager
-                        .GetMedicalAppointmentById(request.MedicalAppointmentId, ServiceSecurityContext.Current.PrimaryIdentity)
+                        .GetMedicalAppointmentById(request.MedicalAppointmentId,  request.User.GetIdentity())
             };
         }
 
@@ -314,8 +301,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="MedicalAppointment"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdMessage request)
+        public override Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
         {
             return new Service.MessageContracts.MedicalAppointmentsMessage
             {
@@ -323,7 +309,7 @@ namespace Service.ServiceImplementation
                     appointmentsManager
                         .GetMedicalAppointmentsByAccount(
                             request.AccountId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                             request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -338,8 +324,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="MedicalAppointment"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.MessageContracts.FacilityIdMessage request)
+        public override Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByFacility(Service.MessageContracts.FacilityIdRequestMessage request)
         {
             return new Service.MessageContracts.MedicalAppointmentsMessage
             {
@@ -347,7 +332,7 @@ namespace Service.ServiceImplementation
                     appointmentsManager
                         .GetMedicalAppointmentsByFacility(
                             request.FacilityId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                             request.User.GetIdentity())
                         .ToList()
             };
         }
@@ -362,8 +347,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="MedicalAppointment"/> that was retrieved
         /// </returns>
-        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public override Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.MessageContracts.ProviderIdMessage request)
+        public override Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByProvider(Service.MessageContracts.ProviderIdRequestMessage request)
         {
             return new Service.MessageContracts.MedicalAppointmentsMessage
             {
@@ -371,7 +355,7 @@ namespace Service.ServiceImplementation
                     appointmentsManager
                         .GetMedicalAppointmentsByProvider(
                             request.ProviderId,
-                            ServiceSecurityContext.Current.PrimaryIdentity)
+                             request.User.GetIdentity())
                         .ToList()
             };
         }

@@ -23,42 +23,42 @@ namespace Service.ServiceImplementation
 	{
 		#region PrescriptionContract Members
 
-		public virtual void AddMedication(Service.MessageContracts.MedicationMessage request)
+		public virtual void AddMedication(Service.MessageContracts.MedicationRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteMedication(Service.MessageContracts.MedicationMessage request)
+		public virtual void DeleteMedication(Service.MessageContracts.MedicationRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateMedication(Service.MessageContracts.MedicationMessage request)
+		public virtual void UpdateMedication(Service.MessageContracts.MedicationRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.MedicationMessage GetMedication(Service.MessageContracts.MedicationIdMessage request)
+		public virtual Service.MessageContracts.MedicationMessage GetMedication(Service.MessageContracts.MedicationIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual void AddPrescriptionPickup(Service.MessageContracts.PrescriptionPickupMessage request)
+		public virtual void AddPrescriptionPickup(Service.MessageContracts.PrescriptionPickupRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeletePrescriptionPickup(Service.MessageContracts.PrescriptionPickupMessage request)
+		public virtual void DeletePrescriptionPickup(Service.MessageContracts.PrescriptionPickupRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdatePrescriptionPickup(Service.MessageContracts.PrescriptionPickupMessage request)
+		public virtual void UpdatePrescriptionPickup(Service.MessageContracts.PrescriptionPickupRequestMessage request)
 		{
 			
 		}
@@ -68,12 +68,12 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByMedication(Service.MessageContracts.MedicationIdMessage request)
+		public virtual Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByMedication(Service.MessageContracts.MedicationIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}

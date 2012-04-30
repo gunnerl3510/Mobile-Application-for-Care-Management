@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://CareManagement.Model/2012/Prescription" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PrescriptionService" targetNamespace="http://CareManagement.Model/2012/Prescription" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://CareManagement.Model/2012/Prescription/Imports">
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd0" namespace="http://CareManagement.Model/2012/Prescription" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Prescription" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd4" namespace="http://CareManagement.Model/2012/Accounts" />
+      <xsd:import schemaLocation="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="MedicationRequestMessage">
+    <wsdl:part name="parameters" element="tns:MedicationRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="PrescriptionContract_AddMedication_OutputMessage" />
+  <wsdl:message name="PrescriptionContract_DeleteMedication_OutputMessage" />
+  <wsdl:message name="PrescriptionContract_UpdateMedication_OutputMessage" />
+  <wsdl:message name="MedicationIdMessage">
+    <wsdl:part name="parameters" element="tns:MedicationIdMessage" />
+  </wsdl:message>
+  <wsdl:message name="MedicationMessage">
+    <wsdl:part name="Medication" element="tns:Medication" />
+  </wsdl:message>
+  <wsdl:message name="AccountIdMessage">
+    <wsdl:part xmlns:q1="http://CareManagement.Model/2012/Accounts" name="parameters" element="q1:AccountIdMessage" />
+  </wsdl:message>
+  <wsdl:message name="MedicationsMessage">
+    <wsdl:part name="Medications" element="tns:Medications" />
+  </wsdl:message>
+  <wsdl:message name="PrescriptionPickupRequestMessage">
+    <wsdl:part name="parameters" element="tns:PrescriptionPickupRequestMessage" />
+  </wsdl:message>
+  <wsdl:message name="PrescriptionContract_AddPrescriptionPickup_OutputMessage" />
+  <wsdl:message name="PrescriptionContract_DeletePrescriptionPickup_OutputMessage" />
+  <wsdl:message name="PrescriptionContract_UpdatePrescriptionPickup_OutputMessage" />
+  <wsdl:message name="PrescriptionPickupIdMessage">
+    <wsdl:part name="parameters" element="tns:PrescriptionPickupIdMessage" />
+  </wsdl:message>
+  <wsdl:message name="PrescriptionPickupMessage">
+    <wsdl:part name="PrescriptionPickup" element="tns:PrescriptionPickup" />
+  </wsdl:message>
+  <wsdl:message name="PrescriptionPickupsMessage">
+    <wsdl:part name="PrescriptionPickups" element="tns:PrescriptionPickups" />
+  </wsdl:message>
+  <wsdl:portType name="PrescriptionContract">
+    <wsdl:operation name="AddMedication">
+      <wsdl:input wsaw:Action="AddMedication" name="MedicationRequestMessage" message="tns:MedicationRequestMessage" />
+      <wsdl:output wsaw:Action="addmedication" message="tns:PrescriptionContract_AddMedication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMedication">
+      <wsdl:input wsaw:Action="DeleteMedication" name="MedicationRequestMessage" message="tns:MedicationRequestMessage" />
+      <wsdl:output wsaw:Action="deletemedication" message="tns:PrescriptionContract_DeleteMedication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMedication">
+      <wsdl:input wsaw:Action="UpdateMedication" name="MedicationRequestMessage" message="tns:MedicationRequestMessage" />
+      <wsdl:output wsaw:Action="updatemedication" message="tns:PrescriptionContract_UpdateMedication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedication">
+      <wsdl:input wsaw:Action="GetMedication" name="MedicationIdMessage" message="tns:MedicationIdMessage" />
+      <wsdl:output wsaw:Action="getmedication" name="MedicationMessage" message="tns:MedicationMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicationsByAccount">
+      <wsdl:input wsaw:Action="GetMedicationsByAccount" name="AccountIdMessage" message="tns:AccountIdMessage" />
+      <wsdl:output wsaw:Action="getmedicationsbyaccount" name="MedicationsMessage" message="tns:MedicationsMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPrescriptionPickup">
+      <wsdl:input wsaw:Action="AddPrescriptionPickup" name="PrescriptionPickupRequestMessage" message="tns:PrescriptionPickupRequestMessage" />
+      <wsdl:output wsaw:Action="addprescriptionpickup" message="tns:PrescriptionContract_AddPrescriptionPickup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePrescriptionPickup">
+      <wsdl:input wsaw:Action="DeletePrescriptionPickup" name="PrescriptionPickupRequestMessage" message="tns:PrescriptionPickupRequestMessage" />
+      <wsdl:output wsaw:Action="deleteprescriptionpickup" message="tns:PrescriptionContract_DeletePrescriptionPickup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrescriptionPickup">
+      <wsdl:input wsaw:Action="UpdatePrescriptionPickup" name="PrescriptionPickupRequestMessage" message="tns:PrescriptionPickupRequestMessage" />
+      <wsdl:output wsaw:Action="updateprescriptionpickup" message="tns:PrescriptionContract_UpdatePrescriptionPickup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrescriptionPickup">
+      <wsdl:input wsaw:Action="GetPrescriptionPickup" name="PrescriptionPickupIdMessage" message="tns:PrescriptionPickupIdMessage" />
+      <wsdl:output wsaw:Action="getprescriptionpickup" name="PrescriptionPickupMessage" message="tns:PrescriptionPickupMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrescriptionPickupsByMedication">
+      <wsdl:input wsaw:Action="GetPrescriptionPickupsByMedication" name="MedicationIdMessage" message="tns:MedicationIdMessage" />
+      <wsdl:output wsaw:Action="getprescriptionpickupsbymedication" name="PrescriptionPickupsMessage" message="tns:PrescriptionPickupsMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrescriptionPickupsByAccount">
+      <wsdl:input wsaw:Action="GetPrescriptionPickupsByAccount" name="AccountIdMessage" message="tns:AccountIdMessage" />
+      <wsdl:output wsaw:Action="getprescriptionpickupsbyaccount" name="PrescriptionPickupsMessage" message="tns:PrescriptionPickupsMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrescriptionBasicHttp" type="tns:PrescriptionContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddMedication">
+      <soap:operation soapAction="AddMedication" style="document" />
+      <wsdl:input name="MedicationRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMedication">
+      <soap:operation soapAction="DeleteMedication" style="document" />
+      <wsdl:input name="MedicationRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMedication">
+      <soap:operation soapAction="UpdateMedication" style="document" />
+      <wsdl:input name="MedicationRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedication">
+      <soap:operation soapAction="GetMedication" style="document" />
+      <wsdl:input name="MedicationIdMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MedicationMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicationsByAccount">
+      <soap:operation soapAction="GetMedicationsByAccount" style="document" />
+      <wsdl:input name="AccountIdMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MedicationsMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPrescriptionPickup">
+      <soap:operation soapAction="AddPrescriptionPickup" style="document" />
+      <wsdl:input name="PrescriptionPickupRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePrescriptionPickup">
+      <soap:operation soapAction="DeletePrescriptionPickup" style="document" />
+      <wsdl:input name="PrescriptionPickupRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrescriptionPickup">
+      <soap:operation soapAction="UpdatePrescriptionPickup" style="document" />
+      <wsdl:input name="PrescriptionPickupRequestMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrescriptionPickup">
+      <soap:operation soapAction="GetPrescriptionPickup" style="document" />
+      <wsdl:input name="PrescriptionPickupIdMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PrescriptionPickupMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrescriptionPickupsByMedication">
+      <soap:operation soapAction="GetPrescriptionPickupsByMedication" style="document" />
+      <wsdl:input name="MedicationIdMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PrescriptionPickupsMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrescriptionPickupsByAccount">
+      <soap:operation soapAction="GetPrescriptionPickupsByAccount" style="document" />
+      <wsdl:input name="AccountIdMessage">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PrescriptionPickupsMessage">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrescriptionService">
+    <wsdl:port name="PrescriptionBasicHttp" binding="tns:PrescriptionBasicHttp">
+      <soap:address location="http://localhost:4538/Service.Host/PrescriptionServiceReference.svc/basicHttp" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

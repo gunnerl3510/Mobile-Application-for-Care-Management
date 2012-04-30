@@ -51,8 +51,26 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [Required]
         [DataType(DataType.DateTime)]
-        [DataMember]
         public DateTimeOffset AppointmentDateTimeUtc { get; set; }
+
+        /// <summary>
+        /// Gets or sets the AppointmentDateTimeUtc using a string value
+        /// </summary>
+        [ScaffoldColumn(false)]
+        [DataMember]
+        public string AppointmentDateTimeUtcString
+        {
+            get
+            {
+                return AppointmentDateTimeUtc.ToString();
+            }
+
+            set
+            {
+                DateTimeOffset tempDateTime;
+                AppointmentDateTimeUtc = DateTimeOffset.TryParse(value, out tempDateTime) ? tempDateTime : default(DateTimeOffset);
+            }
+        }
 
         #endregion
 

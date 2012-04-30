@@ -463,6 +463,9 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\Indexes\PrescriptionPickups.IX_PrescriptionPickups_MedicationId.index.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Database Level Objects\Security\Users\care.management.application.user.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
   <ItemGroup>
     <ArtifactReference Include="..\..\..\..\..\..\..\..\Program Files %28x86%29\Microsoft Visual Studio 10.0\VSTSDB\Extensions\SqlServer\2008\DBSchemas\master.dbschema">
@@ -482,5 +485,13 @@
     <NotInBuild Include="Scripts\Post-Deployment\SynchronizeReferenceData\SynchronizeDosageUnits.sql">
       <SubType>NotInBuild</SubType>
     </NotInBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CareManagementServer\CareManagementServer.dbproj">
+      <Name>CareManagementServer</Name>
+      <Project>{dfe77d58-50c8-4506-8a1f-76b57ac66236}</Project>
+      <Private>True</Private>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ProjectReference>
   </ItemGroup>
 </Project>

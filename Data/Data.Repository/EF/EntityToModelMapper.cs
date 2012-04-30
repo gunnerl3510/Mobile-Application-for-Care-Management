@@ -49,7 +49,7 @@ namespace Data.Repository.EF
                                                 EmailAddress = account.EmailAddress,
                                                 Id = account.AccountId,
                                                 Name = account.Name,
-                                                UserId = account.UserId.HasValue ? account.UserId.ToString() : null
+                                                UserId = account.UserId
                                             }) as IQueryable<T>;
                             }
                         },
@@ -164,14 +164,10 @@ namespace Data.Repository.EF
                                             {
                                                 AccountId = appointment.AccountId,
                                                 AppointmentDateTimeUtc = appointment.AppointmentDateTime,
-                                                AppointmentLengthUnits =
-                                                    (SchedulingModels.ScheduleUnits)
-                                                    (appointment.ScheduleUnitId.HasValue
-                                                         ? appointment.ScheduleUnitId.Value
-                                                         : 0),
+                                                AppointmentLengthUnitsValue = appointment.ScheduleUnitId,
                                                 CurrentVersion = appointment.CurrentVersion,
                                                 Description = appointment.Description,
-                                                Id = appointment.ProviderId,
+                                                Id = appointment.MedicalAppointmentId,
                                                 Length = appointment.Length,
                                                 ProviderId = appointment.ProviderId
                                             }) as IQueryable<T>;
@@ -188,8 +184,7 @@ namespace Data.Repository.EF
                                             {
                                                 AccountId = medicine.AccountId,
                                                 CurrentVersion = medicine.CurrentVersion,
-                                                DosageUnits =
-                                                    (PrescriptionModels.DosageUnits)(medicine.DosageUnitId.HasValue ? medicine.DosageUnitId.Value : 0),
+                                                DosageUnitsValue = medicine.DosageUnitId,
                                                 Id = medicine.MedicationId,
                                                 Name = medicine.Name,
                                                 Quantity = medicine.Quantity

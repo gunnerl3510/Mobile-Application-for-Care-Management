@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://CareManagement.Model/2012/Accounts" elementFormDefault="qualified" targetNamespace="http://CareManagement.Model/2012/Accounts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:4538/Service.Host/AccountsServiceReference.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Account" />
+  <xs:import schemaLocation="http://localhost:4538/Service.Host/AccountsServiceReference.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security" />
+  <xs:element name="AddAccountRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Account" minOccurs="0" name="Account" nillable="true" type="q1:Account" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Account" minOccurs="0" name="Account" nillable="true" type="q2:Account" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security" minOccurs="0" name="User" nillable="true" type="q3:UserLogin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountIdMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AccountId" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Security" minOccurs="0" name="User" nillable="true" type="q4:UserLogin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Infrastructure.Model.Account" name="Account" nillable="true" type="q5:Account" />
+</xs:schema>

@@ -23,47 +23,47 @@ namespace Service.ServiceImplementation
 	{
 		#region InsuranceContract Members
 
-		public virtual void AddInsurer(Service.MessageContracts.InsurerMessage request)
+		public virtual void AddInsurer(Service.MessageContracts.InsurerRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteInsurer(Service.MessageContracts.InsurerMessage request)
+		public virtual void DeleteInsurer(Service.MessageContracts.InsurerRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.InsurerMessage GetInsurer(Service.MessageContracts.InsurerIdMessage request)
+		public virtual Service.MessageContracts.InsurerMessage GetInsurer(Service.MessageContracts.InsurerIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual void UpdateInsurer(Service.MessageContracts.InsurerMessage request)
+		public virtual void UpdateInsurer(Service.MessageContracts.InsurerRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual void AddAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpMessage request)
+		public virtual void AddAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpMessage request)
+		public virtual void DeleteAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpMessage request)
+		public virtual void UpdateAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
@@ -73,22 +73,22 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.AuthorizationFollowUpMessage GetAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpIdMessage request)
+		public virtual Service.MessageContracts.AuthorizationFollowUpMessage GetAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual void AddAuthorizationRequest(Service.MessageContracts.AuthorizationRequestMessage request)
+		public virtual void AddAuthorizationRequest(Service.MessageContracts.AuthorizationRequestRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteAuthorizationRequest(Service.MessageContracts.AuthorizationRequestMessage request)
+		public virtual void DeleteAuthorizationRequest(Service.MessageContracts.AuthorizationRequestRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateAuthorizationRequest(Service.MessageContracts.AuthorizationRequestMessage request)
+		public virtual void UpdateAuthorizationRequest(Service.MessageContracts.AuthorizationRequestRequestMessage request)
 		{
 			
 		}
@@ -98,37 +98,37 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByInsurer(Service.MessageContracts.InsurerIdMessage request)
+		public virtual Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByInsurer(Service.MessageContracts.InsurerIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual void AddAuthorizationNote(Service.MessageContracts.AuthorizationNoteMessage request)
+		public virtual void AddAuthorizationNote(Service.MessageContracts.AuthorizationNoteRequestMessage request)
 		{
 			
 		}
 
-		public virtual void DeleteAuthorizationNote(Service.MessageContracts.AuthorizationNoteMessage request)
+		public virtual void DeleteAuthorizationNote(Service.MessageContracts.AuthorizationNoteRequestMessage request)
 		{
 			
 		}
 
-		public virtual void UpdateAuthorizationNote(Service.MessageContracts.AuthorizationNoteMessage request)
+		public virtual void UpdateAuthorizationNote(Service.MessageContracts.AuthorizationNoteRequestMessage request)
 		{
 			
 		}
 
-		public virtual Service.MessageContracts.AuthorizationNoteMessage GetAuthorizationNote(Service.MessageContracts.AuthorizationNoteIdMessage request)
+		public virtual Service.MessageContracts.AuthorizationNoteMessage GetAuthorizationNote(Service.MessageContracts.AuthorizationNoteIdRequestMessage request)
 		{
 			return null;
 		}
 
-		public virtual Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdMessage request)
+		public virtual Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdRequestMessage request)
 		{
 			return null;
 		}
