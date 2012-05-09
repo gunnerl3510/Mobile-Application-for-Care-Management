@@ -9,6 +9,8 @@
 
 namespace Service.ServiceImplementation
 {
+    using System.ServiceModel;
+
     using BusinessLogic.Account;
 
     using Infrastructure.Security;
@@ -72,7 +74,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void DeleteAccount(Service.MessageContracts.AccountRequestMessage request)
         {
-            accountsManager.DeleteAccount(request.Account, request.User.GetIdentity());
+            accountsManager.DeleteAccount(request.Account, ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -83,7 +85,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void UpdateAccount(Service.MessageContracts.AccountRequestMessage request)
         {
-            accountsManager.UpdateAccount(request.Account, request.User.GetIdentity());
+            accountsManager.UpdateAccount(request.Account, ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -99,7 +101,7 @@ namespace Service.ServiceImplementation
         {
             return new Service.MessageContracts.AccountMessage
             {
-                Account = accountsManager.GetAccountById(request.AccountId, request.User.GetIdentity())
+                Account = accountsManager.GetAccountById(request.AccountId, ServiceSecurityContext.Current.PrimaryIdentity)
             };
         }
 

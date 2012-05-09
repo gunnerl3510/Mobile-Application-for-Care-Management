@@ -19,37 +19,37 @@ namespace Service.ServiceContracts
 	[WCF::ServiceContract(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "InsuranceContract", SessionMode = WCF::SessionMode.Allowed, ProtectionLevel = ProtectionLevel.None )]
 	public partial interface IInsuranceContract 
 	{
-		[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/AddInsurer", ReplyAction = "addinsurer", ProtectionLevel = ProtectionLevel.None)]
+		[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "AddInsurer", ReplyAction = "addinsurer", ProtectionLevel = ProtectionLevel.None)]
 		void AddInsurer(Service.MessageContracts.InsurerRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/DeleteInsurer", ReplyAction = "deleteinsurer", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "DeleteInsurer", ReplyAction = "deleteinsurer", ProtectionLevel = ProtectionLevel.None)]
 		void DeleteInsurer(Service.MessageContracts.InsurerRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/GetInsurer", ReplyAction = "getinsurer", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetInsurer", ReplyAction = "getinsurer", ProtectionLevel = ProtectionLevel.None)]
 		Service.MessageContracts.InsurerMessage GetInsurer(Service.MessageContracts.InsurerIdRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/UpdateInsurer", ReplyAction = "updateinsurer", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "UpdateInsurer", ReplyAction = "updateinsurer", ProtectionLevel = ProtectionLevel.None)]
 		void UpdateInsurer(Service.MessageContracts.InsurerRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/GetInsurersByAccount", ReplyAction = "getinsurersbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdRequestMessage request);
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetInsurersByAccount", ReplyAction = "getinsurersbyaccount", ProtectionLevel = ProtectionLevel.None)]
+		Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/AddAuthorizationFollowUp", ReplyAction = "addauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "AddAuthorizationFollowUp", ReplyAction = "addauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
 		void AddAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/DeleteAuthorizationFollowUp", ReplyAction = "deleteauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "DeleteAuthorizationFollowUp", ReplyAction = "deleteauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
 		void DeleteAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/UpdateAuthorizationFollowUp", ReplyAction = "updateauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "UpdateAuthorizationFollowUp", ReplyAction = "updateauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
 		void UpdateAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/GetAuthorizationFollowUpsByAccount", ReplyAction = "getauthorizationfollowupbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdRequestMessage request);
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAuthorizationFollowUpsByAccount", ReplyAction = "getauthorizationfollowupbyaccount", ProtectionLevel = ProtectionLevel.None)]
+		Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/GetAuthorizationFollowUpsByAuthorizationRequest", ReplyAction = "getauthorizationfollowupsbyauthorization", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAuthorizationFollowUpsByAuthorizationRequest", ReplyAction = "getauthorizationfollowupsbyauthorization", ProtectionLevel = ProtectionLevel.None)]
 		Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAuthorizationRequest(Service.MessageContracts.AuthorizationRequestIdMessage request);
 		
-[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "http://CareManagement.Model/2012/Insurance/InsuranceContract/GetAuthorizationFollowUp", ReplyAction = "getauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
+[WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAuthorizationFollowUp", ReplyAction = "getauthorizationfollowup", ProtectionLevel = ProtectionLevel.None)]
 		Service.MessageContracts.AuthorizationFollowUpMessage GetAuthorizationFollowUp(Service.MessageContracts.AuthorizationFollowUpIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "AddAuthorizationRequest", ReplyAction = "addauthorizationrequest", ProtectionLevel = ProtectionLevel.None)]
@@ -65,7 +65,7 @@ namespace Service.ServiceContracts
 		Service.MessageContracts.AuthorizationRequestMessage GetAuthorizationRequest(Service.MessageContracts.AuthorizationRequestIdMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAuthorizationRequestsByAccount", ReplyAction = "getauthorizationrequestsbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdRequestMessage request);
+		Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAuthorizationRequestsByInsurer", ReplyAction = "getauthorizationrequestsbyinsurer", ProtectionLevel = ProtectionLevel.None)]
 		Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByInsurer(Service.MessageContracts.InsurerIdRequestMessage request);
@@ -83,7 +83,7 @@ namespace Service.ServiceContracts
 		Service.MessageContracts.AuthorizationNoteMessage GetAuthorizationNote(Service.MessageContracts.AuthorizationNoteIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAuthorizationNotesByAccount", ReplyAction = "getauthorizationnotesbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdRequestMessage request);
+		Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetAuthorizationNotesByAuthorizationRequest", ReplyAction = "getauthorizationnotesbyauthorizationrequest", ProtectionLevel = ProtectionLevel.None)]
 		Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAuthorizationRequest(Service.MessageContracts.AuthorizationRequestIdMessage request);

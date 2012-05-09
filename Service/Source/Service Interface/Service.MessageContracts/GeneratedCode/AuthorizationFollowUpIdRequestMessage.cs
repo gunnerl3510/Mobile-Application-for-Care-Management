@@ -16,24 +16,16 @@ namespace Service.MessageContracts
 	/// <summary>
 	/// Service Contract Class - AuthorizationFollowUpIdRequestMessage
 	/// </summary>
-	[WCF::MessageContract(WrapperName = "AuthorizationFollowUpIdRequestMessage", WrapperNamespace = "http://CareManagement.Model/2012/Insurance")] 
+	[WCF::MessageContract(IsWrapped = false)] 
 	public partial class AuthorizationFollowUpIdRequestMessage
 	{
 		private int authorizationFollowUpId;
-	 	private Infrastructure.Model.Security.UserLogin user;
 	 		
 		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "AuthorizationFollowUpId")]
 		public int AuthorizationFollowUpId
 		{
 			get { return authorizationFollowUpId; }
 			set { authorizationFollowUpId = value; }
-		}
-			
-		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "User")]
-		public Infrastructure.Model.Security.UserLogin User
-		{
-			get { return user; }
-			set { user = value; }
 		}
 	}
 }

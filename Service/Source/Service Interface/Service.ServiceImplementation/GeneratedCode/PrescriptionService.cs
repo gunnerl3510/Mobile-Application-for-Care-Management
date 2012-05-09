@@ -43,7 +43,7 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdPrescriptionRequestMessage request)
 		{
 			return null;
 		}
@@ -73,7 +73,7 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdPrescriptionRequestMessage request)
 		{
 			return null;
 		}

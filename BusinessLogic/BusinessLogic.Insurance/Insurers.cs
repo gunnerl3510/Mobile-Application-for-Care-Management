@@ -13,6 +13,7 @@ namespace BusinessLogic.Insurance
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -22,6 +23,7 @@ namespace BusinessLogic.Insurance
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using InsuranceModels = Infrastructure.Model.Insurance;
 
     /// <summary>
@@ -120,16 +122,12 @@ namespace BusinessLogic.Insurance
 
             try
             {
-                kernel.Get<Security>().AuthorizeAction(identity, insurer.AccountId);
-            }
-            catch (SecurityException exception)
-            {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in CreateInsurer");
-                throw;
-            }
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
 
-            try
-            {
+                insurer.AccountId = userAccount.Id;
+
                 insurerRepository.Add(insurer);
             }
             catch (Exception exception)
@@ -293,54 +291,36 @@ namespace BusinessLogic.Insurance
         }
 
         /// <summary>
-        /// Retrieves a collection of <seealso cref="InsuranceModels.Insurer"/> 
-        /// that have an account id that matches the <paramref name="accountId"/> passed in
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.Insurer"/> from the repository.
         /// </summary>
-        /// <param name="accountId">
-        /// The id of the account to retrieve the <seealso cref="InsuranceModels.Insurer"/> for
-        /// </param>
         /// <param name="identity">
-        /// The <seealso cref="IIdentity"/> that contains the identity of the user that is authorized
-        /// to retrieve the records from the repository
+        /// The identity of the user requesting the insurers.
         /// </param>
-        /// <exception cref="ArgumentOutOfRangeException">
-        /// Thrown if the <paramref name="accountId"/> parameter is less than 1
-        /// </exception>
-        /// <exception cref="ArgumentNullException">
-        /// Thrown if the <paramref name="identity"/> parameter is null
-        /// </exception>
-        /// <exception cref="SecurityException">
-        /// Thrown if the user is not authorized to retrieve the insurers for the account specified
-        /// from the repository
-        /// </exception>
         /// <returns>
-        /// An <seealso cref="IQueryable{T}"/> collection of <seealso cref="InsuranceModels.Insurer"/>
-        /// that belong to account identified by <paramref name="accountId"/>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.Insurer"/>.
         /// </returns>
-        public IQueryable<InsuranceModels.Insurer> GetInsurersByAccount(int accountId, IIdentity identity)
+        public IQueryable<InsuranceModels.Insurer> GetInsurers(IIdentity identity)
         {
-            logger.EnterMethod("GetInsurersByAccount");
+            logger.EnterMethod("GetInsurers");
 
             Invariant.IsNotNull(identity, "identity");
 
-            if (accountId < 1)
+            IQueryable<InsuranceModels.Insurer> insurers;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
             {
-                throw new ArgumentOutOfRangeException("accountId", accountId, "The accountId parameter must be greater than 0.");
+                insurers = insurerReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                insurers = insurerReadOnlyRepository.FilterBy(insurer => insurer.AccountId.Equals(userAccount.Id));
             }
 
-            try
-            {
-                kernel.Get<Security>().AuthorizeAction(identity, accountId);
-            }
-            catch (SecurityException exception)
-            {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in GetInsurersByAccount");
-                throw;
-            }
-
-            var insurers = insurerReadOnlyRepository.FilterBy(insurer => insurer.AccountId.Equals(accountId));
-
-            logger.LeaveMethod("GetInsurersByAccount");
+            logger.LeaveMethod("GetInsurers");
 
             return insurers;
         }

@@ -16,24 +16,16 @@ namespace Service.MessageContracts
 	/// <summary>
 	/// Service Contract Class - InsurerRequestMessage
 	/// </summary>
-	[WCF::MessageContract(WrapperName = "InsurerRequestMessage", WrapperNamespace = "http://CareManagement.Model/2012/Insurance")] 
+	[WCF::MessageContract(IsWrapped = false)] 
 	public partial class InsurerRequestMessage
 	{
 		private Infrastructure.Model.Insurance.Insurer insurer;
-	 	private Infrastructure.Model.Security.UserLogin user;
 	 		
 		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "Insurer")]
 		public Infrastructure.Model.Insurance.Insurer Insurer
 		{
 			get { return insurer; }
 			set { insurer = value; }
-		}
-			
-		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "User")]
-		public Infrastructure.Model.Security.UserLogin User
-		{
-			get { return user; }
-			set { user = value; }
 		}
 	}
 }

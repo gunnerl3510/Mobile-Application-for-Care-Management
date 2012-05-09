@@ -13,6 +13,7 @@ namespace BusinessLogic.Insurance
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -22,6 +23,7 @@ namespace BusinessLogic.Insurance
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using InsuranceModels = Infrastructure.Model.Insurance;
 
     /// <summary>
@@ -241,6 +243,42 @@ namespace BusinessLogic.Insurance
         }
 
         #region AuthorizationFollowUp retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.AuthorizationFollowUp"/> from
+        /// the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the follow ups.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.AuthorizationFollowUp"/>.
+        /// </returns>
+        public IQueryable<InsuranceModels.AuthorizationFollowUp> GetAuthorizationFollowUps(IIdentity identity)
+        {
+            logger.EnterMethod("GetAuthorizationFollowUps");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<InsuranceModels.AuthorizationFollowUp> authorizationFollowUps;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                authorizationFollowUps = authorizationFollowUpReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                authorizationFollowUps = authorizationFollowUpReadOnlyRepository.FilterBy(followUp => followUp.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetAuthorizationFollowUps");
+
+            return authorizationFollowUps;
+        }
 
         /// <summary>
         /// Retrieves an <seealso cref="InsuranceModels.AuthorizationFollowUp"/> from the 

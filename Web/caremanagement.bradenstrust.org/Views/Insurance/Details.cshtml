@@ -1,0 +1,36 @@
+﻿@model Infrastructure.Model.Insurance.Insurer
+
+@{
+    ViewBag.Title = "Insurer Details";
+}
+
+<h2>Insurer Details</h2>
+
+<fieldset>
+    <legend>Insurer</legend>
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.CurrentVersion)
+
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">AccountId</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Insurer Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.RouteLink("View Authorization Requests", "InsurerAuthorizations", new { action = "Index", insurerid = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

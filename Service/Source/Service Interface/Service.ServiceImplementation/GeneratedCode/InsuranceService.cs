@@ -43,7 +43,7 @@ namespace Service.ServiceImplementation
 			
 		}
 
-		public virtual Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.InsurersMessage GetInsurersByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request)
 		{
 			return null;
 		}
@@ -63,7 +63,7 @@ namespace Service.ServiceImplementation
 			
 		}
 
-		public virtual Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.AuthorizationFollowUpsMessage GetAuthorizationFollowUpsByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request)
 		{
 			return null;
 		}
@@ -98,7 +98,7 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.AuthorizationRequestsMessage GetAuthorizationRequestsByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request)
 		{
 			return null;
 		}
@@ -128,7 +128,7 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.AuthorizationNotesMessage GetAuthorizationNotesByAccount(Service.MessageContracts.AccountIdInsuranceRequestMessage request)
 		{
 			return null;
 		}

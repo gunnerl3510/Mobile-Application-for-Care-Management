@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="GeneratedCode\AccountIdInsuranceRequestMessage.cs" />
+    <Compile Include="GeneratedCode\AccountIdMedicalRequestMessage.cs" />
     <Compile Include="GeneratedCode\AccountIdMessage.cs" />
-    <Compile Include="GeneratedCode\AccountIdRequestMessage.cs" />
+    <Compile Include="GeneratedCode\AccountIdPrescriptionRequestMessage.cs" />
     <Compile Include="GeneratedCode\AccountMessage.cs" />
     <Compile Include="GeneratedCode\AccountRequestMessage.cs" />
     <Compile Include="GeneratedCode\AddAccountRequestMessage.cs" />

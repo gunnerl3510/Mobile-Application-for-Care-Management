@@ -51,24 +51,46 @@ namespace Infrastructure.Model.Insurance
         /// </summary>
         [Required]
         [DataType(DataType.DateTime)]
+        [ScaffoldColumn(false)]
         public DateTimeOffset AppointmentDateTimeUtc { get; set; }
 
         /// <summary>
         /// Gets or sets the AppointmentDateTimeUtc using a string value
         /// </summary>
-        [ScaffoldColumn(false)]
         [DataMember]
+        [ScaffoldColumn(false)]
         public string AppointmentDateTimeUtcString
         {
             get
             {
-                return AppointmentDateTimeUtc.ToString();
+                return AppointmentDateTimeUtc.ToString("r");
             }
 
             set
             {
                 DateTimeOffset tempDateTime;
                 AppointmentDateTimeUtc = DateTimeOffset.TryParse(value, out tempDateTime) ? tempDateTime : default(DateTimeOffset);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the AppointmentDateTimeUtc using a string value
+        /// </summary>
+        [Display(Name = "Local Date and Time")]
+        [DataType(DataType.DateTime)]
+        public string LocalAppointmentDateTimeString
+        {
+            get
+            {
+                return AppointmentDateTimeUtc.ToLocalTime().ToString("f");
+            }
+
+            set
+            {
+                DateTime tempDateTime;
+                this.AppointmentDateTimeUtc = DateTime.TryParse(value, out tempDateTime)
+                                                  ? DateTime.SpecifyKind(tempDateTime, DateTimeKind.Local)
+                                                  : default(DateTimeOffset);
             }
         }
 

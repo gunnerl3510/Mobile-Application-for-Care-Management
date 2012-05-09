@@ -16,24 +16,16 @@ namespace Service.MessageContracts
 	/// <summary>
 	/// Service Contract Class - AuthorizationNoteRequestMessage
 	/// </summary>
-	[WCF::MessageContract(WrapperName = "AuthorizationNoteRequestMessage", WrapperNamespace = "http://CareManagement.Model/2012/Insurance")] 
+	[WCF::MessageContract(IsWrapped = false)] 
 	public partial class AuthorizationNoteRequestMessage
 	{
 		private Infrastructure.Model.Insurance.AuthorizationNote authorizationNote;
-	 	private Infrastructure.Model.Security.UserLogin user;
 	 		
 		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "AuthorizationNote")]
 		public Infrastructure.Model.Insurance.AuthorizationNote AuthorizationNote
 		{
 			get { return authorizationNote; }
 			set { authorizationNote = value; }
-		}
-			
-		[WCF::MessageBodyMember(Namespace = "http://CareManagement.Model/2012/Insurance", Name = "User")]
-		public Infrastructure.Model.Security.UserLogin User
-		{
-			get { return user; }
-			set { user = value; }
 		}
 	}
 }

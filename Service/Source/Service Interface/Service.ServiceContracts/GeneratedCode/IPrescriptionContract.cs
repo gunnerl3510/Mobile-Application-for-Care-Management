@@ -32,7 +32,7 @@ namespace Service.ServiceContracts
 		Service.MessageContracts.MedicationMessage GetMedication(Service.MessageContracts.MedicationIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetMedicationsByAccount", ReplyAction = "getmedicationsbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdRequestMessage request);
+		Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdPrescriptionRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "AddPrescriptionPickup", ReplyAction = "addprescriptionpickup", ProtectionLevel = ProtectionLevel.None)]
 		void AddPrescriptionPickup(Service.MessageContracts.PrescriptionPickupRequestMessage request);
@@ -50,7 +50,7 @@ namespace Service.ServiceContracts
 		Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByMedication(Service.MessageContracts.MedicationIdRequestMessage request);
 		
 [WCF::OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "GetPrescriptionPickupsByAccount", ReplyAction = "getprescriptionpickupsbyaccount", ProtectionLevel = ProtectionLevel.None)]
-		Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdRequestMessage request);
+		Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdPrescriptionRequestMessage request);
 		
 	}
 }

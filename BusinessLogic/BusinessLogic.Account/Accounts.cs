@@ -10,6 +10,7 @@
 namespace BusinessLogic.Account
 {
     using System;
+    using System.Linq;
     using System.Security;
     using System.Security.Principal;
     using System.Web.Security;
@@ -237,6 +238,37 @@ namespace BusinessLogic.Account
         #region account retrieval
 
         /// <summary>
+        /// Retrieves a list of accounts from the system.
+        /// </summary>
+        /// <param name="identity">
+        /// The <seealso cref="IIdentity"/> of the user requesting the list of accounts.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="AccountModels.Account"/>.
+        /// </returns>
+        /// <exception cref="SecurityException">
+        /// Thrown if the user is not an administrator and therefore not authorized to retrieve the list of accounts.
+        /// </exception>
+        public IQueryable<AccountModels.Account> GetAccounts(IIdentity identity)
+        {
+            logger.EnterMethod("GetAccounts");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            if (!Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                throw new SecurityException(
+                    string.Format("The user {0} is not authorized to retrieve the list of accounts", identity.Name));
+            }
+
+            var accounts = accountReadRepository.All();
+
+            logger.LeaveMethod("GetAccounts");
+
+            return accounts;
+        }
+
+        /// <summary>
         /// Retrieves an <c>Account</c> from the repository using the id of
         /// the account
         /// </summary>
@@ -268,6 +300,34 @@ namespace BusinessLogic.Account
 
             logger.LeaveMethod("GetAccountById");
             return requestedAccount;
+        }
+
+        /// <summary>
+        /// Retrieves the account associated with the provided identity.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity to retrieve the account information for.
+        /// </param>
+        /// <returns>
+        /// The account if it is found, null otherwise.
+        /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown if the identity parameter is null.
+        /// </exception>
+        /// <exception cref="SecurityException">
+        /// Thrown if the identity provided is not authenticated.
+        /// </exception>
+        public AccountModels.Account GetAccountByIdentity(IIdentity identity)
+        {
+            Invariant.IsNotNull(identity, "identity");
+
+            if (!identity.IsAuthenticated)
+            {
+                throw new SecurityException("The identity provided has not been authenticated.");
+            }
+
+            var user = Membership.GetUser(identity.Name);
+            return accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
         }
 
         #endregion

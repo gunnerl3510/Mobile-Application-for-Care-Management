@@ -9,6 +9,7 @@ namespace Infrastructure.Security
     using System.Security.Principal;
     using System.Web.Security;
 
+    using Infrastructure.Model.Account;
     using Infrastructure.Model.Security;
 
     /// <summary>
@@ -21,7 +22,7 @@ namespace Infrastructure.Security
             return
                 Membership.ValidateUser(login.UserName, login.Password)
                     ? new GenericIdentity(login.UserName)
-                    : null;            
+                    : null;
         }
     }
 }

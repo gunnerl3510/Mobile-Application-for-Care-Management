@@ -1,0 +1,52 @@
+﻿@model Infrastructure.Model.Insurance.AuthorizationFollowUp
+
+@{
+    ViewBag.Title = "Authorization Follow Up Details";
+}
+
+<h2>Authorization Follow Up Details</h2>
+
+<fieldset>
+    <legend>Follow Up</legend>
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">Account Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Authorization Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AuthorizationRequestId)
+    </div>
+
+    <div class="display-label">Follow Up Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Appointment Date and Time</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocalAppointmentDateTimeString)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@if (ViewBag.InsuranceId == null)
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+else
+{
+    <p>
+        @Html.RouteLink("Edit", "AuthorizationFollowUps", new { insurerid = ViewBag.InsuranceId, authorizationid = Model.AuthorizationRequestId, id = Model.Id, action = "Edit" }) |
+        @Html.RouteLink("Back to List", "AuthorizationFollowUps", new { insurerid = ViewBag.InsuranceId, authorizationid = Model.AuthorizationRequestId })
+    </p>
+}

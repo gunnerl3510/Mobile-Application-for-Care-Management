@@ -13,6 +13,7 @@ namespace BusinessLogic.Insurance
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -22,6 +23,7 @@ namespace BusinessLogic.Insurance
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using InsuranceModels = Infrastructure.Model.Insurance;
 
     /// <summary>
@@ -241,6 +243,42 @@ namespace BusinessLogic.Insurance
         }
 
         #region AuthorizationRequest retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.AuthorizationRequest"/> from
+        /// the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the authorizations.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.AuthorizationRequest"/>.
+        /// </returns>
+        public IQueryable<InsuranceModels.AuthorizationRequest> GetAuthorizationRequests(IIdentity identity)
+        {
+            logger.EnterMethod("GetAuthorizationRequests");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<InsuranceModels.AuthorizationRequest> authorizationRequests;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                authorizationRequests = authorizationRequestReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                authorizationRequests = authorizationRequestReadOnlyRepository.FilterBy(insurer => insurer.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetAuthorizationRequests");
+
+            return authorizationRequests;
+        }
 
         /// <summary>
         /// Retrieves an <seealso cref="InsuranceModels.AuthorizationRequest"/> from the 

@@ -90,7 +90,7 @@ namespace BusinessLogic.Helpers
             }
 
             // ReSharper disable PossibleNullReferenceException
-            if (!ownerAccount.UserId.Equals((Guid)user.ProviderUserKey))
+            if (!ownerAccount.UserId.Equals((Guid)user.ProviderUserKey) && !Roles.IsUserInRole("Admin"))
             // ReSharper restore PossibleNullReferenceException)
             {
                 throw new SecurityException(

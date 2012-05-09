@@ -43,7 +43,7 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.FacilitiesMessage GetFacilitiesByAccount(Service.MessageContracts.AccountIdMedicalRequestMessage request)
 		{
 			return null;
 		}
@@ -68,7 +68,7 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.ProvidersMessage GetProviderByAccount(Service.MessageContracts.AccountIdMedicalRequestMessage request)
 		{
 			return null;
 		}
@@ -98,7 +98,7 @@ namespace Service.ServiceImplementation
 			return null;
 		}
 
-		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+		public virtual Service.MessageContracts.MedicalAppointmentsMessage GetMedicalAppointmentsByAccount(Service.MessageContracts.AccountIdMedicalRequestMessage request)
 		{
 			return null;
 		}

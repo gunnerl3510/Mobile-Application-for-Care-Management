@@ -59,9 +59,9 @@ namespace Infrastructure.Model.Account
         public string EmailAddress { get; set; }
 
         /// <summary>
-        /// The underlying Guid for the UserId
+        /// Gets or sets the underlying Guid for the UserId
         /// </summary>
-        [ScaffoldColumn(false)]
+        [HiddenInput]
         [Editable(false)]
         public Guid? UserId { get; set; }
 
@@ -74,7 +74,11 @@ namespace Infrastructure.Model.Account
         [DataMember]
         public string UserIdString
         {
-            get { return UserId.ToString(); }
+            get
+            {
+                return UserId.ToString();
+            }
+
             set
             {
                 Guid tempGuid;

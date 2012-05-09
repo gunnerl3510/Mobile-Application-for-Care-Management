@@ -1,0 +1,39 @@
+﻿@model Infrastructure.Model.Insurance.AuthorizationRequest
+
+@{
+    ViewBag.Title = "Authorization Request Details";
+}
+
+<h2>Authorization Request Details</h2>
+
+<fieldset>
+    <legend>Authorization Request</legend>
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">AccountId</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Insurer Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InsurerId)
+    </div>
+
+    <div class="display-label">Authorization Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+    @Html.RouteLink("Edit", "InsurerAuthorizations", new { insurerid = Model.InsurerId, id = Model.Id, action = "Edit" }) |
+    @Html.RouteLink("Follow Ups", "AuthorizationFollowUps", new { insurerid = Model.InsurerId, authorizationid = Model.Id }) |
+    @Html.RouteLink("Notes", "AuthorizationNotes", new { insurerid = Model.InsurerId, authorizationid = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

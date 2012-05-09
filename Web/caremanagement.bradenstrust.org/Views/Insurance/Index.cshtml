@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Infrastructure.Model.Insurance.Insurer>
+
+@{
+    ViewBag.Title = "Insurer List";
+}
+
+<h2>Insurer List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        @if (Roles.IsUserInRole("Admin"))
+        {
+            <th>
+                ID
+            </th>
+            <th>
+                Account ID
+            </th>
+        }
+        <th>
+            Insurer Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        @if (Roles.IsUserInRole("Admin"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountId)
+            </td>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.RouteLink("Authorization Requests", "InsurerAuthorizations", new { insurerid = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -72,7 +72,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void AddMedication(Service.MessageContracts.MedicationRequestMessage request)
         {
-            medicationManager.CreateMedication(request.Medication,  request.User.GetIdentity());
+            medicationManager.CreateMedication(request.Medication,  ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void DeleteMedication(Service.MessageContracts.MedicationRequestMessage request)
         {
-            medicationManager.DeleteMedication(request.Medication,  request.User.GetIdentity());
+            medicationManager.DeleteMedication(request.Medication,  ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void UpdateMedication(Service.MessageContracts.MedicationRequestMessage request)
         {
-            medicationManager.UpdateMedication(request.Medication,  request.User.GetIdentity());
+            medicationManager.UpdateMedication(request.Medication,  ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Service.ServiceImplementation
                     medicationManager
                         .GetMedicationById(
                             request.MedicationId,
-                            request.User.GetIdentity())
+                            ServiceSecurityContext.Current.PrimaryIdentity)
             };
         }
 
@@ -128,7 +128,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="Medication"/> that was retrieved
         /// </returns>
-        public override Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+        public override Service.MessageContracts.MedicationsMessage GetMedicationsByAccount(Service.MessageContracts.AccountIdPrescriptionRequestMessage request)
         {
             return new Service.MessageContracts.MedicationsMessage
             {
@@ -136,7 +136,7 @@ namespace Service.ServiceImplementation
                     medicationManager
                         .GetMedicationsByAccount(
                             request.AccountId,
-                            request.User.GetIdentity())
+                            ServiceSecurityContext.Current.PrimaryIdentity)
                         .ToList()
             };
         }
@@ -149,7 +149,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void AddPrescriptionPickup(Service.MessageContracts.PrescriptionPickupRequestMessage request)
         {
-            pickupManager.CreatePrescriptionPickup(request.PrescriptionPickup,  request.User.GetIdentity());
+            pickupManager.CreatePrescriptionPickup(request.PrescriptionPickup,  ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void DeletePrescriptionPickup(Service.MessageContracts.PrescriptionPickupRequestMessage request)
         {
-            pickupManager.DeletePrescriptionPickup(request.PrescriptionPickup,  request.User.GetIdentity());
+            pickupManager.DeletePrescriptionPickup(request.PrescriptionPickup,  ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Service.ServiceImplementation
         /// </param>
         public override void UpdatePrescriptionPickup(Service.MessageContracts.PrescriptionPickupRequestMessage request)
         {
-            pickupManager.UpdatePrescriptionPickup(request.PrescriptionPickup,  request.User.GetIdentity());
+            pickupManager.UpdatePrescriptionPickup(request.PrescriptionPickup,  ServiceSecurityContext.Current.PrimaryIdentity);
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace Service.ServiceImplementation
                     pickupManager
                         .GetPrescriptionPickupById(
                             request.PrescriptionPickupId,
-                            request.User.GetIdentity())
+                            ServiceSecurityContext.Current.PrimaryIdentity)
             };
         }
 
@@ -213,7 +213,7 @@ namespace Service.ServiceImplementation
                     pickupManager
                         .GetPrescriptionPickupsByMedication(
                             request.MedicationId,
-                            request.User.GetIdentity())
+                            ServiceSecurityContext.Current.PrimaryIdentity)
                         .ToList()
             };
         }
@@ -228,7 +228,7 @@ namespace Service.ServiceImplementation
         /// <returns>
         /// A message that contains a <seealso cref="List{T}"/> of <seealso cref="PrescriptionPickup"/> that was retrieved
         /// </returns>
-        public override Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdRequestMessage request)
+        public override Service.MessageContracts.PrescriptionPickupsMessage GetPrescriptionPickupsByAccount(Service.MessageContracts.AccountIdPrescriptionRequestMessage request)
         {
             return new Service.MessageContracts.PrescriptionPickupsMessage
             {
@@ -236,7 +236,7 @@ namespace Service.ServiceImplementation
                     pickupManager
                         .GetPrescriptionPickupsByAccount(
                             request.AccountId,
-                            request.User.GetIdentity())
+                            ServiceSecurityContext.Current.PrimaryIdentity)
                         .ToList()
             };
         }

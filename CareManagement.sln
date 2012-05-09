@@ -53,6 +53,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Service.Host", "Service\Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Client", "Service\Tests\Service.Client\Service.Client.csproj", "{2CA91385-4DF3-4EDF-BDE5-5A425B996956}"
 	ProjectSection(ProjectDependencies) = postProject
+		{B973AE3D-E411-4549-A709-22723A92154E} = {B973AE3D-E411-4549-A709-22723A92154E}
 		{2A0B83B7-60E3-4958-BDDF-E507F255DCF8} = {2A0B83B7-60E3-4958-BDDF-E507F255DCF8}
 	EndProjectSection
 EndProject
@@ -93,6 +94,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWcfServiceApplication", "Service\Tests\TestWcfServiceApplication\TestWcfServiceApplication.csproj", "{B973AE3D-E411-4549-A709-22723A92154E}"
 EndProject
 Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "CareManagementServer", "Data\CareManagementServer\CareManagementServer.dbproj", "{DFE77D58-50C8-4506-8A1F-76B57AC66236}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{96C77214-4F29-49CF-9AA5-086148D0AF74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "caremanagement.bradenstrust.org", "Web\caremanagement.bradenstrust.org\caremanagement.bradenstrust.org.csproj", "{032F1BD2-B3BB-4282-91D3-D5E18DC4C1CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE6DBCC0-ED04-4700-8F96-517782A5CC8F} = {EE6DBCC0-ED04-4700-8F96-517782A5CC8F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service.bradenstrust.org", "Web\service.bradenstrust.org\service.bradenstrust.org.csproj", "{EE6DBCC0-ED04-4700-8F96-517782A5CC8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -192,6 +202,14 @@ Global
 		{DFE77D58-50C8-4506-8A1F-76B57AC66236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFE77D58-50C8-4506-8A1F-76B57AC66236}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DFE77D58-50C8-4506-8A1F-76B57AC66236}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{032F1BD2-B3BB-4282-91D3-D5E18DC4C1CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032F1BD2-B3BB-4282-91D3-D5E18DC4C1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032F1BD2-B3BB-4282-91D3-D5E18DC4C1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032F1BD2-B3BB-4282-91D3-D5E18DC4C1CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6DBCC0-ED04-4700-8F96-517782A5CC8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6DBCC0-ED04-4700-8F96-517782A5CC8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6DBCC0-ED04-4700-8F96-517782A5CC8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6DBCC0-ED04-4700-8F96-517782A5CC8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -223,5 +241,7 @@ Global
 		{0CD88831-F3C4-465C-949B-23E567DC28FD} = {4A0B359E-5163-494B-8C85-4B6432F1CF0A}
 		{EA68B403-46DF-4C40-A652-E36BAFC57D32} = {4A0B359E-5163-494B-8C85-4B6432F1CF0A}
 		{ACD3B600-1870-4F4C-A493-432CE2D8A1EA} = {4A0B359E-5163-494B-8C85-4B6432F1CF0A}
+		{032F1BD2-B3BB-4282-91D3-D5E18DC4C1CD} = {96C77214-4F29-49CF-9AA5-086148D0AF74}
+		{EE6DBCC0-ED04-4700-8F96-517782A5CC8F} = {96C77214-4F29-49CF-9AA5-086148D0AF74}
 	EndGlobalSection
 EndGlobal

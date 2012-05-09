@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Infrastructure.Model.Insurance.AuthorizationRequest>
+
+@{
+    ViewBag.Title = "Authorization Request List";
+}
+
+<h2>Authorization Request List</h2>
+
+<p>
+    @Html.RouteLink("Create New", "InsurerAuthorizations", new { action = "Create", insurerid = ViewBag.InsurerId })
+</p>
+<table>
+    <tr>
+        @if (Roles.IsUserInRole("Admin"))
+        {
+            <th>
+                AccountId
+            </th>
+        }
+        <th>
+            InsurerId
+        </th>
+        <th>
+            Authorization Id
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (Roles.IsUserInRole("Admin"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountId)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.InsurerId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.RouteLink("Edit", "InsurerAuthorizations", new { id = item.Id, insurerid = item.InsurerId, action = "Edit" }) |
+                @Html.RouteLink("Details", "InsurerAuthorizations", new { id = item.Id, action = "Details" }) |
+                @Html.RouteLink("Delete", "InsurerAuthorizations", new { id = item.Id, action = "Delete" }) |
+                @Html.RouteLink("Follow Ups", "AuthorizationFollowUps", new { insurerid = item.InsurerId, authorizationid = item.Id }) |
+                @Html.RouteLink("Notes", "AuthorizationNotes", new { insurerid = item.InsurerId, authorizationid = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+@if (ViewBag.InsurerId != null)
+{
+    <p>
+        @Html.RouteLink("Return to Insurer", new { controller = "Insurance", action = "Details", id = ViewBag.InsurerId })
+    </p>
+}
