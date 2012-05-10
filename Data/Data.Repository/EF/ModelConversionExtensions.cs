@@ -97,6 +97,7 @@ namespace Data.Repository.EF
         {
             return new AuthorizationNote
                 {
+                    AccountId = note.AccountId,
                     AuthorizationNoteId = note.Id,
                     AuthorizationRequestId = note.AuthorizationRequestId,
                     Created = note.Created,
@@ -163,6 +164,7 @@ namespace Data.Repository.EF
         {
             return new Provider
                 {
+                    AccountId = provider.AccountId,
                     CurrentVersion = provider.CurrentVersion,
                     FacilityId = provider.FacilityId,
                     Name = provider.Name,

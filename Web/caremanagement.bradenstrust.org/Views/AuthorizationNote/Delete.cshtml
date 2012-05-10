@@ -1,0 +1,63 @@
+﻿@model Infrastructure.Model.Insurance.AuthorizationNote
+
+@{
+    ViewBag.Title = "Delete Authorization Note";
+}
+
+<h2>Delete Authorization Note</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Authorization Note</legend>
+        
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <p class="error">@ViewBag.ErrorMessage</p>
+    }
+        
+    @if (ViewBag.InnerErrorMessage != null)
+    {
+        <p class="error">@ViewBag.InnerErrorMessage</p>
+    }
+    
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">Account Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Authorization Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AuthorizationRequestId)
+    </div>
+
+    <div class="display-label">Note Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Note</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Note)
+    </div>
+
+    <div class="display-label">Created</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocalCreatedString)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.AccountId)
+    @Html.HiddenFor(model => model.AuthorizationRequestId)
+    @Html.HiddenFor(model => model.Created)
+    @Html.HiddenFor(model => model.CurrentVersion)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Note)
+
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

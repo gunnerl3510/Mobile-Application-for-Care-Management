@@ -24,19 +24,8 @@ namespace caremanagement.bradenstrust.org.Controllers
         /// </returns>
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            ViewBag.Message = "Welcome to the Care Management System";
 
-            return View();
-        }
-
-        /// <summary>
-        /// Get About action for displaying the "about" information for the web application.
-        /// </summary>
-        /// <returns>
-        /// The About view.
-        /// </returns>
-        public ActionResult About()
-        {
             return View();
         }
     }

@@ -25,6 +25,11 @@ namespace caremanagement.bradenstrust.org
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "MedicalAppointments",
+                "Facility/{facilityid}/Provider/{providerid}/MedicalAppointment/{action}/{id}",
+                new { controller = "MedicalAppointment", action = "Index", id = UrlParameter.Optional });
+
+            routes.MapRoute(
                 "AuthorizationFollowUps",
                 "Insurance/{insurerid}/Authorization/{authorizationid}/AuthorizationFollowUp/{action}/{id}",
                 new { controller = "AuthorizationFollowUp", action = "Index", id = UrlParameter.Optional });
@@ -33,6 +38,11 @@ namespace caremanagement.bradenstrust.org
                 "AuthorizationNotes",
                 "Insurance/{insurerid}/Authorization/{authorizationid}/AuthorizationNote/{action}/{id}",
                 new { controller = "AuthorizationNote", action = "Index", id = UrlParameter.Optional });
+
+            routes.MapRoute(
+                "Providers",
+                "Facility/{facilityid}/Provider/{action}/{id}",
+                new { controller = "Provider", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 "InsurerAuthorizations",

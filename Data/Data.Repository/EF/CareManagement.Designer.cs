@@ -2813,7 +2813,8 @@ namespace Data.Repository.EF
         /// <param name="created">Initial value of the Created property.</param>
         /// <param name="note">Initial value of the Note property.</param>
         /// <param name="currentVersion">Initial value of the CurrentVersion property.</param>
-        public static AuthorizationNote CreateAuthorizationNote(global::System.Int32 authorizationNoteId, global::System.Int32 authorizationRequestId, global::System.DateTimeOffset created, global::System.String note, global::System.Byte[] currentVersion)
+        /// <param name="accountId">Initial value of the AccountId property.</param>
+        public static AuthorizationNote CreateAuthorizationNote(global::System.Int32 authorizationNoteId, global::System.Int32 authorizationRequestId, global::System.DateTimeOffset created, global::System.String note, global::System.Byte[] currentVersion, global::System.Int32 accountId)
         {
             AuthorizationNote authorizationNote = new AuthorizationNote();
             authorizationNote.AuthorizationNoteId = authorizationNoteId;
@@ -2821,6 +2822,7 @@ namespace Data.Repository.EF
             authorizationNote.Created = created;
             authorizationNote.Note = note;
             authorizationNote.CurrentVersion = currentVersion;
+            authorizationNote.AccountId = accountId;
             return authorizationNote;
         }
 
@@ -2949,6 +2951,30 @@ namespace Data.Repository.EF
         private global::System.Byte[] _CurrentVersion;
         partial void OnCurrentVersionChanging(global::System.Byte[] value);
         partial void OnCurrentVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AccountId
+        {
+            get
+            {
+                return _AccountId;
+            }
+            set
+            {
+                OnAccountIdChanging(value);
+                ReportPropertyChanging("AccountId");
+                _AccountId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AccountId");
+                OnAccountIdChanged();
+            }
+        }
+        private global::System.Int32 _AccountId;
+        partial void OnAccountIdChanging(global::System.Int32 value);
+        partial void OnAccountIdChanged();
 
         #endregion
     
@@ -4948,13 +4974,15 @@ namespace Data.Repository.EF
         /// <param name="facilityId">Initial value of the FacilityId property.</param>
         /// <param name="name">Initial value of the Name property.</param>
         /// <param name="currentVersion">Initial value of the CurrentVersion property.</param>
-        public static Provider CreateProvider(global::System.Int32 providerId, global::System.Int32 facilityId, global::System.String name, global::System.Byte[] currentVersion)
+        /// <param name="accountId">Initial value of the AccountId property.</param>
+        public static Provider CreateProvider(global::System.Int32 providerId, global::System.Int32 facilityId, global::System.String name, global::System.Byte[] currentVersion, global::System.Int32 accountId)
         {
             Provider provider = new Provider();
             provider.ProviderId = providerId;
             provider.FacilityId = facilityId;
             provider.Name = name;
             provider.CurrentVersion = currentVersion;
+            provider.AccountId = accountId;
             return provider;
         }
 
@@ -5059,6 +5087,30 @@ namespace Data.Repository.EF
         private global::System.Byte[] _CurrentVersion;
         partial void OnCurrentVersionChanging(global::System.Byte[] value);
         partial void OnCurrentVersionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 AccountId
+        {
+            get
+            {
+                return _AccountId;
+            }
+            set
+            {
+                OnAccountIdChanging(value);
+                ReportPropertyChanging("AccountId");
+                _AccountId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AccountId");
+                OnAccountIdChanged();
+            }
+        }
+        private global::System.Int32 _AccountId;
+        partial void OnAccountIdChanging(global::System.Int32 value);
+        partial void OnAccountIdChanged();
 
         #endregion
     

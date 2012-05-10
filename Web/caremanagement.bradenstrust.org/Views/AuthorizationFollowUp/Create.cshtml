@@ -24,8 +24,6 @@
             <p class="error">@ViewBag.InnerErrorMessage</p>
         }
         
-        @Html.HiddenFor(model => model.AccountId)
-        
         @if (Roles.IsUserInRole("Admin"))
         {
             <div class="display-label">
@@ -35,6 +33,7 @@
                 @Html.DisplayFor(model => model.AccountId)
             </div>
         }
+        @Html.HiddenFor(model => model.AccountId)
 
         <div class="display-label">Authorization Id</div>
         <div class="display-field">

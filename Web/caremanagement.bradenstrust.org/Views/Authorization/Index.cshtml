@@ -14,11 +14,11 @@
         @if (Roles.IsUserInRole("Admin"))
         {
             <th>
-                AccountId
+                Account Id
             </th>
         }
         <th>
-            InsurerId
+            Insurer Id
         </th>
         <th>
             Authorization Id
@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.RouteLink("Edit", "InsurerAuthorizations", new { id = item.Id, insurerid = item.InsurerId, action = "Edit" }) |
+                @Html.RouteLink("Edit", "InsurerAuthorizations", new { id = item.Id, action = "Edit" }) |
                 @Html.RouteLink("Details", "InsurerAuthorizations", new { id = item.Id, action = "Details" }) |
                 @Html.RouteLink("Delete", "InsurerAuthorizations", new { id = item.Id, action = "Delete" }) |
                 @Html.RouteLink("Follow Ups", "AuthorizationFollowUps", new { insurerid = item.InsurerId, authorizationid = item.Id }) |

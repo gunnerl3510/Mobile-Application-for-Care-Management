@@ -42,6 +42,14 @@ namespace Infrastructure.Model.Medical
         #endregion
 
         /// <summary>
+        /// Gets or sets the account identifier to which the insurance company belongs
+        /// </summary>
+        [HiddenInput]
+        [Editable(false)]
+        [DataMember]
+        public int AccountId { get; set; }
+
+        /// <summary>
         /// Gets or sets the facility identifier to which the provider belongs
         /// </summary>
         [HiddenInput]

@@ -8,8 +8,6 @@
 
 <fieldset>
     <legend>Insurer</legend>
-    @Html.HiddenFor(model => model.Id)
-    @Html.HiddenFor(model => model.CurrentVersion)
 
     @if (Roles.IsUserInRole("Admin"))
     {

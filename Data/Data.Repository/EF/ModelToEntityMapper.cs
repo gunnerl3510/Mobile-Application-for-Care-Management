@@ -1,8 +1,11 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="ModelToEntityMapper.cs" company="">
-// TODO: Update copyright text.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ModelToEntityMapper.cs" company="LC LLC">
+//   All rights reserved
 // </copyright>
-// -----------------------------------------------------------------------
+// <summary>
+//   The static class used to map the business models to the EF models
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace Data.Repository.EF
 {

@@ -1,0 +1,53 @@
+﻿@model Infrastructure.Model.Insurance.AuthorizationNote
+
+@{
+    ViewBag.Title = "Authorization Note Details";
+}
+
+<h2>Authorization Note Details</h2>
+
+<fieldset>
+    <legend>Authorization Note</legend>
+    
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">Account Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Authorization Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AuthorizationRequestId)
+    </div>
+
+    <div class="display-label">Note Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Note</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Note)
+    </div>
+
+    <div class="display-label">Created</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocalCreatedString)
+    </div>
+</fieldset>
+@if (ViewBag.InsuranceId == null)
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+else
+{
+    <p>
+        @Html.RouteLink("Edit", "AuthorizationNotes", new { insurerid = ViewBag.InsuranceId, authorizationid = Model.AuthorizationRequestId, id = Model.Id, action = "Edit" }) |
+        @Html.RouteLink("Back to List", "AuthorizationNotes", new { insurerid = ViewBag.InsuranceId, authorizationid = Model.AuthorizationRequestId })
+    </p>
+}

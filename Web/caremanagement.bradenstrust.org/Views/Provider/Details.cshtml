@@ -1,0 +1,38 @@
+﻿@model Infrastructure.Model.Medical.Provider
+
+@{
+    ViewBag.Title = "Provider Details";
+}
+
+<h2>Provider Details</h2>
+
+<fieldset>
+    <legend>Provider</legend>
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">Account Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Facility Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FacilityId)
+    </div>
+
+    <div class="display-label">Provider Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.RouteLink("Edit", "Providers", new { facilityid = Model.FacilityId, id = Model.Id, action = "Edit" }) |
+    @Html.RouteLink("Appointments", "MedicalAppointments", new { facilityid = Model.FacilityId, providerid = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

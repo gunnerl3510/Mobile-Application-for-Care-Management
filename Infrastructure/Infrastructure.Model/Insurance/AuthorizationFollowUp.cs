@@ -82,7 +82,7 @@ namespace Infrastructure.Model.Insurance
         {
             get
             {
-                return AppointmentDateTimeUtc.ToLocalTime().ToString("f");
+                return AppointmentDateTimeUtc.ToLocalTime().ToString("g");
             }
 
             set

@@ -282,6 +282,7 @@
             <PropertyRef Name="AuthorizationNoteId" />
           </Key>
           <Property Name="AuthorizationNoteId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="AuthorizationRequestId" Type="int" Nullable="false" />
           <Property Name="Created" Type="datetimeoffset" Nullable="false" />
           <Property Name="Note" Type="nvarchar" Nullable="false" MaxLength="512" />
@@ -374,6 +375,7 @@
             <PropertyRef Name="ProviderId" />
           </Key>
           <Property Name="ProviderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
           <Property Name="FacilityId" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
           <Property Name="CurrentVersion" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
@@ -748,7 +750,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_PrescriptionPickups_MedicationId">
-          <End Role="Medications" Type="CareManagement.Store.Medications" Multiplicity="1" />
+          <End Role="Medications" Type="CareManagement.Store.Medications" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="PrescriptionPickups" Type="CareManagement.Store.PrescriptionPickups" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medications">
@@ -1218,6 +1222,7 @@
           <Property Type="String" Name="Note" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
           <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="AuthorizationRequest" Relationship="CareManagement.FK_AuthorizationNotes_AuthorizationRequestId_AuthorizationRequests_AuthorizationRequestId" FromRole="AuthorizationNote" ToRole="AuthorizationRequest" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
         </EntityType>
         <EntityType Name="AuthorizationRequest">
           <Key>
@@ -1328,6 +1333,7 @@
           <Property Type="Binary" Name="CurrentVersion" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Facility" Relationship="CareManagement.FK_Providers_FacilityId_Facilities_FacilityId" FromRole="Provider" ToRole="Facility" />
           <NavigationProperty Name="MedicalAppointments" Relationship="CareManagement.FK_MedicalAppointments_ProviderId_Providers_ProviderId" FromRole="Provider" ToRole="MedicalAppointment" />
+          <Property Type="Int32" Name="AccountId" Nullable="false" />
         </EntityType>
         <EntityType Name="ScheduleUnit">
           <Key>
@@ -1785,6 +1791,7 @@
           <EntitySetMapping Name="AuthorizationNotes">
             <EntityTypeMapping TypeName="CareManagement.AuthorizationNote">
               <MappingFragment StoreEntitySet="AuthorizationNotes">
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
                 <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
@@ -1886,6 +1893,7 @@
           <EntitySetMapping Name="Providers">
             <EntityTypeMapping TypeName="CareManagement.Provider">
               <MappingFragment StoreEntitySet="Providers">
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
                 <ScalarProperty Name="CurrentVersion" ColumnName="CurrentVersion" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="FacilityId" ColumnName="FacilityId" />
@@ -2001,7 +2009,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="CareManagement" ZoomLevel="29" >
+      <Diagram Name="CareManagement" ZoomLevel="72" >
         <EntityTypeShape EntityType="CareManagement.C__RefactorLog" Width="1.5" PointX="2.5" PointY="17.375" Height="1.211080729166667" />
         <EntityTypeShape EntityType="CareManagement.Account" Width="1.5" PointX="5.5" PointY="8.25" Height="3.5186979166666674" />
         <EntityTypeShape EntityType="CareManagement.aspnet_Applications" Width="1.5" PointX="0.5" PointY="2" Height="2.3648893229166674" />

@@ -1,0 +1,83 @@
+﻿@model Infrastructure.Model.Insurance.AuthorizationNote
+
+@{
+    ViewBag.Title = "Edit Authorization Note";
+}
+
+<h2>Edit Authorization Note</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Authorization Note</legend>
+        
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <p class="error">@ViewBag.ErrorMessage</p>
+        }
+        
+        @if (ViewBag.InnerErrorMessage != null)
+        {
+            <p class="error">@ViewBag.InnerErrorMessage</p>
+        }
+
+        @Html.HiddenFor(model => model.CurrentVersion)
+        
+        @if (Roles.IsUserInRole("Admin"))
+        {
+            <div class="display-label">
+                @Html.LabelFor(model => model.AccountId)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.AccountId)
+            </div>
+        }
+        @Html.HiddenFor(model => model.AccountId)
+
+        <div class="display-label">Authorization Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AuthorizationRequestId)
+        </div>
+        @Html.HiddenFor(model => model.AuthorizationRequestId)
+
+        <div class="display-label">Note Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Id)
+        </div>
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Note)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Note)
+            @Html.ValidationMessageFor(model => model.Note)
+        </div>
+
+        <div class="display-label">Created</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LocalCreatedString)
+        </div>
+        @Html.HiddenFor(model => model.Created)
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+@if (ViewBag.InsurerId == null)
+{
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+else
+{
+    <div>
+        @Html.RouteLink("Back to List", "AuthorizationNotes", new { insurerid = ViewBag.InsurerId, authorizationid = Model.AuthorizationRequestId })
+    </div>
+}

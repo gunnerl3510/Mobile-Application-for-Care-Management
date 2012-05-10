@@ -73,6 +73,27 @@ namespace Infrastructure.Model.Medical
             }
         }
 
+        /// <summary>
+        /// Gets or sets the AppointmentDateTimeUtc using a string value
+        /// </summary>
+        [Display(Name = "Local Date and Time")]
+        [DataType(DataType.DateTime)]
+        public string LocalAppointmentDateTimeString
+        {
+            get
+            {
+                return AppointmentDateTimeUtc.ToLocalTime().ToString("g");
+            }
+
+            set
+            {
+                DateTime tempDateTime;
+                this.AppointmentDateTimeUtc = DateTime.TryParse(value, out tempDateTime)
+                                                  ? DateTime.SpecifyKind(tempDateTime, DateTimeKind.Local)
+                                                  : default(DateTimeOffset);
+            }
+        }
+
         #endregion
 
         #region Implementation of IAppointmentDuration
@@ -80,7 +101,7 @@ namespace Infrastructure.Model.Medical
         /// <summary>
         /// Gets or sets the units used for the length of the appointment
         /// </summary>
-        [Display(Name = "Unit")]
+        [Display(Name = "Time Unit")]
         [DataMember]
         public ScheduleUnits? AppointmentLengthUnits { get; set; }
 
@@ -97,6 +118,18 @@ namespace Infrastructure.Model.Medical
             set
             {
                 AppointmentLengthUnits = value.HasValue ? (ScheduleUnits)value.Value : (ScheduleUnits?)null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the string value of the AppointmentLengthUnits enum value
+        /// </summary>
+        [Display(Name = "Time Unit")]
+        public string AppointmentLengthUnitsString
+        {
+            get
+            {
+                return AppointmentLengthUnits.HasValue ? AppointmentLengthUnits.Value.ToString() : "minutes";
             }
         }
 

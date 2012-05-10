@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Infrastructure.Model.Medical.Provider>
+
+@{
+    ViewBag.Title = "Provider List";
+}
+
+<h2>Provider List</h2>
+
+<p>
+    @Html.RouteLink("Create New", "Providers", new { action = "Create", facilityid = ViewBag.FacilityId })
+</p>
+<table>
+    <tr>
+        @if (Roles.IsUserInRole("Admin"))
+        {
+            <th>
+                Account Id
+            </th>
+        }
+        <th>
+            Facility Id
+        </th>
+        <th>
+            Provider id
+        </th>
+        <th>
+            Name
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) 
+    {
+        <tr>
+            @if (Roles.IsUserInRole("Admin"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountId)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.FacilityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.RouteLink("Edit", "Providers", new { id = item.Id, action = "Edit" }) |
+                @Html.RouteLink("Details", "Providers", new { id = item.Id, action = "Details" }) |
+                @Html.RouteLink("Delete", "Providers", new { id = item.Id, action = "Delete" }) |
+                @Html.RouteLink("Appointments", "MedicalAppointments", new { facilityid = item.FacilityId, providerid = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+@if (ViewBag.FacilityId != null)
+{
+    <p>
+        @Html.RouteLink("Return to Facility", new { controller = "Facility", action = "Details", id = ViewBag.FacilityId })
+    </p>
+}

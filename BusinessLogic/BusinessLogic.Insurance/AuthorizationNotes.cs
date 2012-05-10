@@ -13,6 +13,7 @@ namespace BusinessLogic.Insurance
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -22,6 +23,7 @@ namespace BusinessLogic.Insurance
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using InsuranceModels = Infrastructure.Model.Insurance;
 
     /// <summary>
@@ -253,6 +255,42 @@ namespace BusinessLogic.Insurance
         }
 
         #region AuthorizationNote retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.AuthorizationNote"/> from
+        /// the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the follow ups.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="InsuranceModels.AuthorizationNote"/>.
+        /// </returns>
+        public IQueryable<InsuranceModels.AuthorizationNote> GetAuthorizationNotes(IIdentity identity)
+        {
+            logger.EnterMethod("GetAuthorizationNotes");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<InsuranceModels.AuthorizationNote> authorizationNotes;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                authorizationNotes = authorizationNoteReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                authorizationNotes = authorizationNoteReadOnlyRepository.FilterBy(note => note.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetAuthorizationFollowUps");
+
+            return authorizationNotes;
+        }
 
         /// <summary>
         /// Retrieves an <seealso cref="InsuranceModels.AuthorizationNote"/> from the 

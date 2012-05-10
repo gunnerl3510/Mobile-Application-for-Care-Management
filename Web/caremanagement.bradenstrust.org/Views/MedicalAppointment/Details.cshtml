@@ -1,0 +1,72 @@
+﻿@model Infrastructure.Model.Medical.MedicalAppointment
+
+@{
+    ViewBag.Title = "Medical Appointment Details";
+}
+
+<h2>Medical Appointment Details</h2>
+
+<fieldset>
+    <legend>Medical Appointment</legend>
+    
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">Account Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Provider Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProviderId)
+    </div>
+
+    <div class="display-label">Appointment Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Appointment Date and Time</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocalAppointmentDateTimeString)
+    </div>
+
+    <div class="display-label">Length</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Length)
+    </div>
+
+    <div class="display-label">Time Units</div>
+    @if (Model.AppointmentLengthUnits.HasValue)
+    {
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AppointmentLengthUnitsString)
+        </div>
+    }
+    else
+    {
+        <div class="display-field">
+            minutes
+        </div>
+    }
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@if (ViewBag.FacilityId == null)
+{
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+else
+{
+    <p>
+        @Html.RouteLink("Edit", "MedicalAppointments", new { facilityid = ViewBag.FacilityId, providerid = Model.ProviderId, id = Model.Id, action = "Edit" }) |
+        @Html.RouteLink("Back to List", "MedicalAppointments", new { facilityid = ViewBag.FacilityId, providerid = Model.ProviderId })
+    </p>
+}

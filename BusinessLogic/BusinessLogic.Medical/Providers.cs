@@ -13,6 +13,7 @@ namespace BusinessLogic.Medical
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -22,6 +23,7 @@ namespace BusinessLogic.Medical
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using MedicalModels = Infrastructure.Model.Medical;
 
     /// <summary>
@@ -250,6 +252,42 @@ namespace BusinessLogic.Medical
         }
 
         #region Provider retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="MedicalModels.Provider"/> from
+        /// the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the providers.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="MedicalModels.Provider"/>.
+        /// </returns>
+        public IQueryable<MedicalModels.Provider> GetProviders(IIdentity identity)
+        {
+            logger.EnterMethod("GetProviders");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<MedicalModels.Provider> providers;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                providers = providerReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                providers = providerReadOnlyRepository.FilterBy(insurer => insurer.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetProviders");
+
+            return providers;
+        }
 
         /// <summary>
         /// Retrieves an <seealso cref="MedicalModels.Provider"/> from the 

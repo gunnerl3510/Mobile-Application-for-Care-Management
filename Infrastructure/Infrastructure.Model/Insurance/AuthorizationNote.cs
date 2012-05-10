@@ -43,6 +43,14 @@ namespace Infrastructure.Model.Insurance
         #endregion
 
         /// <summary>
+        /// Gets or sets the account identifier to which the follow up belongs
+        /// </summary>
+        [HiddenInput]
+        [Editable(false)]
+        [DataMember]
+        public int AccountId { get; set; }
+
+        /// <summary>
         /// Gets or sets the authorization request that this not belongs to
         /// </summary>
         [Required]
@@ -60,7 +68,7 @@ namespace Infrastructure.Model.Insurance
         /// <summary>
         /// Gets or sets the date and time that the note was created
         /// </summary>
-        [Required]
+        [ScaffoldColumn(false)]
         [DataType(DataType.DateTime)]
         public DateTimeOffset Created { get; set; }
 
@@ -75,10 +83,24 @@ namespace Infrastructure.Model.Insurance
             {
                 return Created.ToString();
             }
+
             set
             {
                 DateTimeOffset tempDateTime;
                 Created = DateTimeOffset.TryParse(value, out tempDateTime) ? tempDateTime : default(DateTimeOffset);
+            }
+        }
+
+        /// <summary>
+        /// Gets the AppointmentDateTimeUtc using a string value
+        /// </summary>
+        [Display(Name = "Local Date and Time")]
+        [DataType(DataType.DateTime)]
+        public string LocalCreatedString
+        {
+            get
+            {
+                return Created.ToLocalTime().ToString("f");
             }
         }
     }

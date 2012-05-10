@@ -10,11 +10,10 @@
 namespace BusinessLogic.Medical
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
-    using System.Text;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -24,6 +23,7 @@ namespace BusinessLogic.Medical
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using MedicalModels = Infrastructure.Model.Medical;
 
     /// <summary>
@@ -244,6 +244,42 @@ namespace BusinessLogic.Medical
         }
 
         #region MedicalAppointment retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="MedicalModels.MedicalAppointment"/> from
+        /// the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the providers.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="MedicalModels.MedicalAppointment"/>.
+        /// </returns>
+        public IQueryable<MedicalModels.MedicalAppointment> GetMedicalAppointments(IIdentity identity)
+        {
+            logger.EnterMethod("GetMedicalAppointments");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<MedicalModels.MedicalAppointment> providers;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                providers = medicalAppointmentReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                providers = medicalAppointmentReadOnlyRepository.FilterBy(insurer => insurer.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetMedicalAppointments");
+
+            return providers;
+        }
 
         /// <summary>
         /// Retrieves a <seealso cref="MedicalModels.MedicalAppointment"/> from the 

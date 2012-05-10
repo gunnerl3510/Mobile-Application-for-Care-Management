@@ -13,6 +13,7 @@ namespace BusinessLogic.Medical
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -22,6 +23,7 @@ namespace BusinessLogic.Medical
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using MedicalModels = Infrastructure.Model.Medical;
 
     /// <summary>
@@ -121,16 +123,11 @@ namespace BusinessLogic.Medical
 
             try
             {
-                kernel.Get<Security>().AuthorizeAction(identity, facility.AccountId);
-            }
-            catch (SecurityException exception)
-            {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in CreateFacility");
-                throw;
-            }
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
 
-            try
-            {
+                facility.AccountId = userAccount.Id;
                 facilityRepository.Add(facility);
             }
             catch (Exception exception)
@@ -243,6 +240,41 @@ namespace BusinessLogic.Medical
         }
 
         #region facility retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="MedicalModels.Facility"/> from the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the facilities.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="MedicalModels.Facility"/>.
+        /// </returns>
+        public IQueryable<MedicalModels.Facility> GetFacilities(IIdentity identity)
+        {
+            logger.EnterMethod("GetFacilities");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<MedicalModels.Facility> facilities;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                facilities = facilityReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                facilities = facilityReadOnlyRepository.FilterBy(facility => facility.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetFacilities");
+
+            return facilities;
+        }
 
         /// <summary>
         /// Retrieves a <seealso cref="MedicalModels.Facility"/> from the 

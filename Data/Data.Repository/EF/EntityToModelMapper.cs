@@ -95,6 +95,7 @@ namespace Data.Repository.EF
                                         note =>
                                         new InsuranceModels.AuthorizationNote
                                             {
+                                                AccountId = note.AccountId,
                                                 AuthorizationRequestId = note.AuthorizationRequestId,
                                                 Created = note.Created,
                                                 CurrentVersion = note.CurrentVersion,
@@ -146,6 +147,7 @@ namespace Data.Repository.EF
                                         provider =>
                                         new MedicalModels.Provider
                                             {
+                                                AccountId = provider.AccountId,
                                                 CurrentVersion = provider.CurrentVersion,
                                                 FacilityId = provider.FacilityId,
                                                 Id = provider.ProviderId,
