@@ -1,0 +1,37 @@
+﻿@model Infrastructure.Model.Prescription.PrescriptionPickup
+
+@{
+    ViewBag.Title = "Prescription Pickup Details";
+}
+
+<h2>Prescription Pickup Details</h2>
+
+<fieldset>
+    <legend>Prescription Pickup</legend>
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">Account Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Medication Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MedicationId)
+    </div>
+
+    <div class="display-label">Pickiup Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Pickup Date and Time</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LocalAppointmentDateTimeString)
+    </div>
+</fieldset>
+<p>
+    @Html.RouteLink("Edit", "PrescriptionPickups", new { medicationid = Model.MedicationId, id = Model.Id, action = "Edit" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

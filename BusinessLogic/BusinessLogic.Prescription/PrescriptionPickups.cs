@@ -15,6 +15,7 @@ namespace BusinessLogic.Prescription
     using System.Security;
     using System.Security.Principal;
     using System.Text;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -24,6 +25,7 @@ namespace BusinessLogic.Prescription
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using PrescriptionModels = Infrastructure.Model.Prescription;
 
     /// <summary>
@@ -244,6 +246,42 @@ namespace BusinessLogic.Prescription
         }
 
         #region PrescriptionPickup retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="PrescriptionModels.PrescriptionPickup"/> from
+        /// the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the prescription pickups.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="PrescriptionModels.PrescriptionPickup"/>.
+        /// </returns>
+        public IQueryable<PrescriptionModels.PrescriptionPickup> GetPrescriptionPickups(IIdentity identity)
+        {
+            logger.EnterMethod("GetPrescriptionPickups");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<PrescriptionModels.PrescriptionPickup> pickups;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                pickups = prescriptionPickupkReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                pickups = prescriptionPickupkReadOnlyRepository.FilterBy(pickup => pickup.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetPrescriptionPickups");
+
+            return pickups;
+        }
 
         /// <summary>
         /// Retrieves an <seealso cref="PrescriptionModels.PrescriptionPickup"/> from the 

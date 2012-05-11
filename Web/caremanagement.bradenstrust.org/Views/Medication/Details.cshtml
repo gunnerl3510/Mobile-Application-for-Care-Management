@@ -1,0 +1,44 @@
+﻿@model Infrastructure.Model.Prescription.Medication
+
+@{
+    ViewBag.Title = "Medication Details";
+}
+
+<h2>Medication Details</h2>
+
+<fieldset>
+    <legend>Medication</legend>
+
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">Account Id</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Medication Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Quantity</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantity)
+    </div>
+
+    <div class="display-label">Units</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DosageUnitsStringValue)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.RouteLink("View Prescription Pickups", "PrescriptionPickups", new { action = "Index", medicationid = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

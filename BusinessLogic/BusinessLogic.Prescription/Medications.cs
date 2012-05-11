@@ -13,6 +13,7 @@ namespace BusinessLogic.Prescription
     using System.Linq;
     using System.Security;
     using System.Security.Principal;
+    using System.Web.Security;
 
     using BusinessLogic.Helpers;
 
@@ -22,6 +23,7 @@ namespace BusinessLogic.Prescription
 
     using Ninject;
 
+    using AccountModels = Infrastructure.Model.Account;
     using PrescriptionModels = Infrastructure.Model.Prescription;
 
     /// <summary>
@@ -120,16 +122,12 @@ namespace BusinessLogic.Prescription
 
             try
             {
-                kernel.Get<Security>().AuthorizeAction(identity, medication.AccountId);
-            }
-            catch (SecurityException exception)
-            {
-                logger.LogExceptionWithMessage(exception, "SecurityException thrown in CreateMedication");
-                throw;
-            }
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
 
-            try
-            {
+                medication.AccountId = userAccount.Id;
+
                 medicationRepository.Add(medication);
             }
             catch (Exception exception)
@@ -243,6 +241,41 @@ namespace BusinessLogic.Prescription
         }
 
         #region medication retrieval
+
+        /// <summary>
+        /// Retrives an <seealso cref="IQueryable{T}"/> of <seealso cref="PrescriptionModels.Medication"/> from the repository.
+        /// </summary>
+        /// <param name="identity">
+        /// The identity of the user requesting the medications.
+        /// </param>
+        /// <returns>
+        /// An <seealso cref="IQueryable{T}"/> of <seealso cref="PrescriptionModels.Medication"/>.
+        /// </returns>
+        public IQueryable<PrescriptionModels.Medication> GetMedications(IIdentity identity)
+        {
+            logger.EnterMethod("GetMedications");
+
+            Invariant.IsNotNull(identity, "identity");
+
+            IQueryable<PrescriptionModels.Medication> medications;
+
+            if (Roles.IsUserInRole(identity.Name, "Admin"))
+            {
+                medications = medicationReadOnlyRepository.All();
+            }
+            else
+            {
+                var user = Membership.GetUser(identity.Name, false);
+                var accountReadRepository = kernel.Get<IReadOnlyRepository<AccountModels.Account>>();
+                var userAccount = accountReadRepository.FindBy(account => account.UserId.Value.Equals((Guid)user.ProviderUserKey));
+
+                medications = medicationReadOnlyRepository.FilterBy(medication => medication.AccountId.Equals(userAccount.Id));
+            }
+
+            logger.LeaveMethod("GetMedications");
+
+            return medications;
+        }
 
         /// <summary>
         /// Retrieves an <seealso cref="PrescriptionModels.Medication"/> from the 

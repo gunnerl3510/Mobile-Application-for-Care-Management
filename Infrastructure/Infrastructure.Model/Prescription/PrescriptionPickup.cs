@@ -49,7 +49,8 @@ namespace Infrastructure.Model.Prescription
         /// <summary>
         /// Gets or sets the date and time of the appointment in UTC time
         /// </summary>
-        [Required]
+        [ScaffoldColumn(false)]
+        [Display(Name = "Pickup Date and Time")]
         public DateTimeOffset AppointmentDateTimeUtc { get; set; }
 
         /// <summary>
@@ -68,6 +69,28 @@ namespace Infrastructure.Model.Prescription
             {
                 DateTimeOffset tempDateTime;
                 AppointmentDateTimeUtc = DateTimeOffset.TryParse(value, out tempDateTime) ? tempDateTime : default(DateTimeOffset);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the AppointmentDateTimeUtc using a string value
+        /// </summary>
+        [Required]
+        [Display(Name = "Pickup Date and Time")]
+        [DataType(DataType.DateTime)]
+        public string LocalAppointmentDateTimeString
+        {
+            get
+            {
+                return AppointmentDateTimeUtc.ToLocalTime().ToString("g");
+            }
+
+            set
+            {
+                DateTime tempDateTime;
+                this.AppointmentDateTimeUtc = DateTime.TryParse(value, out tempDateTime)
+                                                  ? DateTime.SpecifyKind(tempDateTime, DateTimeKind.Local)
+                                                  : default(DateTimeOffset);
             }
         }
 

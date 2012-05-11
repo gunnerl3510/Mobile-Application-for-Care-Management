@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Infrastructure.Model.Prescription.PrescriptionPickup>
+
+@{
+    ViewBag.Title = "Pickup List";
+}
+
+<h2>Pickup List</h2>
+
+<p>
+    @Html.RouteLink("Create New", "PrescriptionPickups", new { action = "Create", insurerid = ViewBag.MedicationId })
+</p>
+<table>
+    <tr>
+        @if (Roles.IsUserInRole("Admin"))
+        {
+            <th>
+                Account Id
+            </th>
+        }
+        <th>
+            Medication Id
+        </th>
+        <th>
+            Pickup Id
+        </th>
+        <th>
+            Pickup Date and Time
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (Roles.IsUserInRole("Admin"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountId)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalAppointmentDateTimeString)
+            </td>
+            <td>
+                @Html.RouteLink("Edit", "PrescriptionPickups", new { id = item.Id, action = "Edit" }) |
+                @Html.RouteLink("Details", "PrescriptionPickups", new { id = item.Id, action = "Details" }) |
+                @Html.RouteLink("Delete", "PrescriptionPickups", new { id = item.Id, action = "Delete" })
+            </td>
+        </tr>
+    }
+
+</table>
+@if (ViewBag.MedicationId != null)
+{
+    <p>
+        @Html.RouteLink("Return to Medication", new { controller = "Medication", action = "Details", id = ViewBag.MedicationId })
+    </p>
+}

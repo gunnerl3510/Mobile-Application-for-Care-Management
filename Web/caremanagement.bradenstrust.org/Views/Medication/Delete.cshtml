@@ -1,0 +1,66 @@
+﻿@model Infrastructure.Model.Prescription.Medication
+
+@{
+    ViewBag.Title = "Delete Medication";
+}
+
+<h2>Delete Medication</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Medication</legend>
+        
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <p class="error">@ViewBag.ErrorMessage</p>
+    }
+        
+    @if (ViewBag.InnerErrorMessage != null)
+    {
+        <p class="error">@ViewBag.InnerErrorMessage</p>
+    }
+        
+    @if (Roles.IsUserInRole("Admin"))
+    {
+        <div class="display-label">
+            @Html.LabelFor(model => model.AccountId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AccountId)
+        </div>
+    }
+
+    <div class="display-label">Medication Id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Id)
+    </div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Quantity</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantity)
+    </div>
+
+    <div class="display-label">Units</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DosageUnitsStringValue)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.AccountId)
+    @Html.HiddenFor(model => model.CurrentVersion)
+    @Html.HiddenFor(model => model.DosageUnits)
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.Name)
+    @Html.HiddenFor(model => model.Quantity)
+    
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -62,11 +62,13 @@ namespace Infrastructure.Model.Prescription
         /// Gets or sets the units for the dosage for the medication
         /// </summary>
         [DataMember]
+        [ScaffoldColumn(false)]
         public DosageUnits? DosageUnits { get; set; }
 
         /// <summary>
         /// Gets or sets the int value of the AppointmentLengthUnits enum value
         /// </summary>
+        [ScaffoldColumn(false)]
         public int? DosageUnitsValue
         {
             get
@@ -77,6 +79,18 @@ namespace Infrastructure.Model.Prescription
             set
             {
                 DosageUnits = value.HasValue ? (DosageUnits)value.Value : (DosageUnits?)null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the dosage units value as a string.
+        /// </summary>
+        [Display(Name = "Units")]
+        public string DosageUnitsStringValue
+        {
+            get
+            {
+                return DosageUnits.HasValue ? DosageUnits.Value.ToString() : "no unit specified";
             }
         }
 

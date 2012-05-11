@@ -40,6 +40,11 @@ namespace caremanagement.bradenstrust.org
                 new { controller = "AuthorizationNote", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(
+                "PrescriptionPickups",
+                "Medication/{medicationid}/PrescriptionPickup/{action}/{id}",
+                new { controller = "PrescriptionPickup", action = "Index", id = UrlParameter.Optional });
+
+            routes.MapRoute(
                 "Providers",
                 "Facility/{facilityid}/Provider/{action}/{id}",
                 new { controller = "Provider", action = "Index", id = UrlParameter.Optional });
