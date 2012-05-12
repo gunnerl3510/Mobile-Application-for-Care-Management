@@ -23,6 +23,7 @@ namespace caremanagement.bradenstrust.org.Controllers
     /// <summary>
     /// Controller to manage all medical appointments.
     /// </summary>
+    [Authorize]
     public class MedicalAppointmentController : Controller
     {
         /// <summary>

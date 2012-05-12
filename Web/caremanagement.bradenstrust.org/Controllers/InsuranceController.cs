@@ -21,6 +21,7 @@ namespace caremanagement.bradenstrust.org.Controllers
     /// <summary>
     /// Controller to manage all insurance actions.
     /// </summary>
+    [Authorize]
     public class InsuranceController : Controller
     {
         /// <summary>

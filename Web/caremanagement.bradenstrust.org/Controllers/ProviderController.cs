@@ -23,6 +23,7 @@ namespace caremanagement.bradenstrust.org.Controllers
     /// <summary>
     /// Controller to manage all provider actions.
     /// </summary>
+    [Authorize]
     public class ProviderController : Controller
     {
         /// <summary>

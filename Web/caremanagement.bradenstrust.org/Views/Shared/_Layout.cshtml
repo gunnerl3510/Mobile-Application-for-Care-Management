@@ -19,9 +19,12 @@
             <nav>
                 <ul id="menu">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Insurance", "Index", "Insurance")</li>
-                    <li>@Html.ActionLink("Medical", "Index", "Facility")</li>
-                    <li>@Html.ActionLink("Medication", "Index", "Medication")</li>
+                    @if (HttpContext.Current.User != null && HttpContext.Current.User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Insurance", "Index", "Insurance")</li>
+                        <li>@Html.ActionLink("Medical", "Index", "Facility")</li>
+                        <li>@Html.ActionLink("Medication", "Index", "Medication")</li>
+                    }
                 </ul>
             </nav>
         </header>

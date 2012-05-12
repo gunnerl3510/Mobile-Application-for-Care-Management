@@ -21,6 +21,7 @@ namespace caremanagement.bradenstrust.org.Controllers
     /// <summary>
     /// Controller to manage all facility actions.
     /// </summary>
+    [Authorize]
     public class FacilityController : Controller
     {
         /// <summary>

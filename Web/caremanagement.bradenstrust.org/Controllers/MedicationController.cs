@@ -21,6 +21,7 @@ namespace caremanagement.bradenstrust.org.Controllers
     /// <summary>
     /// Controller to manage all medication actions.
     /// </summary>
+    [Authorize]
     public class MedicationController : Controller
     {
         /// <summary>
